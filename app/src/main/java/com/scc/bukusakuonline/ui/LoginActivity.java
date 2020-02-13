@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
@@ -11,35 +12,33 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.gson.Gson;
 import com.scc.bukusakuonline.R;
+import com.scc.bukusakuonline.R2;
 import com.scc.bukusakuonline.connection.ApiService;
 import com.scc.bukusakuonline.connection.RetroConfig;
 import com.scc.bukusakuonline.model.Login;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    MaterialButton btnLogin;
-    TextInputEditText txtEmail, txtPassword;
+//    @BindView(R2.id.btnLogin) MaterialButton btnLogin;
+    @BindView(R2.id.txtEmail) TextInputEditText txtEmail;
+
+    @BindView(R2.id.txtPassword) TextInputEditText txtPassword;
+
     SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        btnLogin = findViewById(R.id.btnLogin);
-        txtEmail = findViewById(R.id.txtEmail);
-        txtPassword = findViewById(R.id.txtPassword);
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
+        ButterKnife.bind(this);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
-
-    private void login() {
+    @OnClick(R2.id.btnLogin) void login(){
         try {
             RetroConfig.getRetrofit().create(ApiService.class).
                     login(txtEmail.getText().toString(),txtPassword.getText().toString(),"001").enqueue(new Callback<Login>() {
@@ -56,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 }
-
                 @Override
                 public void onFailure(Call<Login> call, Throwable t) {
                     Log.d("failure",t.getMessage());
@@ -66,6 +64,5 @@ public class LoginActivity extends AppCompatActivity {
         }catch (Exception e){
             Log.d("error",e.getMessage());
         }
-
     }
 }
