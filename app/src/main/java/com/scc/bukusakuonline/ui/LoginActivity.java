@@ -1,16 +1,14 @@
 package com.scc.bukusakuonline.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
 
-import com.google.android.material.button.MaterialButton;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.gson.Gson;
 import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.R2;
 import com.scc.bukusakuonline.connection.ApiService;
@@ -25,7 +23,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-//    @BindView(R2.id.btnLogin) MaterialButton btnLogin;
     @BindView(R2.id.txtEmail) TextInputEditText txtEmail;
 
     @BindView(R2.id.txtPassword) TextInputEditText txtPassword;
@@ -51,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("TOKEN",token);
                             editor.apply();
                             Log.d("response", token);
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
 
                     }
