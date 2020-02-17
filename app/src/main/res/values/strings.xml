@@ -7,4 +7,7 @@
     <string name="email">Email</string>
     <string name="masuk">Masuk</string>
     <string name="masuk_untuk_melanjutkan">Masuk Untuk Melanjutkan</string>
+    <string name="history">History</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="profile">Profile</string>
 </resources>
