@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.scc.bukusakuonline.ui.history.HistoryFragment"
+        android:name="com.scc.bukusakuonline.ui.profile.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>
