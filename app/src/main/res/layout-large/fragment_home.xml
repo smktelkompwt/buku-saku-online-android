@@ -75,12 +75,12 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="60dp"
-                    android:maxLines="2"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Peraturan dan Pasal"
                     android:layout_margin="10dp"
                     android:layout_marginEnd="32dp"
+                    android:maxLines="2"
                     android:layout_marginRight="32dp"
                     android:textColor="@color/colorHitam"
                     android:fontFamily="@font/roboto"/>
@@ -106,7 +106,7 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="60dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Daftar Point Pelanggaran"
                     android:layout_margin="10dp"
@@ -137,7 +137,7 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:text="Lihat Daftar Kelas"
                     android:layout_margin="10dp"
@@ -168,12 +168,12 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="60dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Lainya"
+                    android:text="Fitur Lainya"
                     android:layout_margin="10dp"
-                    android:layout_marginEnd="32dp"
                     android:maxLines="2"
+                    android:layout_marginEnd="32dp"
                     android:layout_marginRight="32dp"
                     android:textColor="@color/colorHitam"
                     android:fontFamily="@font/roboto"/>
