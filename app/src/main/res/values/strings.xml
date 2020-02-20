@@ -20,4 +20,11 @@
     <string name="t">TextView</string>
     <string name="bantuan">Bantuan</string>
     <string name="keluar">Keluar</string>
+    <string name="detail_pelanggaran">Detail Pelanggaran</string>
+    <string name="kelas">Kelas</string>
+    <string name="kategori_pelanggaran">Kategori Pelanggaran</string>
+    <string name="point_pelanggaran">Point Pelanggaran</string>
+    <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
+    <string name="pelapor">Pelapor</string>
+    <string name="bukti">Bukti</string>
 </resources>
