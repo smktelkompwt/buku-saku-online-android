@@ -17,6 +17,8 @@
         android:label="@string/history"
         tools:layout="@layout/fragment_history" />
 
+
+
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.scc.bukusakuonline.ui.dashboard.DashboardFragment"
@@ -27,4 +29,13 @@
         android:name="com.scc.bukusakuonline.ui.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_pengaduan"
+        android:name="com.scc.bukusakuonline.ui.pengaduan.PengaduanFragment"
+        android:label="@string/pengaduan"
+        tools:layout="@layout/fragment_pengaduan">
+
+
+    </fragment>
 </navigation>
