@@ -10,4 +10,12 @@
     <string name="history">History</string>
     <string name="dashboard">Dashboard</string>
     <string name="profile">Profile</string>
+    <string name="detail_pelanggaran">Detail Pelanggaran</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="kelas">Kelas</string>
+    <string name="kategori_pelanggaran">Kategori Pelanggaran</string>
+    <string name="point_pelanggaran">Point Pelanggaran</string>
+    <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
+    <string name="pelapor">Pelapor</string>
+    <string name="bukti">Bukti</string>
 </resources>
