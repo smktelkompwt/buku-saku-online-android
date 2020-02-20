@@ -75,7 +75,7 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="55dp"
+                    android:layout_width="70dp"
                     android:maxLines="2"
                     android:layout_height="wrap_content"
                     android:text="Peraturan dan Pasal"
@@ -171,7 +171,7 @@
                     android:scaleType="fitXY"
                     android:background="@color/gray"/>
                 <TextView
-                    android:layout_width="60dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:text="Lainya"
                     android:layout_margin="10dp"
