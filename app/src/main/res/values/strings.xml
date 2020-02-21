@@ -27,4 +27,7 @@
     <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
     <string name="pelapor">Pelapor</string>
     <string name="bukti">Bukti</string>
+    <string name="code">Kode</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="point">Point</string>
 </resources>

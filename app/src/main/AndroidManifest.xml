@@ -12,27 +12,26 @@
         android:theme="@style/AppTheme">
         <activity
             android:theme="@style/Toolbar"
-            android:name=".ui.DetailPelanggaran">
-
-        </activity>
-        <activity
-            android:name=".ui.LoginActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".ui.SplashScreenActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/app_name">
+            android:name=".ui.DetailPoint">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.DetailPelanggaran"
+            android:theme="@style/Toolbar"></activity>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"></activity>
+        <activity
+            android:name=".ui.SplashScreenActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"></activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name">
+
         </activity>
     </application>
 
