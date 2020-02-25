@@ -36,21 +36,37 @@
                 android:layout_height="wrap_content"
                 android:text="Rayhan Rafiud Darojat"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/colorHitam"
                 android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="32 Febrari 2020, Pukul 07.04"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lihat Detail"
                 android:fontFamily="@font/roboto"
-                android:textSize="16sp"
-                android:layout_marginTop="3dp"
-                android:textColor="@color/colorPrimary"/>
+                android:text="32 Febrari 2020, Pukul 07.04"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Kode : A-01"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lihat Detail"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="17sp"
+                    android:gravity="end"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

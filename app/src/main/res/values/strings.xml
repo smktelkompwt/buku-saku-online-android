@@ -27,4 +27,6 @@
     <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
     <string name="pelapor">Pelapor</string>
     <string name="bukti">Bukti</string>
+    <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
+    <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
 </resources>
