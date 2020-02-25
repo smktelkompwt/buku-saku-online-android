@@ -11,7 +11,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         app:cardCornerRadius="0dp"
         app:cardElevation="15dp"
         app:cardBackgroundColor="@color/colorbgHome">
@@ -21,8 +21,8 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_height="25dp"
                 android:src="@drawable/back"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
                 android:fontFamily="@font/roboto"
                 android:text="Peraturan dan Pasal"
                 android:textColor="@color/colorWhite"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_marginStart="50dp"
                 android:layout_marginLeft="50dp"
                 android:layout_gravity="center"/>

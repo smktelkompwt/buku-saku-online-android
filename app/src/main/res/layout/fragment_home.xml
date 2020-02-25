@@ -72,6 +72,7 @@
                 android:layout_gravity="center"
                 android:columnCount="2">
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/menu_peraturan"
                     android:layout_height="90dp"
                     android:layout_width="match_parent"
                     app:cardElevation="0dp"
@@ -104,6 +105,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/menu_pelanggaran"
                     android:layout_height="90dp"
                     android:layout_width="match_parent"
                     app:cardElevation="0dp"
@@ -136,6 +138,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/menu_daftar_kelas"
                     android:layout_height="90dp"
                     android:layout_width="match_parent"
                     app:cardElevation="0dp"
@@ -168,6 +171,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/menu_lainya"
                     android:layout_height="90dp"
                     android:layout_width="match_parent"
                     app:cardElevation="0dp"
@@ -215,6 +219,13 @@
                     android:textColor="@color/colorHitam"
                     android:layout_margin="15dp"/>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_aktivitas_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    tools:listitem="@layout/item_aktivitas_new"/>
                 <!-- test pas di run -->
                 <ImageView
                     android:layout_width="match_parent"
@@ -228,12 +239,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
                     android:src="@drawable/test"/>
-                <androidx.recyclerview.widget.RecyclerView
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:orientation="vertical"
-                    tools:listitem="@layout/item_aktivitas_new"/>
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:src="@drawable/test"/>
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
