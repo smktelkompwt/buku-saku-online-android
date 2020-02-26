@@ -32,4 +32,8 @@
     <string name="code">Kode</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="point">Point</string>
+    <string name="overview">Overview</string>
+    <string name="jumlah_pelanggar">Jumlah Pelanggar</string>
+    <string name="jumlah_siswa">Jumlah Siswa</string>
+    <string name="pelanggaran_paling_sering">Pelanggaran Paling Sering</string>
 </resources>

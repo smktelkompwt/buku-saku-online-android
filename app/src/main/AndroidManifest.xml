@@ -20,7 +20,6 @@
         <activity
             android:name=".ui.DetailPoint"
             android:theme="@style/Toolbar">
-
         </activity>
         <activity
             android:name=".ui.DetailPelanggaran"
@@ -28,10 +27,7 @@
         <activity
             android:name=".ui.LoginActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-
-
         </activity>
-
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
@@ -45,6 +41,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 </manifest>
