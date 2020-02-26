@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.scc.bukusakuonline.R;
+
+import java.lang.reflect.Field;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,6 +57,8 @@ public class PengaduanFragment extends Fragment implements AdapterView.OnItemSel
 // Apply the adapter to the spinner
         spinnerKategori.setAdapter(adapter);
         spinnerKategori.setOnItemSelectedListener(this);
+
+
         return v;
     }
 

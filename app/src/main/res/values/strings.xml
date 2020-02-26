@@ -40,6 +40,16 @@
         <item>Rambut</item>
         <item>Telat</item>
         <item>Minggat</item>
+        <item>Kesiangan</item>
+        <item>Telat lagi</item>
+        <item>Nakal banget</item>
+        <item>apalagi ya</item>
+        <item>cukup kayanya</item>
+        <item>belum</item>
+        <item>coba lagi</item>
+        <item>belum lagi</item>
+        <item>oke pas</item>
+        <item>oke</item>
     </string-array>
     <string-array name="spinner_pasal">
         <item>Pilih Pasal</item>
