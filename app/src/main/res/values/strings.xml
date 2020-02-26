@@ -58,5 +58,9 @@
         <item>Pasal 3</item>
         <item>Pasal 4</item>
     </string-array>
-
+    <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
+    <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
+    <string name="code">Kode</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="point">Point</string>
 </resources>

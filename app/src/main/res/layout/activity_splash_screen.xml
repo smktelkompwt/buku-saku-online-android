@@ -16,6 +16,7 @@
         android:layout_marginTop="307dp"
         android:text="Bukusaku"
         android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@color/colorBgSplash"
         android:textSize="40dp"
         android:textStyle="bold"
