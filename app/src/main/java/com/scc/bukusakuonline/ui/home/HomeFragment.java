@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.scc.bukusakuonline.R;
+import com.scc.bukusakuonline.ui.LainyaActivity;
 import com.scc.bukusakuonline.ui.PeraturanActivity;
 
 public class HomeFragment extends Fragment {
@@ -55,6 +56,7 @@ public class HomeFragment extends Fragment {
         menu_lainya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getContext(), LainyaActivity.class));
             }
         });
         return root;

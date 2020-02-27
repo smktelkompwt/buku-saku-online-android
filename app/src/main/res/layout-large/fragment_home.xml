@@ -78,29 +78,34 @@
                     app:cardCornerRadius="7dp"
                     android:layout_margin="10dp"
                     android:background="@color/colorWhite">
-                    <LinearLayout
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Peraturan dan Pasal"
                             android:layout_margin="10dp"
-                            android:layout_marginEnd="32dp"
-                            android:maxLines="2"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Peraturan dan Pasal"
+                                android:layout_margin="10dp"
+                                android:layout_marginEnd="32dp"
+                                android:maxLines="2"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_height="95dp"
@@ -109,29 +114,34 @@
                     app:cardCornerRadius="7dp"
                     android:layout_margin="10dp"
                     android:background="@color/colorWhite">
-                    <LinearLayout
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Daftar Point Pelanggaran"
+                            android:layout_gravity="center"
                             android:layout_margin="10dp"
-                            android:maxLines="2"
-                            android:layout_marginEnd="32dp"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Daftar Point Pelanggaran"
+                                android:layout_margin="10dp"
+                                android:maxLines="2"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_height="95dp"
