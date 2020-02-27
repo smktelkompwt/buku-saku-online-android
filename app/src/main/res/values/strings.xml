@@ -21,6 +21,9 @@
     <string name="bantuan">Bantuan</string>
     <string name="keluar">Keluar</string>
     <string name="detail_pelanggaran">Detail Pelanggaran</string>
+    <string name="detail_peraturan">Peraturan dan Pasal</string>
+    <string name="detail_1">BAB I Ketentuan Umum</string>
+    <string name="detail_2">Pasal I Definisi Istilah</string>
     <string name="kelas">Kelas</string>
     <string name="kategori_pelanggaran">Pilih Kategori</string>
     <string name="point_pelanggaran">Point Pelanggaran</string>

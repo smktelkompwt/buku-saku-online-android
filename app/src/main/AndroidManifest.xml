@@ -12,9 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DetailPasalActivity"></activity>
-        <activity android:name=".ui.DetailPeraturanActivity" />
-        <activity android:name=".ui.PeraturanActivity" />
+        <activity android:name=".ui.DetailPasalActivity"
+            android:theme="@style/Toolbar"></activity>
+        <activity android:name=".ui.DetailPeraturanActivity"
+            android:theme="@style/Toolbar">
+
+        </activity>
+        <activity android:name=".ui.PeraturanActivity"
+            android:theme="@style/Toolbar">
+
+        </activity>
 
         <activity android:name=".ui.DaftarPoint" />
         <activity
