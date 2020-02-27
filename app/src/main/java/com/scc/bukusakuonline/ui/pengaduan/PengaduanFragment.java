@@ -2,11 +2,13 @@ package com.scc.bukusakuonline.ui.pengaduan;
 
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -32,6 +34,8 @@ public class PengaduanFragment extends Fragment implements AdapterView.OnItemSel
     Spinner spinnerKategori;
     @BindView(R.id.spinner_pasal)
     Spinner spinnerPasal;
+    @BindView(R.id.editText_spinner_pengaduan)
+    EditText editText;
 
     public PengaduanFragment() {
         // Required empty public constructor
@@ -80,5 +84,9 @@ public class PengaduanFragment extends Fragment implements AdapterView.OnItemSel
     @OnClick(R.id.button)
     public void onButtonClicked() {
         Toast.makeText(getContext(),"Laporkan",Toast.LENGTH_SHORT).show();
+    }
+    @OnClick(R.id.editText_spinner_pengaduan)
+    public void setEditText(){
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER);
     }
 }
