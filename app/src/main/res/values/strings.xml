@@ -21,10 +21,54 @@
     <string name="bantuan">Bantuan</string>
     <string name="keluar">Keluar</string>
     <string name="detail_pelanggaran">Detail Pelanggaran</string>
+    <string name="detail_peraturan">Peraturan dan Pasal</string>
+    <string name="detail_1">BAB I Ketentuan Umum</string>
+    <string name="detail_2">Pasal I Definisi Istilah</string>
     <string name="kelas">Kelas</string>
-    <string name="kategori_pelanggaran">Kategori Pelanggaran</string>
+    <string name="kategori_pelanggaran">Pilih Kategori</string>
     <string name="point_pelanggaran">Point Pelanggaran</string>
     <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
     <string name="pelapor">Pelapor</string>
     <string name="bukti">Bukti</string>
+    <string name="upload_bukti">Upload Bukti</string>
+    <string name="laporkan_pelanggaran">Laporkan Pelanggaran</string>
+    <string name="laporkan">Laporkan</string>
+    <string name="contoh_nis">Contoh : 3103117342</string>
+    <string name="nis">NIS</string>
+    <string name="kategori_pasal">Pilih Pasal</string>
+    <string name="pelanggaran">Pelanggaran</string>
+
+    <string-array name="spinner_kategori">
+        <item>Pilih Kategori</item>
+        <item>Nakal</item>
+        <item>Rambut</item>
+        <item>Telat</item>
+        <item>Minggat</item>
+        <item>Kesiangan</item>
+        <item>Telat lagi</item>
+        <item>Nakal banget</item>
+        <item>apalagi ya</item>
+        <item>cukup kayanya</item>
+        <item>belum</item>
+        <item>coba lagi</item>
+        <item>belum lagi</item>
+        <item>oke pas</item>
+        <item>oke</item>
+    </string-array>
+    <string-array name="spinner_pasal">
+        <item>Pilih Kode</item>
+        <item>Kode 1</item>
+        <item>Kode 2</item>
+        <item>Kode 3</item>
+        <item>Kode 4</item>
+    </string-array>
+    <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
+    <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
+    <string name="code">Kode</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="point">Point</string>
+    <string name="overview">Overview</string>
+    <string name="jumlah_pelanggar">Jumlah Pelanggar</string>
+    <string name="jumlah_siswa">Jumlah Siswa</string>
+    <string name="pelanggaran_paling_sering">Pelanggaran Paling Sering</string>
 </resources>
