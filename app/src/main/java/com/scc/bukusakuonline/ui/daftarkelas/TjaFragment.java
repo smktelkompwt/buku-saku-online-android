@@ -33,7 +33,7 @@ public class TjaFragment extends Fragment implements AdapterView.OnItemSelectedL
         Spinner spinner = v.findViewById(R.id.spinner_tja);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-                R.array.XRPL, android.R.layout.simple_spinner_item);
+                R.array.TJA, android.R.layout.simple_list_item_1);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner

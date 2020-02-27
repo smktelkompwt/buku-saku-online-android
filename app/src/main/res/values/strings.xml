@@ -30,12 +30,13 @@
     <string name="erpeel">RPL</string>
     <string name="tekaje">TKJ</string>
     <string name="tejea">TJA</string>
+
     <string-array name="RPL">
-    <item>choose one</item>
-    <item>X RPL 1</item>
-    <item>X RPL 2</item>
-    <item>X RPL 3</item>
-    <item>X RPL 4</item>
+        <item>choose one</item>
+        <item>X RPL 1</item>
+        <item>X RPL 2</item>
+        <item>X RPL 3</item>
+        <item>X RPL 4</item>
         <item>XI RPL 1</item>
         <item>XI RPL 2</item>
         <item>XI RPL 3</item>
@@ -44,7 +45,7 @@
         <item>XII RPL 2</item>
         <item>XII RPL 3</item>
         <item>XII RPL 4</item>
-</string-array>
+    </string-array>
     <string-array name="TJA">
         <item>choose one</item>
         <item>X TJA 1</item>
@@ -55,10 +56,10 @@
         <item>XI TJA 2</item>
         <item>XI TJA 3</item>
         <item>XI TJA 4</item>
-        <item>XI TJA 1</item>
-        <item>XI TJA 2</item>
-        <item>XI TJA 3</item>
-        <item>XI TJA 4</item>
+        <item>XII TJA 1</item>
+        <item>XII TJA 2</item>
+        <item>XII TJA 3</item>
+        <item>XII TJA 4</item>
     </string-array>
     <string-array name="TKJ">
         <item>choose one</item>
@@ -66,5 +67,13 @@
         <item>X TKJ 2</item>
         <item>X TKJ 3</item>
         <item>X TKJ 4</item>
+        <item>XI TKJ 1</item>
+        <item>XI TKJ 2</item>
+        <item>XI TKJ 3</item>
+        <item>XI TKJ 4</item>
+        <item>XII TKJ 1</item>
+        <item>XII TKJ 2</item>
+        <item>XII TKJ 3</item>
+        <item>XII TKJ 4</item>
     </string-array>
 </resources>
