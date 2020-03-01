@@ -8,14 +8,14 @@ import com.scc.bukusakuonline.R;
 
 import java.util.Objects;
 
-public class DetailPeraturanActivity extends AppCompatActivity {
+public class LaguHymneActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_peraturan);
+        setContentView(R.layout.activity_lagu_hymne);
 
-        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.detail_1));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.detail_5 ));
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

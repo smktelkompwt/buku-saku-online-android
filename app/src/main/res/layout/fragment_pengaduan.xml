@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,21 +7,28 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme"
     style="@style/AppTheme"
-    tools:context=".ui.pengaduan.PengaduanFragment">
+    android:paddingStart="20dp"
+    android:paddingEnd="21dp"
+    android:orientation="vertical"
+    tools:context=".ui.pengaduan.PengaduanFragment"
+    android:paddingLeft="20dp"
+    android:paddingRight="21dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nis"/>
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_edittext_spinner_pengaduan"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="20dp"
-        android:layout_marginTop="32dp"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998">
-
+        app:cardCornerRadius="5dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,136 +38,101 @@
                 android:id="@+id/editText_spinner_pengaduan"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="21dp"
                 android:background="@drawable/edittext_without_underline"
+                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
                 android:fontFamily="@font/roboto_regular"
                 android:hint="@string/contoh_nis"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColorHint="@color/gray"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/nis"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/pelanggaran"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/roboto_medium"
-        android:text="Pelanggaran"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/card_spinner_kategori"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_edittext_spinner_pengaduan" />
-
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pelanggaran"/>
+    </LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
+        android:layout_height="50dp"
         android:id="@+id/card_spinner_kategori"
-        app:cardCornerRadius="5dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_edittext_spinner_pengaduan">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-    <Spinner
-        android:id="@+id/spinner_kategori"
-        style="@style/SpinnerTheme"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"/>
-    </LinearLayout>
-
+        app:cardCornerRadius="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/spinner_kategori"
+                style="@style/SpinnerTheme"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_margin="20dp"
         android:id="@+id/card_spinner_pasal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="5dp"
-        android:layout_height="50dp"
-        app:layout_constraintCircleRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_spinner_kategori">
+        android:layout_height="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/spinner_pasal"
+                style="@style/SpinnerTheme"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="120dp"
+       android:layout_height="120dp">
+
+       <ImageButton
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/imageButton3"
+           style="@style/ImageButtonBg"
+           android:background="@drawable/btn_image_bg"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:fontFamily="@font/roboto_medium"
+           android:hint="@string/upload_bukti"
+           android:textColorHint="@color/colorWhite"
+           app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
+           app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+           app:layout_constraintStart_toStartOf="@+id/imageButton3"
+           app:layout_constraintTop_toTopOf="@+id/imageButton3" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal">
-    <Spinner
-        android:id="@+id/spinner_pasal"
-        style="@style/SpinnerTheme"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"/>
-    </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        style="@style/ImageButtonBg"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_image_bg"
-        android:layout_marginEnd="220dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_spinner_pasal" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="20dp"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/laporkan"
-        android:textAllCaps="false"
         android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_spinner_pasal"
-        app:layout_constraintVertical_bias="0.57" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_medium"
-        android:hint="@string/upload_bukti"
-        android:textColorHint="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
-        app:layout_constraintStart_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="@string/laporkan"
+        android:textAllCaps="false"/>
+    </LinearLayout>
+</LinearLayout>

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.scc.bukusakuonline">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,22 +13,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DetailPasalActivity"></activity>
-        <activity android:name=".ui.DetailPeraturanActivity" />
-        <activity android:name=".ui.PeraturanActivity" />
-
+        <activity android:name=".ui.LaguHymneActivity"
+            android:theme="@style/Toolbar"></activity>
+        <activity android:name=".ui.TentangKamiActivity"
+            android:theme="@style/Toolbar"/>
+        <activity
+            android:name=".ui.LainyaActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.DetailPasalActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.DetailPeraturanActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.PeraturanActivity"
+            android:theme="@style/Toolbar" />
         <activity android:name=".ui.DaftarPoint" />
         <activity
             android:name=".ui.DetailPoint"
-            android:theme="@style/Toolbar">
-        </activity>
+            android:theme="@style/Toolbar" />
         <activity
             android:name=".ui.DetailPelanggaran"
             android:theme="@style/Toolbar" />
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        </activity>
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity
             android:name=".ui.SplashScreenActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
@@ -42,4 +53,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

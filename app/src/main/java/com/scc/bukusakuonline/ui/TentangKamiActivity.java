@@ -8,14 +8,14 @@ import com.scc.bukusakuonline.R;
 
 import java.util.Objects;
 
-public class DetailPeraturanActivity extends AppCompatActivity {
+public class TentangKamiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_peraturan);
+        setContentView(R.layout.activity_tentang_kami);
 
-        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.detail_1));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(getString(R.string.detail_4));
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

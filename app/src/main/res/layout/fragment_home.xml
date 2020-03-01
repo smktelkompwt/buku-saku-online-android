@@ -30,9 +30,9 @@
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/colorWhite"
                 android:textSize="24sp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
                 android:textStyle="bold"/>
             <SearchView
                 android:id="@+id/sercing"
@@ -41,10 +41,12 @@
                 android:iconifiedByDefault="false"
                 android:queryBackground="@drawable/background_search_home"
                 android:searchIcon="@drawable/sercing"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
                 android:queryHint="Cari Siswa Berdasarkan NIS"
                 android:background="@drawable/background_search_home"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="110dp"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -64,7 +66,9 @@
                 android:textColor="@color/colorHitam"
                 android:fontFamily="@font/roboto"
                 android:textSize="20sp"
-                android:layout_margin="15dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"/>
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,32 +81,36 @@
                     android:layout_width="match_parent"
                     app:cardElevation="0dp"
                     app:cardCornerRadius="5dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/colorWhite">
-                    <LinearLayout
+                    android:layout_margin="10dp">
+                    <FrameLayout
+                        android:background="@drawable/border"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="65dp"
-                            android:maxLines="2"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Peraturan dan Pasal"
                             android:layout_margin="10dp"
-                            android:textSize="14sp"
-                            android:layout_marginEnd="32dp"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="65dp"
+                                android:maxLines="2"
+                                android:layout_height="wrap_content"
+                                android:text="Peraturan dan Pasal"
+                                android:layout_margin="10dp"
+                                android:textSize="12sp"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/menu_pelanggaran"
@@ -112,30 +120,35 @@
                     app:cardCornerRadius="5dp"
                     android:layout_margin="10dp"
                     android:background="@color/colorWhite">
-                    <LinearLayout
+                    <FrameLayout
+                        android:background="@drawable/border"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="65dp"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Daftar Point Pelanggaran"
+                            android:layout_gravity="center"
                             android:layout_margin="10dp"
-                            android:textSize="14sp"
-                            android:maxLines="2"
-                            android:layout_marginEnd="32dp"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:text="Daftar Point Pelanggaran"
+                                android:layout_margin="10dp"
+                                android:textSize="12sp"
+                                android:maxLines="2"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/menu_daftar_kelas"
@@ -145,30 +158,35 @@
                     app:cardCornerRadius="5dp"
                     android:layout_margin="10dp"
                     android:background="@color/colorWhite">
-                    <LinearLayout
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="65dp"
+                        android:background="@drawable/border"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lihat Daftar Kelas"
+                            android:layout_gravity="center"
                             android:layout_margin="10dp"
-                            android:maxLines="2"
-                            android:textSize="14sp"
-                            android:layout_marginEnd="32dp"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lihat Daftar Kelas"
+                                android:layout_margin="5dp"
+                                android:textSize="12sp"
+                                android:maxLines="2"
+                                android:layout_marginEnd="32dp"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/menu_lainya"
@@ -178,37 +196,41 @@
                     app:cardCornerRadius="5dp"
                     android:layout_margin="10dp"
                     android:background="@color/colorWhite">
-                    <LinearLayout
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:scaleType="fitXY"
-                            android:background="@color/gray"/>
-                        <TextView
-                            android:layout_width="65dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border">
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lainya"
+                            android:layout_gravity="center"
                             android:layout_margin="10dp"
-                            android:layout_marginEnd="32dp"
-                            android:maxLines="2"
-                            android:textSize="14sp"
-                            android:layout_marginRight="32dp"
-                            android:textColor="@color/colorHitam"
-                            android:fontFamily="@font/roboto"/>
-                    </LinearLayout>
+                            android:orientation="horizontal"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/gray"/>
+                            <TextView
+                                android:layout_width="65dp"
+                                android:layout_height="wrap_content"
+                                android:text="Lainya"
+                                android:layout_margin="10dp"
+                                android:layout_marginEnd="32dp"
+                                android:maxLines="2"
+                                android:textSize="12sp"
+                                android:layout_marginRight="32dp"
+                                android:textColor="@color/colorHitam"
+                                android:fontFamily="@font/roboto"/>
+                        </LinearLayout>
+                    </FrameLayout>
                 </androidx.cardview.widget.CardView>
             </GridLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorWhite"
-                android:layout_marginTop="15dp"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
@@ -217,64 +239,78 @@
                     android:fontFamily="@font/roboto"
                     android:textSize="20sp"
                     android:textColor="@color/colorHitam"
-                    android:layout_margin="15dp"/>
-
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"/>
+                <!-- test pas di run -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/test"/>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_aktivitas_new"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:padding="20dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="vertical"
                     tools:listitem="@layout/item_aktivitas_new"/>
-                <!-- test pas di run -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:src="@drawable/test"/>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
