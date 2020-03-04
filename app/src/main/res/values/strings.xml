@@ -52,13 +52,6 @@
         <item>oke pas</item>
         <item>oke</item>
     </string-array>
-    <string-array name="spinner_pasal">
-        <item>Pilih Kode</item>
-        <item>Kode 1</item>
-        <item>Kode 2</item>
-        <item>Kode 3</item>
-        <item>Kode 4</item>
-    </string-array>
     <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
     <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
     <string name="code">Kode</string>
