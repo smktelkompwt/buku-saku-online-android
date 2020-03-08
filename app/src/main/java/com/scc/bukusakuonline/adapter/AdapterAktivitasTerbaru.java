@@ -1,4 +1,4 @@
-package com.scc.bukusakuonline.Adapter;
+package com.scc.bukusakuonline.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
