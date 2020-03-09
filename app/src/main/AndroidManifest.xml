@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.LaguHymneActivity"
-            android:theme="@style/Toolbar"></activity>
+            android:theme="@style/Toolbar">
+
+        </activity>
         <activity android:name=".ui.TentangKamiActivity"
             android:theme="@style/Toolbar"/>
         <activity
@@ -33,7 +35,6 @@
         <activity
             android:name=".ui.detailpoint.DetailPoint"
             android:theme="@style/Toolbar" >
-            
         </activity>
         <activity
             android:name=".ui.DetailPelanggaran"
