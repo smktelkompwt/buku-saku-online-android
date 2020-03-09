@@ -33,8 +33,10 @@
             android:theme="@style/Toolbar" />
         <activity android:name=".ui.DaftarPoint" />
         <activity
-            android:name=".ui.DetailPoint"
-            android:theme="@style/Toolbar" />
+            android:name=".ui.detailpoint.DetailPoint"
+            android:theme="@style/Toolbar" >
+
+        </activity>
         <activity
             android:name=".ui.DetailPelanggaran"
             android:theme="@style/Toolbar" />

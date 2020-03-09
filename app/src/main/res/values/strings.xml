@@ -36,6 +36,7 @@
     <string name="contoh_nis">Contoh : 3103117342</string>
     <string name="nis">NIS</string>
     <string name="kategori_pasal">Pilih Pasal</string>
+    <string name="pelanggaran">Pelanggaran</string>
 
     <string-array name="spinner_kategori">
         <item>Pilih Kategori</item>
@@ -55,11 +56,11 @@
         <item>oke</item>
     </string-array>
     <string-array name="spinner_pasal">
-        <item>Pilih Pasal</item>
-        <item>Pasal 1</item>
-        <item>Pasal 2</item>
-        <item>Pasal 3</item>
-        <item>Pasal 4</item>
+        <item>Pilih Kode</item>
+        <item>Kode 1</item>
+        <item>Kode 2</item>
+        <item>Kode 3</item>
+        <item>Kode 4</item>
     </string-array>
     <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
     <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
