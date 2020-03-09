@@ -12,15 +12,20 @@
     android:orientation="vertical"
     tools:context=".ui.pengaduan.PengaduanFragment"
     android:paddingLeft="20dp"
-    android:paddingRight="21dp">
+    android:paddingRight="21dp"
+    android:paddingTop="34dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="8dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:textSize="14sp"
             android:text="@string/nis"/>
     </LinearLayout>
 
@@ -28,11 +33,13 @@
         android:id="@+id/card_edittext_spinner_pengaduan"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:cardCornerRadius="5dp">
+        app:cardCornerRadius="5dp"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/spinner_line">
 
             <EditText
                 android:id="@+id/editText_spinner_pengaduan"
@@ -51,12 +58,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp">
         <TextView
+            app:fontFamily="@font/roboto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pelanggaran"/>
+            android:text="@string/pelanggaran"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
     </LinearLayout>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -65,46 +78,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Spinner
+            android:orientation="horizontal"
+            android:background="@drawable/spinner_line">
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
                 android:id="@+id/spinner_kategori"
-                style="@style/SpinnerTheme"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"/>
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:ms_dropdown_max_height="200dp"
+                android:layout_margin="2dp"
+                app:ms_hint="Pilih Kategori"
+                android:entries="@array/spinner_kategori" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:id="@+id/card_spinner_pasal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="5dp"
-        android:layout_height="50dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Spinner
-                android:id="@+id/spinner_pasal"
-                style="@style/SpinnerTheme"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
    <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="120dp"
-       android:layout_height="120dp">
-
+       android:layout_height="120dp"
+       android:layout_marginTop="32dp">
        <ImageButton
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:id="@+id/imageButton3"
            style="@style/ImageButtonBg"
-           android:background="@drawable/btn_image_bg"
+           android:background="@drawable/image_button_bg"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
@@ -112,8 +110,9 @@
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           app:fontFamily="@font/roboto_medium"
+           app:fontFamily="@font/roboto"
            android:hint="@string/upload_bukti"
+           android:textSize="16sp"
            android:textColorHint="@color/colorWhite"
            app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
            app:layout_constraintEnd_toEndOf="@+id/imageButton3"
@@ -122,16 +121,16 @@
    </androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:layout_marginTop="32dp"
         android:orientation="horizontal">
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_shape"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/colorWhite"
+        android:layout_height="match_parent"
+        app:backgroundTint="#23B88E"
+        app:fontFamily="@font/roboto"
+        android:textSize="16sp"
         android:text="@string/laporkan"
         android:textAllCaps="false"/>
     </LinearLayout>
