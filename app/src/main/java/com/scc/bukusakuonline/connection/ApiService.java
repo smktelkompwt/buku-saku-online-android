@@ -4,6 +4,7 @@ import android.graphics.Movie;
 
 import com.scc.bukusakuonline.model.DetailPointItems;
 import com.scc.bukusakuonline.model.DetailPointResponse;
+import com.scc.bukusakuonline.model.Laporan.LaporanResponse;
 import com.scc.bukusakuonline.model.Login;
 
 import retrofit2.Call;
@@ -23,4 +24,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("api/users/admin/login")
     Call<Login> login(@Field("email") String email, @Field("password") String password, @Field("secretCode") String secret);
+
+    @GET("lapor/all")
+    Call<LaporanResponse>getSiswa(@Header("Authorization") String Auth);
 }
