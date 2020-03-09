@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.scc.bukusakuonline">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.daftarkelas.DaftarKelas">
+        <activity android:name=".ui.daftarkelas.DaftarKelas"></activity>
+
+        <activity android:name=".ui.LaguHymneActivity"
+            android:theme="@style/Toolbar"></activity>
+        <activity android:name=".ui.TentangKamiActivity"
+            android:theme="@style/Toolbar"/>
+        <activity
+            android:name=".ui.LainyaActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.DetailPasalActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.DetailPeraturanActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.PeraturanActivity"
+            android:theme="@style/Toolbar" />
+        <activity android:name=".ui.DaftarPoint" />
+        <activity
+            android:name=".ui.detailpoint.DetailPoint"
+            android:theme="@style/Toolbar" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

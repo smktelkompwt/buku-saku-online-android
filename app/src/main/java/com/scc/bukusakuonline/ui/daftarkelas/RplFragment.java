@@ -45,7 +45,7 @@ public class RplFragment extends Fragment implements AdapterView.OnItemSelectedL
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        parent.getItemAtPosition(position);
     }
 
     @Override
