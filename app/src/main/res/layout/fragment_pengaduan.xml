@@ -83,12 +83,12 @@
 
             <com.jaredrummler.materialspinner.MaterialSpinner
                 android:id="@+id/spinner_kategori"
-                style="@style/SpinnerTheme"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 app:ms_dropdown_max_height="200dp"
-                android:layout_margin="10dp"
+                android:layout_margin="2dp"
+                app:ms_hint="Pilih Kategori"
                 android:entries="@array/spinner_kategori" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
