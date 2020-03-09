@@ -1,6 +1,7 @@
 package com.scc.bukusakuonline.ui.pengaduan;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -9,15 +10,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.scc.bukusakuonline.R;
 
-import java.lang.reflect.Field;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,13 +31,9 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PengaduanFragment extends Fragment implements AdapterView.OnItemSelectedListener {
-
-
+public class PengaduanFragment extends Fragment implements AdapterView.OnItemSelectedListener, MaterialSpinner.OnItemSelectedListener {
     @BindView(R.id.spinner_kategori)
-    Spinner spinnerKategori;
-    @BindView(R.id.spinner_pasal)
-    Spinner spinnerPasal;
+    MaterialSpinner spinnerKategori;
     @BindView(R.id.editText_spinner_pengaduan)
     EditText editText;
 
@@ -49,20 +49,12 @@ public class PengaduanFragment extends Fragment implements AdapterView.OnItemSel
         View v = inflater.inflate(R.layout.fragment_pengaduan, container, false);
         ButterKnife.bind(this, v);
 
-        ArrayAdapter<CharSequence> adapter_pasal = ArrayAdapter.createFromResource(getContext(),
-                R.array.spinner_pasal, android.R.layout.simple_spinner_item);
-        adapter_pasal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
-        spinnerPasal.setAdapter(adapter_pasal);
-        spinnerPasal.setOnItemSelectedListener(this);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(Objects.requireNonNull(getContext()),
                 R.array.spinner_kategori, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinnerKategori.setAdapter(adapter);
         spinnerKategori.setOnItemSelectedListener(this);
-
-
         return v;
     }
 
@@ -88,5 +80,10 @@ public class PengaduanFragment extends Fragment implements AdapterView.OnItemSel
     @OnClick(R.id.editText_spinner_pengaduan)
     public void setEditText(){
         editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+    }
+
+    @Override
+    public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
+
     }
 }
