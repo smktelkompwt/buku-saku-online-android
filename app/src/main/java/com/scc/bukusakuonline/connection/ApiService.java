@@ -6,6 +6,7 @@ import com.scc.bukusakuonline.model.DetailPointItems;
 import com.scc.bukusakuonline.model.DetailPointResponse;
 import com.scc.bukusakuonline.model.Laporan.LaporanResponse;
 import com.scc.bukusakuonline.model.Login;
+import com.scc.bukusakuonline.model.UploadPelanggaran;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -27,4 +28,8 @@ public interface ApiService {
 
     @GET("lapor/all")
     Call<LaporanResponse>getSiswa(@Header("Authorization") String Auth);
+
+    @FormUrlEncoded
+    @POST("api/lapor/upload")
+    Call<UploadPelanggaran> uploadPelanggaran(@Header("Authorization") String auth,@Field("pelanggaran_kategori") String Pelanggaran, @Field("nis") Double Nis , @Field("image") String Image);
 }
