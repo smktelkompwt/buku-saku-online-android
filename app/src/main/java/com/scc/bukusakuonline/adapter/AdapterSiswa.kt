@@ -8,16 +8,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.model.Riwayat.User
+import com.scc.bukusakuonline.model.siswa.SiswaKelasItem
 
-class AdapterSiswa (private  val context: Context, private val Items:List<User>): RecyclerView.Adapter<AdapterSiswa.ViewHolder>() {
+class AdapterSiswa (private  val context: Context, private val Items:List<SiswaKelasItem>): RecyclerView.Adapter<AdapterSiswa.ViewHolder>() {
     class ViewHolder (view: View): RecyclerView.ViewHolder(view)  {
         private val name = view.findViewById<TextView>(R.id.namaSiswa)
         private val nis = view.findViewById<TextView>(R.id.nisSiswa)
+        private val point = view.findViewById<TextView>(R.id.point)
 
 
-        fun bindItem(items: User){
-
-            name.text = items.nama
+        fun bindItem(items: SiswaKelasItem){
+            point.text = items.point
+            name.text = items.name
             nis.text = items.nis.toString()
         }
 
