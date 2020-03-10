@@ -3,7 +3,11 @@ package com.scc.bukusakuonline.connection;
 import com.scc.bukusakuonline.model.DetailPointResponse;
 import com.scc.bukusakuonline.model.Riwayat.LaporanResponse;
 import com.scc.bukusakuonline.model.Login;
+
 import com.scc.bukusakuonline.model.siswa.SiswaKelasResponse;
+
+import com.scc.bukusakuonline.model.UploadPelanggaran;
+
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -24,4 +28,12 @@ public interface ApiService {
 
     @GET("api/kelas")
     Call<SiswaKelasResponse>getSiswa(@Header("Authorization") String Auth, @Query("kelas") String kelas);
+
+    @GET("lapor/all")
+    Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
+
+    @FormUrlEncoded
+    @POST("api/lapor/upload")
+    Call<UploadPelanggaran> uploadPelanggaran(@Header("Authorization") String auth,@Field("pelanggaran_kategori") String Pelanggaran, @Field("nis") Double Nis , @Field("image") String Image);
+
 }
