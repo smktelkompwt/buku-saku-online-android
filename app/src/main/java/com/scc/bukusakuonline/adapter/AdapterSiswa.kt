@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.model.Riwayat.User
 
-class AdapterRiwayat (private  val context: Context, private val Items:List<User>): RecyclerView.Adapter<AdapterRiwayat.ViewHolder>() {
+class AdapterSiswa (private  val context: Context, private val Items:List<User>): RecyclerView.Adapter<AdapterSiswa.ViewHolder>() {
     class ViewHolder (view: View): RecyclerView.ViewHolder(view)  {
         private val name = view.findViewById<TextView>(R.id.namaSiswa)
         private val nis = view.findViewById<TextView>(R.id.nisSiswa)
@@ -23,14 +23,14 @@ class AdapterRiwayat (private  val context: Context, private val Items:List<User
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterRiwayat.ViewHolder {
-        return AdapterRiwayat.ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_siswa, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterSiswa.ViewHolder {
+        return AdapterSiswa.ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_siswa, parent, false))
     }
 
     override fun getItemCount(): Int  = Items.size
 
 
-    override fun onBindViewHolder(holder: AdapterRiwayat.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AdapterSiswa.ViewHolder, position: Int) {
         holder.bindItem(Items[position])
     }
 }
