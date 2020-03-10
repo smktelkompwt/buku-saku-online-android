@@ -26,8 +26,8 @@ public interface ApiService {
     @POST("api/users/admin/login")
     Call<Login> login(@Field("email") String email, @Field("password") String password, @Field("secretCode") String secret);
 
-    @GET("lapor/all")
-    Call<LaporanResponse>getSiswa(@Header("Authorization") String Auth);
+    @GET("api/lapor/all")
+    Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
 
     @FormUrlEncoded
     @POST("api/lapor/upload")

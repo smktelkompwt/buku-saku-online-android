@@ -29,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.R2;
@@ -70,7 +71,7 @@ public class PengaduanFragment extends Fragment {
     String base64Image;
     PengaduanViewModel mPengaduanViewModel;
     String category;
-
+    View v;
     public PengaduanFragment() {
         // Required empty public constructor
     }
@@ -80,7 +81,7 @@ public class PengaduanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_pengaduan, container, false);
+        v = inflater.inflate(R.layout.fragment_pengaduan, container, false);
         ButterKnife.bind(this, v);
         mPengaduanViewModel = ViewModelProviders.of(this).get(PengaduanViewModel.class);
         mPengaduanViewModel.loadData(getContext());
@@ -132,7 +133,7 @@ public class PengaduanFragment extends Fragment {
                 final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
                 imageButton.setImageBitmap(selectedImage);
                 upload.setVisibility(View.GONE);
-                selectedImage.compress(Bitmap.CompressFormat.PNG, 50, baos);
+                selectedImage.compress(Bitmap.CompressFormat.PNG, 10, baos);
                 byte[] imageBytes = baos.toByteArray();
                 base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.DEFAULT);
 //                base64Image = "data:image/png;base64,"+ imageBase.substring(4);
@@ -150,21 +151,24 @@ public class PengaduanFragment extends Fragment {
     @OnClick(R.id.button)
     void onButtonClicked() {
         Log.d("wait","wait");
+        Snackbar.make(v,"Please Wait",Snackbar.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
         String token ="Bearer "+ sharedPreferences.getString("TOKEN","abc");
         RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, Double.parseDouble(editText.getText().toString()) ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
             @Override
             public void onResponse(Call<UploadPelanggaran> call, Response<UploadPelanggaran> response) {
                 if (response.isSuccessful()){
-                    Log.d("response",response.toString());
-                    assert response.body() != null;
-                    if (response.body().getCode().equals("200")) {
-                        Toast.makeText(getContext(), "Success", Toast.LENGTH_LONG).show();
+                    if (response.body().getCode() == 200){
+                        Snackbar.make(v,"Success",Snackbar.LENGTH_SHORT).show();
 
+                    }else {
+                        Log.d("yes","yes");
+                        Log.d("yes",response.body().toString());
                     }
+
                 }else {
                     Log.d("no","no");
-                    Log.d("response",response.toString());
+                    Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_SHORT).show();
                 }
             }
 
