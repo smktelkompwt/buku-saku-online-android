@@ -37,7 +37,7 @@
             android:theme="@style/Toolbar" >
         </activity>
         <activity
-            android:name=".ui.DetailPelanggaran"
+            android:name=".ui.detailpelanggaran.DetailPelanggaran"
             android:theme="@style/Toolbar" />
         <activity
             android:name=".ui.LoginActivity"
