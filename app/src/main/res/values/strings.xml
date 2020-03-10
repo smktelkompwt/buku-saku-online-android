@@ -91,5 +91,7 @@
     <string name="_100">100</string>
     <string name="jumlah_pelanggaran">Jumlah Pelanggaran</string>
     <string name="pelanggaran_yang_dilakukan">Pelanggaran yang dilakukan</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="_1">1</string>
 
 </resources>

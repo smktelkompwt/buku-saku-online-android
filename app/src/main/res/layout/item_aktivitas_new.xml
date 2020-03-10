@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -15,52 +16,58 @@
             app:cardCornerRadius="5dp"
             app:cardBackgroundColor="@color/colorPrimary"
             android:layout_margin="20dp">
+
             <TextView
+                android:id="@+id/point_history"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:layout_gravity="center"
+                tools:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="@string/_1"
+                android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/roboto"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:layout_gravity="center"/>
+                android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/name_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rayhan Rafiud Darojat"
+                tools:text="Rayhan Rafiud Darojat"
                 android:layout_marginTop="15dp"
-                android:fontFamily="@font/roboto"
+                tools:fontFamily="@font/roboto"
                 android:textColor="@color/colorHitam"
                 android:textSize="18sp"/>
             <TextView
+                android:id="@+id/date_history"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:fontFamily="@font/roboto"
-                android:text="32 Febrari 2020, Pukul 07.04"/>
+                tools:fontFamily="@font/roboto"
+                tools:text="32 Febrari 2020, Pukul 07.04"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
+                    android:id="@+id/desc_history"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:textSize="17sp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Kode : A-01"/>
+                    tools:fontFamily="@font/roboto"
+                    android:maxLength="11"
+                    tools:text="Kode : A-01"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lihat Detail"
-                    android:fontFamily="@font/roboto"
+                    android:text="@string/lihat_detail"
+                    tools:fontFamily="@font/roboto"
                     android:textSize="17sp"
                     android:gravity="end"
                     android:layout_marginRight="16dp"
