@@ -7,5 +7,5 @@ data class SiswaKelasResponse (
     @SerializedName("code")
     val code : Int ?,
     @SerializedName("data")
-    val data : List<DetailPointItems> ?
+    val data : List<SiswaKelasItem> ?
 )

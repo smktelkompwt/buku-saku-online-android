@@ -2,9 +2,11 @@ package com.scc.bukusakuonline.ui.daftarkelas
 
 import android.content.Context
 import android.util.Log
+import android.util.Log.d
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.scc.bukusakuonline.R2.string.kelas
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
 import com.scc.bukusakuonline.model.DetailPointItems
@@ -19,17 +21,20 @@ class RPLViewModel : ViewModel() {
     private  var listSiswa : MutableLiveData<List<SiswaKelasItem>> = MutableLiveData()
 
 
-    fun loadData(context: Context){
-        Log.d("viewmodel", "viewmodel")
+    fun loadData(context: Context ,kelass : String){
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
-        RetroConfig.getRetrofit().create(ApiService::class.java).getSiswa(token,"isi apa?? kan aku wis get  spinner e isi kelas").enqueue(object : retrofit2.Callback<SiswaKelasResponse>{
+        RetroConfig.getRetrofit().create(ApiService::class.java).getSiswa(token,kelass).enqueue(object : retrofit2.Callback<SiswaKelasResponse>{
             override fun onFailure(call: Call<SiswaKelasResponse>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                d("error","failure")
             }
 
             override fun onResponse(call: Call<SiswaKelasResponse>, response: Response<SiswaKelasResponse>) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                if (response.code() == 200){
+                    response.body()?.data.let {
+                        listSiswa.postValue(it)
+                    }
+                }
             }
 
 
