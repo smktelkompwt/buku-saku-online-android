@@ -253,42 +253,7 @@
                     android:textColor="@color/colorHitam"
                     android:layout_marginLeft="20dp"
                     android:layout_marginStart="20dp"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
-                <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/test"
-                    android:scaleType="fitXY"/>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_aktivitas_new"
                     android:layout_width="match_parent"

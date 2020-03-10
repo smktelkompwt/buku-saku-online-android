@@ -35,7 +35,7 @@
     <string name="tejea">TJA</string>
 
     <string-array name="RPL">
-
+        <item>X RPL 1</item>
         <item>X RPL 1</item>
         <item>X RPL 2</item>
         <item>X RPL 3</item>
@@ -134,5 +134,15 @@
     <string name="lagu15">Dengan penuh tekad dan keikhlasan</string>
     <string name="lagu16">Telkom Schools selalu tetap jaya</string>
     <string name="detail_5">Hymne Telkom Shcools</string>
+    <string name="nama_lengkap_detail">Nama Lengkap</string>
+    <string name="rayhan_rafiud_darojat">Rayhan Rafiud Darojat</string>
+
+    <string name="x_rpl_1">X RPL 1</string>
+    <string name="jumlah_point">Jumlah Point</string>
+    <string name="_100">100</string>
+    <string name="jumlah_pelanggaran">Jumlah Pelanggaran</string>
+    <string name="pelanggaran_yang_dilakukan">Pelanggaran yang dilakukan</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="_1">1</string>
 
 </resources>

@@ -13,13 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.daftarkelas.DaftarKelas">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.daftarkelas.DaftarKelas"></activity>
 
         <activity android:name=".ui.LaguHymneActivity"
             android:theme="@style/Toolbar">
@@ -59,7 +53,11 @@
 
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

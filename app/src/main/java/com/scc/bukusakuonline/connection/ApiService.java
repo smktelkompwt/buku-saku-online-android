@@ -29,7 +29,7 @@ public interface ApiService {
     @GET("api/kelas")
     Call<SiswaKelasResponse>getSiswa(@Header("Authorization") String Auth, @Query("kelas") String kelas);
 
-    @GET("lapor/all")
+    @GET("api/lapor/all")
     Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
 
     @FormUrlEncoded
