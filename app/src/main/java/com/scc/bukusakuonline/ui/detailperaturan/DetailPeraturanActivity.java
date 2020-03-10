@@ -38,8 +38,8 @@ public class DetailPeraturanActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
         detailPeraturanViewModel = ViewModelProviders.of(this).get(DetailPeraturanViewModel.class);
         detailPeraturanViewModel.loadData(this,id);
-        detailPeraturanViewModel.getListData().observe(this, dataItems -> {
-            adapterBab = new AdapterBab(this, Objects.requireNonNull(dataItems.get(0).getPasal()));
+        detailPeraturanViewModel.getListData().observe(this, pasalItems -> {
+            adapterBab = new AdapterBab(this, pasalItems ,id);
 
             recyclerView.setAdapter(adapterBab);
             adapterBab.notifyDataSetChanged();

@@ -23,7 +23,7 @@
             android:name=".ui.LainyaActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.DetailPasalActivity"
+            android:name=".ui.detailpasal.DetailPasalActivity"
             android:theme="@style/Toolbar" />
         <activity
             android:name=".ui.detailperaturan.DetailPeraturanActivity"

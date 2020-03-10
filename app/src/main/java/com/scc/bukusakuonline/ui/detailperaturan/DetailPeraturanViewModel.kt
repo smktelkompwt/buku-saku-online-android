@@ -7,31 +7,33 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
+import com.scc.bukusakuonline.model.peraturan.PasalItems
+import com.scc.bukusakuonline.model.peraturan.PeraturanById
 import com.scc.bukusakuonline.model.peraturan.PeraturanItems
 import com.scc.bukusakuonline.model.peraturan.PeraturanResponse
 import retrofit2.Call
 import retrofit2.Response
 
 class DetailPeraturanViewModel :ViewModel() {
-    private  var listPoint : MutableLiveData<List<PeraturanItems>> = MutableLiveData()
+    private  var listPoint : MutableLiveData<List<PasalItems>> = MutableLiveData()
 
 
     fun loadData(context: Context,id :String){
         d("viewmodel","viewmodel")
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
-        RetroConfig.getRetrofit().create(ApiService::class.java).getPeraturanById(token,id).enqueue(object : retrofit2.Callback<PeraturanResponse>{
-            override fun onFailure(call: Call<PeraturanResponse>, t: Throwable) {
-                d("error","error")
+        RetroConfig.getRetrofit().create(ApiService::class.java).getPeraturanById(token,id).enqueue(object : retrofit2.Callback<PeraturanById>{
+            override fun onFailure(call: Call<PeraturanById>, t: Throwable) {
+                d("error",t.message)
             }
 
-            override fun onResponse(call: Call<PeraturanResponse>, response: Response<PeraturanResponse>) {
-                response.body()?.data.let {
-                   listPoint.postValue(it)
+            override fun onResponse(call: Call<PeraturanById>, response: Response<PeraturanById>) {
+                response.body()?.data?.pasal.let {
+                    listPoint.postValue(it)
                 }
             }
 
         })
     }
-    val listData: LiveData<List<PeraturanItems>> = listPoint
+    val listData: LiveData<List<PasalItems>> = listPoint
 }

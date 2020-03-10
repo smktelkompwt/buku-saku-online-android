@@ -10,23 +10,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.model.peraturan.PasalItems
-import com.scc.bukusakuonline.model.peraturan.PeraturanItems
+import com.scc.bukusakuonline.ui.detailpasal.DetailPasalActivity
 
-class AdapterBab (private  val context: Context, private val Items:List<PasalItems>): RecyclerView.Adapter<AdapterBab.ViewHolder>() {
+class AdapterBab (private  val context: Context, private val Items:List<PasalItems>, private val id_bab : String): RecyclerView.Adapter<AdapterBab.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         private val bab = view.findViewById<TextView>(R.id.bab)
         private val descBab = view.findViewById<TextView>(R.id.desc_bab)
 
-        fun bindItem(items: PasalItems, position: Int, context: Context){
+        fun bindItem(items: PasalItems, position: Int, context: Context, id: String){
             d("items",position.toString())
-            bab.text = "Bab ${(position +1)}"
+            bab.text = "Pasal ${(position +1)}"
             descBab.text = items.title
             itemView.setOnClickListener {
-//                val intent = Intent(context, DetailPeraturanActivity::class.java)
-//                intent.putExtra("id", items.id)
-//                intent.putExtra("title", items.bab)
-//
-//                context.startActivity(intent)
+                val intent = Intent(context, DetailPasalActivity::class.java)
+                intent.putExtra("id_pasal", items.id)
+                intent.putExtra("title", items.title)
+                intent.putExtra("id",id)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent)
             }
         }
     }
@@ -38,6 +39,6 @@ class AdapterBab (private  val context: Context, private val Items:List<PasalIte
     override fun getItemCount(): Int = Items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItem(Items[position],position, context)
+        holder.bindItem(Items[position],position, context, id_bab)
     }
 }
