@@ -51,13 +51,13 @@ public class DetailPelanggaran extends AppCompatActivity {
         mDetailPelanggaranViewModel = ViewModelProviders.of(this).get(DetailPelanggaranViewModel.class);
         mDetailPelanggaranViewModel.loadData(this,id);
         mDetailPelanggaranViewModel.getListData().observe(this, dataItems -> {
-            Picasso.get().load(dataItems.get(0).getImage()).fit().into(imageView);
-            name_detail.setText(dataItems.get(0).getUser().getNama());
-            classDetail.setText(dataItems.get(0).getUser().getKelas());
-            category.setText(dataItems.get(0).getPelanggaran().getKategori());
-            point.setText(String.valueOf(dataItems.get(0).getPelanggaran().getPoint()));
-            rules.setText(dataItems.get(0).getPelanggaran().getKategori());
-            user.setText(dataItems.get(0).getPelapor().getNama());
+            Picasso.get().load(dataItems.getImage()).fit().into(imageView);
+            name_detail.setText(dataItems.getUser().getNama());
+            classDetail.setText(dataItems.getUser().getKelas());
+            category.setText(dataItems.getPelanggaran().getKategori());
+            point.setText(String.valueOf(dataItems.getPelanggaran().getPoint()));
+            rules.setText(dataItems.getPelanggaran().getKategori());
+            user.setText(dataItems.getPelapor().getNama());
         });
     }
 

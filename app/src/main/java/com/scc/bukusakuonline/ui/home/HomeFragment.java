@@ -6,14 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +21,7 @@ import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.R2;
 import com.scc.bukusakuonline.adapter.AdapterAktivitasTerbaru;
 import com.scc.bukusakuonline.ui.LainyaActivity;
-import com.scc.bukusakuonline.ui.PeraturanActivity;
+import com.scc.bukusakuonline.ui.peraturan.PeraturanActivity;
 import com.scc.bukusakuonline.ui.detailpoint.DetailPoint;
 
 import butterknife.BindView;

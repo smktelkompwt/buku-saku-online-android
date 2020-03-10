@@ -1,19 +1,17 @@
 package com.scc.bukusakuonline.connection;
 
-import android.graphics.Movie;
-
-import com.scc.bukusakuonline.model.DetailPointItems;
 import com.scc.bukusakuonline.model.DetailPointResponse;
+import com.scc.bukusakuonline.model.Laporan.LaporanByIdResponse;
 import com.scc.bukusakuonline.model.Laporan.LaporanResponse;
 import com.scc.bukusakuonline.model.Login;
 import com.scc.bukusakuonline.model.UploadPelanggaran;
+import com.scc.bukusakuonline.model.peraturan.PeraturanResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -28,6 +26,14 @@ public interface ApiService {
 
     @GET("api/lapor/all")
     Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
+
+    @GET("api/peraturan/all")
+    Call<PeraturanResponse> getPeraturan(@Header("Authorization") String auth);
+    @GET("api/peraturan/all")
+    Call<PeraturanResponse> getPeraturanById(@Header("Authorization") String auth,@Query("id") String id);
+
+    @GET("api/lapor")
+    Call<LaporanByIdResponse>getLaporById(@Header("Authorization") String Auth, @Query("id") String id);
 
     @FormUrlEncoded
     @POST("api/lapor/upload")

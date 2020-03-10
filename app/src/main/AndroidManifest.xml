@@ -26,10 +26,10 @@
             android:name=".ui.DetailPasalActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.DetailPeraturanActivity"
+            android:name=".ui.detailperaturan.DetailPeraturanActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.PeraturanActivity"
+            android:name=".ui.peraturan.PeraturanActivity"
             android:theme="@style/Toolbar" />
         <activity android:name=".ui.DaftarPoint" />
         <activity
