@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
-import com.scc.bukusakuonline.model.DetailPointItems
-import com.scc.bukusakuonline.model.DetailPointResponse
+import com.scc.bukusakuonline.model.detailpoint.DetailPointItems
+import com.scc.bukusakuonline.model.detailpoint.DetailPointResponse
 import retrofit2.Call
 import retrofit2.Response
 

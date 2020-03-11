@@ -14,16 +14,34 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.scc.bukusakuonline.R;
 
+import java.util.Objects;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
-
+    // name ,textview13, subjects
+    @BindView(R.id.name)
+    TextView name;
+    @BindView(R.id.subjects)
+    TextView email;
+    @BindView(R.id.textView13)
+    TextView phone;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        ButterKnife.bind(this,root);
+        profileViewModel.loadData(Objects.requireNonNull(getContext()));
+        profileViewModel.getListData().observe(this, userItems -> {
+            name.setText(userItems.get(0).getName());
+            email.setText(userItems.get(0).getEmail());
+            phone.setText(userItems.get(0).getPhone());
 
+        });
         return root;
     }
 }

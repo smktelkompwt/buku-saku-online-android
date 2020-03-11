@@ -10,7 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
-import com.scc.bukusakuonline.model.DetailPointItems
+import com.scc.bukusakuonline.model.detailpoint.DetailPointItems
 
 class AdapterDetailPoint(private  val context: Context, private val Items:List<DetailPointItems>): RecyclerView.Adapter<AdapterDetailPoint.ViewHolder>() {
     class ViewHolder (view: View): RecyclerView.ViewHolder(view) {

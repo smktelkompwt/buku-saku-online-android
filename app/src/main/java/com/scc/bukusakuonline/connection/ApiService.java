@@ -1,6 +1,6 @@
 package com.scc.bukusakuonline.connection;
 
-import com.scc.bukusakuonline.model.DetailPointResponse;
+import com.scc.bukusakuonline.model.detailpoint.DetailPointResponse;
 
 import com.scc.bukusakuonline.model.kelas.KelasResponse;
 import com.scc.bukusakuonline.model.riwayat.LaporanResponse;
@@ -16,6 +16,7 @@ import com.scc.bukusakuonline.model.UploadPelanggaran;
 import com.scc.bukusakuonline.model.peraturan.DetailPasalResponse;
 import com.scc.bukusakuonline.model.peraturan.PeraturanById;
 import com.scc.bukusakuonline.model.peraturan.PeraturanResponse;
+import com.scc.bukusakuonline.model.user.UserResponse;
 
 
 import retrofit2.Call;
@@ -30,10 +31,15 @@ public interface ApiService {
     // point
     @GET("api/point/all")
     Call<DetailPointResponse> getDetailPoint(@Header("Authorization") String Auth);
-    //login
+    //login / users
     @FormUrlEncoded
     @POST("api/users/admin/login")
     Call<Login> login(@Field("email") String email, @Field("password") String password, @Field("secretCode") String secret);
+
+    @GET("api/users/me")
+    Call<UserResponse> profile(@Header("Authorization") String Auth);
+
+
     //kelas + siswa
     @GET("api/kelas")
     Call<SiswaKelasResponse>getSiswa(@Header("Authorization") String Auth, @Query("kelas") String kelas);

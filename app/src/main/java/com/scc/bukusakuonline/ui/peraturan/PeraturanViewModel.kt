@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
-import com.scc.bukusakuonline.model.DetailPointItems
 import com.scc.bukusakuonline.model.peraturan.PeraturanItems
 import com.scc.bukusakuonline.model.peraturan.PeraturanResponse
 import retrofit2.Call
