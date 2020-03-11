@@ -20,7 +20,7 @@ class HistoryViewModel : ViewModel() {
         d("viewmodel","viewmodel")
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
-        RetroConfig.getRetrofit().create(ApiService::class.java).getLapor(token).enqueue(object : retrofit2.Callback<LaporanResponse>{
+        RetroConfig.getRetrofit().create(ApiService::class.java).getLaporByMe(token).enqueue(object : retrofit2.Callback<LaporanResponse>{
             override fun onFailure(call: Call<LaporanResponse>, t: Throwable) {
                 d("error","failure")
             }

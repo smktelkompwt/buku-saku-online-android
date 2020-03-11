@@ -38,7 +38,7 @@ class TjaFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
     private fun init() {
         kelasViewModel = ViewModelProviders.of(this).get(KelasViewModel::class.java)
-        context?.let { kelasViewModel.loadData(it,"RPL") }
+        context?.let { kelasViewModel.loadData(it,"TJA") }
         kelasViewModel.listData.observe(this, Observer {
             val kelas = ArrayList<String>()
             for (i in it.indices) {

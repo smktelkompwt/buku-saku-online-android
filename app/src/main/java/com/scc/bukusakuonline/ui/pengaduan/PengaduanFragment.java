@@ -187,39 +187,45 @@ public class PengaduanFragment extends Fragment {
     }
     @OnClick(R.id.button)
     void onButtonClicked() {
-        Log.d("wait","wait");
-        Toast.makeText(getContext(), "Please Wait", Toast.LENGTH_SHORT).show();
-        SharedPreferences sharedPreferences = getContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
-        String token ="Bearer "+ sharedPreferences.getString("TOKEN","abc");
-        RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, Double.parseDouble(editText.getText().toString()) ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
-            @Override
-            public void onResponse(Call<UploadPelanggaran> call, Response<UploadPelanggaran> response) {
-                if (response.isSuccessful()){
-                    if (response.body() != null) {
-                        if (response.body().getCode() == 404){
-                            Log.d("yes","yes");
-                            Log.d("yes",response.body().toString());
-                            Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Snackbar.make(v, "Success", Snackbar.LENGTH_LONG).show();
-                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+        if (editText.getText().toString().equals("") && base64Image.length() ==0){
+            Toast.makeText(getContext(), "Isi Datanya", Toast.LENGTH_SHORT).show();
+
+        }else {
+            Log.d("wait","wait");
+            Toast.makeText(getContext(), "Please Wait", Toast.LENGTH_SHORT).show();
+            SharedPreferences sharedPreferences = getContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
+            String token ="Bearer "+ sharedPreferences.getString("TOKEN","abc");
+            RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, Double.parseDouble(editText.getText().toString()) ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
+                @Override
+                public void onResponse(Call<UploadPelanggaran> call, Response<UploadPelanggaran> response) {
+                    if (response.isSuccessful()){
+                        if (response.body() != null) {
+                            if (response.body().getCode() == 404){
+                                Log.d("yes","yes");
+                                Log.d("yes",response.body().toString());
+                                Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Snackbar.make(v, "Success", Snackbar.LENGTH_LONG).show();
+                                Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                            }
                         }
+                    }else {
+                        Log.d("no","no");
+                        Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
                     }
-                }else {
-                    Log.d("no","no");
-                    Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_LONG).show();
-                    Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
                 }
-            }
 
-            @Override
-            public void onFailure(Call<UploadPelanggaran> call, Throwable t) {
-                Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
-                Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onFailure(Call<UploadPelanggaran> call, Throwable t) {
+                    Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
 
-                Log.d("error",t.getMessage());
-            }
-        });
+                    Log.d("error",t.getMessage());
+                }
+            });
+        }
+
     }
     @OnClick(R.id.editText_spinner_pengaduan)
     void setEditText(){

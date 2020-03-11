@@ -48,6 +48,9 @@ public interface ApiService {
     @GET("api/lapor/all")
     Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
 
+    @GET("api/lapor/me")
+    Call<LaporanResponse>getLaporByMe(@Header("Authorization") String Auth);
+
     @GET("api/lapor")
     Call<LaporanByIdResponse>getLaporById(@Header("Authorization") String Auth, @Query("id") String id);
 
