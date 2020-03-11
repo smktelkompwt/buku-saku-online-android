@@ -21,6 +21,7 @@ import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.R2;
 import com.scc.bukusakuonline.adapter.AdapterAktivitasTerbaru;
 import com.scc.bukusakuonline.ui.LainyaActivity;
+import com.scc.bukusakuonline.ui.daftarkelas.DaftarKelas;
 import com.scc.bukusakuonline.ui.peraturan.PeraturanActivity;
 import com.scc.bukusakuonline.ui.detailpoint.DetailPoint;
 
@@ -51,6 +52,7 @@ public class HomeFragment extends Fragment {
         menu_daftar_kelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getContext(), DaftarKelas.class));
             }
         });
         menu_pelanggaran.setOnClickListener(new View.OnClickListener() {

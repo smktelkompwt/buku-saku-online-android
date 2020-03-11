@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
-import com.scc.bukusakuonline.model.Riwayat.DataItem
-import com.scc.bukusakuonline.model.Riwayat.LaporanResponse
+import com.scc.bukusakuonline.model.riwayat.DataItem
+import com.scc.bukusakuonline.model.riwayat.LaporanResponse
 
 import retrofit2.Call
 import retrofit2.Response
