@@ -27,7 +27,7 @@ class AdapterPasal(private  val context: Context, private val items:List<DetailP
 
         fun bindItem(items: DetailPasalItems, position: Int){
             Log.d("items", position.toString())
-            id_pasal.text = position.toString()
+            id_pasal.text = (position + 1).toString()
             desc.text = items.descPasal
 
         }

@@ -72,7 +72,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:id="@+id/card_spinner_kategori"
         app:cardCornerRadius="5dp">
         <LinearLayout

@@ -1,17 +1,15 @@
 package com.scc.bukusakuonline.ui.detailpelanggaran;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.scc.bukusakuonline.R;
-import com.scc.bukusakuonline.R2;
-import com.scc.bukusakuonline.ui.detailpoint.DetailPointsViewModel;
 import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
@@ -51,7 +49,9 @@ public class DetailPelanggaran extends AppCompatActivity {
         mDetailPelanggaranViewModel = ViewModelProviders.of(this).get(DetailPelanggaranViewModel.class);
         mDetailPelanggaranViewModel.loadData(this,id);
         mDetailPelanggaranViewModel.getListData().observe(this, dataItems -> {
-            Picasso.get().load(dataItems.getImage()).fit().into(imageView);
+            Log.d("url",dataItems.getImage());
+            String url = "http://" + dataItems.getImage();
+            Picasso.get().load(url).into(imageView);
             name_detail.setText(dataItems.getUser().getNama());
             classDetail.setText(dataItems.getUser().getKelas());
             category.setText(dataItems.getPelanggaran().getKategori());
