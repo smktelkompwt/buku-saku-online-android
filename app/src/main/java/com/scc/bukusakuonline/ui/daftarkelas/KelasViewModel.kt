@@ -16,7 +16,7 @@ import com.scc.bukusakuonline.model.siswa.SiswaKelasResponse
 import retrofit2.Call
 import retrofit2.Response
 
-class RPLViewModel : ViewModel() {
+class KelasViewModel : ViewModel() {
 
     private  var listSiswa : MutableLiveData<List<SiswaKelasItem>> = MutableLiveData()
 
