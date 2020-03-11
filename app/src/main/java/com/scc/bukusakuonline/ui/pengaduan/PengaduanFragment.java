@@ -3,6 +3,7 @@ package com.scc.bukusakuonline.ui.pengaduan;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -41,6 +42,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -124,21 +126,56 @@ public class PengaduanFragment extends Fragment {
     @Override
     public void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
+        int dataSize=0;
         if (resultCode == RESULT_OK) {
             try {
-                final Uri imageUri = data.getData();
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                File f;
+                Uri uri  = data.getData();
+                String scheme = uri.getScheme();
+                System.out.println("Scheme type " + scheme);
+                if(scheme.equals(ContentResolver.SCHEME_CONTENT))
+                {
+                    try {
+                        InputStream fileInputStream=getContext().getApplicationContext().getContentResolver().openInputStream(uri);
+                        dataSize = fileInputStream.available();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("File size in bytes"+dataSize);
 
-                final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
-                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                imageButton.setImageBitmap(selectedImage);
-                upload.setVisibility(View.GONE);
-                selectedImage.compress(Bitmap.CompressFormat.PNG, 10, baos);
-                byte[] imageBytes = baos.toByteArray();
-                base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                }
+                else if(scheme.equals(ContentResolver.SCHEME_FILE))
+                {
+                    String path = uri.getPath();
+                    try {
+                        f = new File(path);
+                        Log.d("f",f.toString());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+//                    System.out.println("File size in bytes"+f.length());
+                }
+                int mb = dataSize / 1000000;
+                if (mb  < 3){
+                    final Uri imageUri = data.getData();
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+                    final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    imageButton.setImageBitmap(selectedImage);
+                    upload.setVisibility(View.GONE);
+                    selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                    byte[] imageBytes = baos.toByteArray();
+                    base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
 //                base64Image = "data:image/png;base64,"+ imageBase.substring(4);
 //                base64Image = imageBase;
-                Log.d("base",base64Image);
+                    Log.d("base",base64Image);
+                }else {
+                    Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
+
+                }
+
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
                 Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
@@ -151,30 +188,35 @@ public class PengaduanFragment extends Fragment {
     @OnClick(R.id.button)
     void onButtonClicked() {
         Log.d("wait","wait");
-        Snackbar.make(v,"Please Wait",Snackbar.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Please Wait", Toast.LENGTH_SHORT).show();
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
         String token ="Bearer "+ sharedPreferences.getString("TOKEN","abc");
         RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, Double.parseDouble(editText.getText().toString()) ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
             @Override
             public void onResponse(Call<UploadPelanggaran> call, Response<UploadPelanggaran> response) {
                 if (response.isSuccessful()){
-                    if (response.body().getCode() == 200){
-                        Snackbar.make(v,"Success",Snackbar.LENGTH_SHORT).show();
-
-                    }else {
-                        Log.d("yes","yes");
-                        Log.d("yes",response.body().toString());
+                    if (response.body() != null) {
+                        if (response.body().getCode() == 404){
+                            Log.d("yes","yes");
+                            Log.d("yes",response.body().toString());
+                            Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Snackbar.make(v, "Success", Snackbar.LENGTH_LONG).show();
+                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
                 }else {
                     Log.d("no","no");
-                    Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<UploadPelanggaran> call, Throwable t) {
                 Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
+
                 Log.d("error",t.getMessage());
             }
         });

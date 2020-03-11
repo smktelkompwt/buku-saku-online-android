@@ -25,13 +25,13 @@
             android:name=".ui.LainyaActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.DetailPasalActivity"
+            android:name=".ui.detailpasal.DetailPasalActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.DetailPeraturanActivity"
+            android:name=".ui.detailperaturan.DetailPeraturanActivity"
             android:theme="@style/Toolbar" />
         <activity
-            android:name=".ui.PeraturanActivity"
+            android:name=".ui.peraturan.PeraturanActivity"
             android:theme="@style/Toolbar" />
         <activity android:name=".ui.DaftarPoint" />
         <activity
@@ -40,8 +40,9 @@
 
         </activity>
         <activity
-            android:name=".ui.DetailPelanggaran"
-            android:theme="@style/Toolbar"></activity>
+
+            android:name=".ui.detailpelanggaran.DetailPelanggaran"
+            android:theme="@style/Toolbar" />
         <activity
             android:name=".ui.LoginActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"></activity>

@@ -1,12 +1,20 @@
 package com.scc.bukusakuonline.connection;
 
 import com.scc.bukusakuonline.model.DetailPointResponse;
+
 import com.scc.bukusakuonline.model.Riwayat.LaporanResponse;
+
+import com.scc.bukusakuonline.model.Laporan.LaporanByIdResponse;
+
 import com.scc.bukusakuonline.model.Login;
 
 import com.scc.bukusakuonline.model.siswa.SiswaKelasResponse;
 
 import com.scc.bukusakuonline.model.UploadPelanggaran;
+import com.scc.bukusakuonline.model.peraturan.DetailPasalResponse;
+import com.scc.bukusakuonline.model.peraturan.PasalResponse;
+import com.scc.bukusakuonline.model.peraturan.PeraturanById;
+import com.scc.bukusakuonline.model.peraturan.PeraturanResponse;
 
 
 import retrofit2.Call;
@@ -31,6 +39,16 @@ public interface ApiService {
 
     @GET("api/lapor/all")
     Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
+
+    @GET("api/peraturan/all")
+    Call<PeraturanResponse> getPeraturan(@Header("Authorization") String auth);
+    @GET("api/peraturan")
+    Call<PeraturanById> getPeraturanById(@Header("Authorization") String auth, @Query("id") String id);
+
+    @GET("api/peraturan/pasal")
+    Call<DetailPasalResponse> getPasal(@Header("Authorization") String auth, @Query("id") String id, @Query("idPasal") String idPasal);
+    @GET("api/lapor")
+    Call<LaporanByIdResponse>getLaporById(@Header("Authorization") String Auth, @Query("id") String id);
 
     @FormUrlEncoded
     @POST("api/lapor/upload")

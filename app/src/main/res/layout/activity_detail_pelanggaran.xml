@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailPelanggaran">
+    tools:context=".ui.detailpelanggaran.DetailPelanggaran">
     <LinearLayout
         android:paddingTop="32dp"
         android:layout_width="match_parent"
@@ -18,12 +18,14 @@
             android:orientation="vertical"
             android:paddingStart="20dp"
             android:paddingEnd="20dp">
+
             <ImageView
+                android:id="@+id/photo_detail"
                 android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:layout_gravity=""
                 android:contentDescription="@string/bukti"
-                android:src="@drawable/cukur" />
+                tools:src="@drawable/cukur" />
         </LinearLayout>
 
         <LinearLayout
@@ -38,13 +40,15 @@
                 android:text="@string/nama_lengkap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="Rayhan Rafiud"
+                android:id="@+id/name_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="Rayhan Rafiud" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"
@@ -63,13 +67,15 @@
                 android:text="@string/kelas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="Rayhan Rafiud"
+                android:id="@+id/class_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="Rayhan Rafiud" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"
@@ -88,13 +94,15 @@
                 android:text="@string/kategori_pelanggaran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="Rayhan Rafiud"
+                android:id="@+id/category_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="Rayhan Rafiud" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"
@@ -113,13 +121,15 @@
                 android:text="@string/point_pelanggaran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="5"
+                android:id="@+id/point_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="5" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"
@@ -138,13 +148,15 @@
                 android:text="@string/aturan_yang_dilanggar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="Rayhan Rafiud"
+                android:id="@+id/rules_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="Rayhan Rafiud" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"
@@ -163,13 +175,15 @@
                 android:text="@string/pelapor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
             <TextView
-                android:textSize="14sp"
-                android:textColor="#454545"
-                android:layout_marginTop="6dp"
-                tools:text="Rayhan Rafiud"
+                android:id="@+id/user_detail"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="#454545"
+                android:textSize="14sp"
+                tools:text="Rayhan Rafiud" />
         </LinearLayout>
         <View
             android:layout_marginTop="16dp"

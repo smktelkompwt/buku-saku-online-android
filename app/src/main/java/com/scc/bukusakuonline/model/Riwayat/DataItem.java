@@ -1,6 +1,9 @@
 package com.scc.bukusakuonline.model.Riwayat;
 
-public class DataItem{
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class DataItem {
 	private Pelanggaran pelanggaran;
 	private String image;
 	private String createdDate;
@@ -79,4 +82,6 @@ public class DataItem{
 			",user = '" + user + '\'' + 
 			"}";
 		}
+
+
 }
