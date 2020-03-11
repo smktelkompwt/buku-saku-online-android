@@ -1,4 +1,4 @@
-package com.scc.bukusakuonline.model.Laporan;
+package com.scc.bukusakuonline.model.Riwayat;
 
 import java.util.List;
 

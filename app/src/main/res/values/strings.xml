@@ -30,6 +30,56 @@
     <string name="aturan_yang_dilanggar">Aturan yang dilanggar</string>
     <string name="pelapor">Pelapor</string>
     <string name="bukti">Bukti</string>
+    <string name="erpeel">RPL</string>
+    <string name="tekaje">TKJ</string>
+    <string name="tejea">TJA</string>
+
+    <string-array name="RPL">
+        <item>X RPL 1</item>
+        <item>X RPL 1</item>
+        <item>X RPL 2</item>
+        <item>X RPL 3</item>
+        <item>X RPL 4</item>
+        <item>XI RPL 1</item>
+        <item>XI RPL 2</item>
+        <item>XI RPL 3</item>
+        <item>XI RPL 4</item>
+        <item>XII RPL 1</item>
+        <item>XII RPL 2</item>
+        <item>XII RPL 3</item>
+        <item>XII RPL 4</item>
+    </string-array>
+    <string-array name="TJA">
+        <item>choose one</item>
+        <item>X TJA 1</item>
+        <item>X TJA 2</item>
+        <item>X TJA 3</item>
+        <item>X TJA 4</item>
+        <item>XI TJA 1</item>
+        <item>XI TJA 2</item>
+        <item>XI TJA 3</item>
+        <item>XI TJA 4</item>
+        <item>XII TJA 1</item>
+        <item>XII TJA 2</item>
+        <item>XII TJA 3</item>
+        <item>XII TJA 4</item>
+    </string-array>
+    <string-array name="TKJ">
+        <item>choose one</item>
+        <item>X TKJ 1</item>
+        <item>X TKJ 2</item>
+        <item>X TKJ 3</item>
+        <item>X TKJ 4</item>
+        <item>XI TKJ 1</item>
+        <item>XI TKJ 2</item>
+        <item>XI TKJ 3</item>
+        <item>XI TKJ 4</item>
+        <item>XII TKJ 1</item>
+        <item>XII TKJ 2</item>
+        <item>XII TKJ 3</item>
+        <item>XII TKJ 4</item>
+    </string-array>
+
     <string name="upload_bukti">Upload Bukti</string>
     <string name="laporkan_pelanggaran">Laporkan Pelanggaran</string>
     <string name="laporkan">Laporkan</string>
@@ -54,6 +104,7 @@
         <item>oke pas</item>
         <item>oke</item>
     </string-array>
+
     <string name="aktivitas_terbaru">Aktivitas Terbaru</string>
     <string name="fitur_buku_sakuku">Fitur Buku Sakuku</string>
     <string name="code">Kode</string>

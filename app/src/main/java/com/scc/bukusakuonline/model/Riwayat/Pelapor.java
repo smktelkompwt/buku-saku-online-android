@@ -1,4 +1,4 @@
-package com.scc.bukusakuonline.model.Laporan;
+package com.scc.bukusakuonline.model.Riwayat;
 
 public class Pelapor{
 	private String nama;

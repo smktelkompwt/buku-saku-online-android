@@ -1,14 +1,21 @@
 package com.scc.bukusakuonline.connection;
 
 import com.scc.bukusakuonline.model.DetailPointResponse;
+
+import com.scc.bukusakuonline.model.Riwayat.LaporanResponse;
+
 import com.scc.bukusakuonline.model.Laporan.LaporanByIdResponse;
-import com.scc.bukusakuonline.model.Laporan.LaporanResponse;
+
 import com.scc.bukusakuonline.model.Login;
+
+import com.scc.bukusakuonline.model.siswa.SiswaKelasResponse;
+
 import com.scc.bukusakuonline.model.UploadPelanggaran;
 import com.scc.bukusakuonline.model.peraturan.DetailPasalResponse;
 import com.scc.bukusakuonline.model.peraturan.PasalResponse;
 import com.scc.bukusakuonline.model.peraturan.PeraturanById;
 import com.scc.bukusakuonline.model.peraturan.PeraturanResponse;
+
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -27,6 +34,9 @@ public interface ApiService {
     @POST("api/users/admin/login")
     Call<Login> login(@Field("email") String email, @Field("password") String password, @Field("secretCode") String secret);
 
+    @GET("api/kelas")
+    Call<SiswaKelasResponse>getSiswa(@Header("Authorization") String Auth, @Query("kelas") String kelas);
+
     @GET("api/lapor/all")
     Call<LaporanResponse>getLapor(@Header("Authorization") String Auth);
 
@@ -43,4 +53,5 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("api/lapor/upload")
     Call<UploadPelanggaran> uploadPelanggaran(@Header("Authorization") String auth,@Field("pelanggaran_kategori") String Pelanggaran, @Field("nis") Double Nis , @Field("image") String Image);
+
 }

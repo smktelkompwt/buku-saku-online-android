@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.adapter.AdapterAktivitasTerbaru.AktivitasTerbaruViewHolder
-import com.scc.bukusakuonline.model.Laporan.DataItem
+import com.scc.bukusakuonline.model.Riwayat.DataItem
 import com.scc.bukusakuonline.ui.detailpelanggaran.DetailPelanggaran
 
 
