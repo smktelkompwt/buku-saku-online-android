@@ -8,15 +8,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
+import  com.scc.bukusakuonline.model.riwayat.DataItem
 import com.scc.bukusakuonline.model.riwayat.LaporanByIdResponse
-import com.scc.bukusakuonline.model.riwayat.DataItem
+
 import retrofit2.Call
 import retrofit2.Response
 
 class DetailPelanggaranViewModel : ViewModel() {
     private  var listPoint : MutableLiveData<DataItem> = MutableLiveData()
-
-
     fun loadData(context: Context, id :String){
         Log.d("viewmodel", "viewmodel")
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
