@@ -16,11 +16,12 @@ import com.scc.bukusakuonline.adapter.AdapterSiswa
 import com.scc.bukusakuonline.model.siswa.SiswaKelasItem
 import kotlinx.android.synthetic.main.fragment_rpl.*
 import kotlinx.android.synthetic.main.fragment_tja.*
+import android.widget.AdapterView.OnItemSelectedListener
 
 /**
  * A simple [Fragment] subclass.
  */
-class TjaFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class TjaFragment : Fragment(), OnItemSelectedListener {
     private lateinit var kelasViewModel: KelasViewModel
     private lateinit var siswaAdapter: AdapterSiswa
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
