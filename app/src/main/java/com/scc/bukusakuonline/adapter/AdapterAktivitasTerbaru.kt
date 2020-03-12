@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.adapter.AdapterAktivitasTerbaru.AktivitasTerbaruViewHolder
-import com.scc.bukusakuonline.model.Riwayat.DataItem
+import com.scc.bukusakuonline.model.riwayat.DataItem
 import com.scc.bukusakuonline.ui.detailpelanggaran.DetailPelanggaran
 
 
@@ -20,9 +20,9 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
     }
 
     override fun onBindViewHolder(holder: AktivitasTerbaruViewHolder, position: Int) {
-        holder.bindItem(Items[position],position, context)
+        holder.bindItem(Items[position], context)
     }
-    override fun getItemCount() : Int = Items.size
+    override fun getItemCount() : Int = 5
 
     class AktivitasTerbaruViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val point = itemView.findViewById<TextView>(R.id.point_history)
@@ -30,7 +30,7 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
         private val date = itemView.findViewById<TextView>(R.id.date_history)
         private val desc = itemView.findViewById<TextView>(R.id.desc_history)
 
-        fun bindItem(items: DataItem, position: Int, context: Context){
+        fun bindItem(items: DataItem, context: Context){
             point.text = items.pelanggaran.point.toString()
             name.text = items.user.nama
             date.text = items.createdDate.toString()

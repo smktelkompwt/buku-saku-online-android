@@ -1,7 +1,4 @@
-package com.scc.bukusakuonline.model.Riwayat;
-
-import android.os.Parcel;
-import android.os.Parcelable;
+package com.scc.bukusakuonline.model.riwayat;
 
 public class DataItem {
 	private Pelanggaran pelanggaran;

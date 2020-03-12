@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
-import com.scc.bukusakuonline.model.Riwayat.DataItem
-import com.scc.bukusakuonline.model.Riwayat.LaporanResponse
+import com.scc.bukusakuonline.model.riwayat.DataItem
+import com.scc.bukusakuonline.model.riwayat.LaporanResponse
 import retrofit2.Call
 import retrofit2.Response
 
@@ -20,7 +20,7 @@ class HistoryViewModel : ViewModel() {
         d("viewmodel","viewmodel")
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
-        RetroConfig.getRetrofit().create(ApiService::class.java).getLapor(token).enqueue(object : retrofit2.Callback<LaporanResponse>{
+        RetroConfig.getRetrofit().create(ApiService::class.java).getLaporByMe(token).enqueue(object : retrofit2.Callback<LaporanResponse>{
             override fun onFailure(call: Call<LaporanResponse>, t: Throwable) {
                 d("error","failure")
             }

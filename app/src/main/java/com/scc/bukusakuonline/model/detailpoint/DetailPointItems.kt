@@ -1,4 +1,4 @@
-package com.scc.bukusakuonline.model
+package com.scc.bukusakuonline.model.detailpoint
 
 import com.google.gson.annotations.SerializedName
 

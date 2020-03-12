@@ -1,5 +1,6 @@
 package com.scc.bukusakuonline.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.util.Log.d
@@ -17,6 +18,7 @@ class AdapterBab (private  val context: Context, private val Items:List<PasalIte
         private val bab = view.findViewById<TextView>(R.id.bab)
         private val descBab = view.findViewById<TextView>(R.id.desc_bab)
 
+        @SuppressLint("SetTextI18n")
         fun bindItem(items: PasalItems, position: Int, context: Context, id: String){
             d("items",position.toString())
             bab.text = "Pasal ${(position +1)}"
@@ -26,7 +28,7 @@ class AdapterBab (private  val context: Context, private val Items:List<PasalIte
                 intent.putExtra("id_pasal", items.id)
                 intent.putExtra("title", items.title)
                 intent.putExtra("id",id)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }
         }
