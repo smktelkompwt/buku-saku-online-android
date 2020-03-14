@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@drawable/border"
         app:cardCornerRadius="5dp"
         app:cardElevation="0dp"
@@ -34,126 +34,131 @@
                 android:gravity="center"
                 android:text="Karya Simanjutak Seslalu"
                 android:layout_marginTop="50dp"/>
-            <LinearLayout
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:layout_marginTop="100dp">
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu1" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu2" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu3" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu" />
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:layout_marginTop="100dp">
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu1" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu2" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu3" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu" />
 
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu5" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu6" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu7" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu8" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu9" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu10" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu11" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu12" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu13" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu14" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu15" />
-                <TextView
-                    android:fontFamily="@font/roboto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lagu16" />
-            </LinearLayout>
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu5" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu6" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu7" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu8" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu9" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu10" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu11" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu12" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu13" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu14" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu15" />
+                    <TextView
+                        android:fontFamily="@font/roboto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/lagu16" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
         </FrameLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

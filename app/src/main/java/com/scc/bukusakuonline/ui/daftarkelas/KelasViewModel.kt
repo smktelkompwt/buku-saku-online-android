@@ -10,7 +10,7 @@ import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
 import com.scc.bukusakuonline.model.kelas.KelasItems
 import com.scc.bukusakuonline.model.kelas.KelasResponse
-import com.scc.bukusakuonline.model.riwayat.DataItem
+
 import com.scc.bukusakuonline.model.riwayat.LaporanByIdResponse
 import retrofit2.Call
 import retrofit2.Response
