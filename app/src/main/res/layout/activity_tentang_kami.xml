@@ -116,13 +116,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Ramadhani Samudra Gawang"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="Gawang"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -145,13 +145,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Faresa Prasetyo Nugroho"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="faresa"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -174,13 +174,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Bagas Makhali"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="Bagas"/>
                     </LinearLayout>
                 </LinearLayout>
                 <TextView
