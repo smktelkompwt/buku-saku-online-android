@@ -2,6 +2,7 @@ package com.scc.bukusakuonline.connection;
 
 import com.scc.bukusakuonline.model.detailpoint.DetailPointResponse;
 
+import com.scc.bukusakuonline.model.kelas.KelasResponse;
 import com.scc.bukusakuonline.model.riwayat.LaporanResponse;
 
 import com.scc.bukusakuonline.model.riwayat.LaporanByIdResponse;
