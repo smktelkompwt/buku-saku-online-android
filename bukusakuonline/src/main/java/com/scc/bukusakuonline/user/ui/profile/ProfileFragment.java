@@ -1,5 +1,8 @@
 package com.scc.bukusakuonline.user.ui.profile;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +16,13 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.scc.bukusakuonline.user.R;
+import com.scc.bukusakuonline.user.ui.LoginActivity;
 
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ProfileFragment extends Fragment {
 
@@ -43,5 +48,12 @@ public class ProfileFragment extends Fragment {
 
         });
         return root;
+    }
+    @OnClick(R.id.btn_out) void Logout(){
+        SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("TOKEN");
+        editor.apply();
+        startActivity(new Intent(getActivity(), LoginActivity.class));
     }
 }

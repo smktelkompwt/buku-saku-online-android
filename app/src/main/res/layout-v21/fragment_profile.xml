@@ -13,7 +13,7 @@
         android:layout_marginLeft="24dp"
 
         android:layout_marginTop="8dp"
-        android:text="NIG"
+        android:text="@string/email"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -92,11 +92,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:text="@string/t" />
-
     <Button
         android:id="@+id/btn_out"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
@@ -104,6 +103,7 @@
         android:layout_marginRight="24dp"
         android:background="@drawable/green_button"
         android:text="@string/keluar"
+        android:backgroundTint="#23B88E"
         android:textAllCaps="false"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"

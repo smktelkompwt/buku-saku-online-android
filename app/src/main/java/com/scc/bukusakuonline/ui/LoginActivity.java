@@ -38,6 +38,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         preferences = this.getSharedPreferences("PREF", Context.MODE_PRIVATE);
+        String token = preferences.getString("TOKEN","abc");
+        if (!token.equals("abc")){
+            startActivity(new Intent(this,MainActivity.class));
+        }
     }
     @OnClick(R2.id.btnLogin) void login(){
         try {
