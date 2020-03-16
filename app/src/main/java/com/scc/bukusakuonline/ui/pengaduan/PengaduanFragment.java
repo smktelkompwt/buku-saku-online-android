@@ -51,6 +51,7 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -125,9 +126,12 @@ public class PengaduanFragment extends Fragment {
     public void onImageButton3Clicked() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, 10);
+            popImageChooser();
+
+        }else {
+            popImageChooser();
 
         }
-        popImageChooser();
 
     }
 
@@ -142,14 +146,14 @@ public class PengaduanFragment extends Fragment {
             intent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
             intent.setPackage(packageName);
             intent.putExtra(MediaStore.MEDIA_IGNORE_FILENAME, ".nomedia");
-
+            Uri uri  = Uri.parse("file:///sdcard/photo.jpg");
+            intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
             cameraIntents.add(intent);
         }
 
         // Filesystem.
-        final Intent galleryIntent = new Intent();
+        final Intent galleryIntent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         galleryIntent.setType("image/*");
-        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
         // Chooser of filesystem options.
         final Intent chooserIntent = Intent.createChooser(galleryIntent, getString(R.string.attach_images_title));
@@ -195,13 +199,10 @@ public class PengaduanFragment extends Fragment {
                 Log.d("image", String.valueOf(imageReturnedIntent));
 
                 if (imageReturnedIntent == null) {   //since we used EXTRA_OUTPUT for camera, so it will be null
-                    Log.d("image", String.valueOf(imageReturnedIntent));
-                    for (int i = 0; i < cameraImageFiles.size(); i++) {
-                        if (cameraImageFiles.get(i).exists()) {
-                            uri = Uri.fromFile(cameraImageFiles.get(i));
-                            break;
-                        }
-                    }
+                    String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+                    File file = new File(Environment.getExternalStorageDirectory().getPath(), "photo.jpg");
+                    uri = Uri.fromFile(file);
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
                     final InputStream imageStream;
@@ -237,8 +238,10 @@ public class PengaduanFragment extends Fragment {
                             imageStream = getActivity().getContentResolver().openInputStream(uri);
                             final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
                             imageButton.setImageBitmap(selectedImage);
+                            selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
                             byte[] imageBytes = baos.toByteArray();
                             base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+                            Log.d("base64",base64Image);
                         }else {
                             Toast.makeText(getContext(), "Too Large", Toast.LENGTH_SHORT).show();
                         }
