@@ -39,6 +39,8 @@ public interface ApiService {
     @GET("api/users/me")
     Call<UserResponse> profile(@Header("Authorization") String Auth);
 
+
+    //kelas + siswa
     @GET("api/kelas")
     Call<SiswaKelasResponse>getSiswa(@Header("Authorization") String Auth, @Query("kelas") String kelas);
 
