@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detailsiswa.DetailSiswaActivity">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_detail_siswa"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/masfiud"
+            android:layout_margin="32dp"/>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama_lengkap_detail"
+                android:textSize="12sp"
+                app:fontFamily="@font/roboto" />
+
+            <TextView
+                android:id="@+id/nama_lengkap"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:text="@string/rayhan_rafiud_darojat"
+                android:textSize="16sp"
+                android:textColor="#29291E"
+                app:fontFamily="@font/roboto" />
+        </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e5e5e5"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/linearlayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kelas"
+            android:textSize="12sp"
+            app:fontFamily="@font/roboto"/>
+
+        <TextView
+            android:id="@+id/kelas"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:text="@string/x_rpl_1"
+            android:textSize="16sp"
+            android:textColor="#29291E"
+            app:fontFamily="@font/roboto" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e5e5e5"
+        android:layout_marginTop="16dp"/>
+    <LinearLayout
+        android:id="@+id/linearlayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/jumlah_point_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/jumlah_point"
+            android:textSize="12sp"
+            app:fontFamily="@font/roboto"/>
+
+        <TextView
+            android:id="@+id/jumlah_point"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="6dp"
+            android:text="@string/_100"
+            android:textColor="#29291E"
+            android:textSize="16sp"
+            app:fontFamily="@font/roboto" />
+    </LinearLayout>
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e5e5e5"
+        android:layout_marginTop="16dp"/>
+    <LinearLayout
+        android:id="@+id/linearlayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/jumlah_pelanggaran"
+        android:textSize="12sp"
+        app:fontFamily="@font/roboto"/>
+
+    <TextView
+        android:id="@+id/jumlah_pelanggara_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"
+        android:text="@string/_100"
+        android:textColor="#29291E"
+        android:textSize="16sp"
+        app:fontFamily="@font/roboto" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fontFamily="@font/roboto"
+        android:text="@string/pelanggaran_yang_dilakukan"
+        android:textColor="#29291E"
+        android:textSize="14sp"
+        android:layout_margin="20dp">
+    </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/rv_detail_siswa"
+                tools:listitem="@layout/detail_siswa_item"
+                android:layout_height="match_parent">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

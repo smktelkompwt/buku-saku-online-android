@@ -143,5 +143,7 @@
     <string name="pelanggaran_yang_dilakukan">Pelanggaran yang dilakukan</string>
     <string name="lihat_detail">Lihat Detail</string>
     <string name="_1">1</string>
+    <string name="no_hp">No Hp</string>
+    <string name="attach_images_title">Choose Image</string>
 
 </resources>

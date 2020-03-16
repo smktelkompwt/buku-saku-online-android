@@ -2,16 +2,22 @@ package com.scc.bukusakuonline.ui.pengaduan;
 
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.text.InputType;
 import android.util.Base64;
@@ -27,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -45,7 +52,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -74,6 +85,10 @@ public class PengaduanFragment extends Fragment {
     PengaduanViewModel mPengaduanViewModel;
     String category;
     View v;
+    private List<File> cameraImageFiles;
+    private ArrayList permissionsToRequest;
+    private ArrayList permissionsRejected = new ArrayList();
+    private ArrayList permissions = new ArrayList();
     public PengaduanFragment() {
         // Required empty public constructor
     }
@@ -108,6 +123,49 @@ public class PengaduanFragment extends Fragment {
 
     @OnClick(R.id.imageButton3)
     public void onImageButton3Clicked() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(getActivity(), new String[] {Manifest.permission.CAMERA}, 10);
+
+        }
+        popImageChooser();
+
+    }
+
+    private void popImageChooser(){
+        final List<Intent> cameraIntents = new ArrayList<Intent>();
+        final Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        final PackageManager packageManager = getActivity().getPackageManager();
+        final List<ResolveInfo> listCam = packageManager.queryIntentActivities(captureIntent, 0);
+        for(ResolveInfo res : listCam) {
+            final String packageName = res.activityInfo.packageName;
+            final Intent intent = new Intent(captureIntent);
+            intent.setComponent(new ComponentName(res.activityInfo.packageName, res.activityInfo.name));
+            intent.setPackage(packageName);
+            intent.putExtra(MediaStore.MEDIA_IGNORE_FILENAME, ".nomedia");
+
+            cameraIntents.add(intent);
+        }
+
+        // Filesystem.
+        final Intent galleryIntent = new Intent();
+        galleryIntent.setType("image/*");
+        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+
+        // Chooser of filesystem options.
+        final Intent chooserIntent = Intent.createChooser(galleryIntent, getString(R.string.attach_images_title));
+
+        // Add the camera options.
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, cameraIntents.toArray(new Parcelable[]{}));
+        startActivityForResult(chooserIntent, 100);
+    }
+
+    private String createCameraImageFileName() {
+        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+        return date+".jpg";
+    }
+
+    void galery(){
         if(ActivityCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
         {
@@ -123,68 +181,129 @@ public class PengaduanFragment extends Fragment {
             }
         }
     }
-    @Override
-    public void onActivityResult(int reqCode, int resultCode, Intent data) {
-        super.onActivityResult(reqCode, resultCode, data);
-        int dataSize=0;
-        if (resultCode == RESULT_OK) {
-            try {
-                File f;
-                Uri uri  = data.getData();
-                String scheme = uri.getScheme();
-                System.out.println("Scheme type " + scheme);
-                if(scheme.equals(ContentResolver.SCHEME_CONTENT))
-                {
-                    try {
-                        InputStream fileInputStream=getContext().getApplicationContext().getContentResolver().openInputStream(uri);
-                        dataSize = fileInputStream.available();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("File size in bytes"+dataSize);
+    //get callback from picker
+    public void onActivityResult(int requestCode, int resultCode,
+                                 Intent imageReturnedIntent) {
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+        Log.d("code", String.valueOf(requestCode));
+        Log.d("code", String.valueOf(resultCode));
 
-                }
-                else if(scheme.equals(ContentResolver.SCHEME_FILE))
-                {
-                    String path = uri.getPath();
-                    try {
-                        f = new File(path);
-                        Log.d("f",f.toString());
-                    } catch (Exception e) {
-                        e.printStackTrace();
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = null;
+                Log.d("code", String.valueOf(resultCode));
+                Log.d("image", String.valueOf(imageReturnedIntent));
+
+                if (imageReturnedIntent == null) {   //since we used EXTRA_OUTPUT for camera, so it will be null
+                    Log.d("image", String.valueOf(imageReturnedIntent));
+                    for (int i = 0; i < cameraImageFiles.size(); i++) {
+                        if (cameraImageFiles.get(i).exists()) {
+                            uri = Uri.fromFile(cameraImageFiles.get(i));
+                            break;
+                        }
                     }
-//                    System.out.println("File size in bytes"+f.length());
-                }
-                int mb = dataSize / 1000000;
-                if (mb  < 3){
-                    final Uri imageUri = data.getData();
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
-                    final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
-                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                    imageButton.setImageBitmap(selectedImage);
-                    upload.setVisibility(View.GONE);
-                    selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                    byte[] imageBytes = baos.toByteArray();
-                    base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
-//                base64Image = "data:image/png;base64,"+ imageBase.substring(4);
-//                base64Image = imageBase;
-                    Log.d("base",base64Image);
-                }else {
-                    Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
+                    final InputStream imageStream;
+                    try {
+                        int dataSize=0;
+                        File f;
 
+                        String scheme = uri.getScheme();
+                        System.out.println("Scheme type " + scheme);
+                        if(scheme.equals(ContentResolver.SCHEME_CONTENT))
+                        {
+                            try {
+                                InputStream fileInputStream=getContext().getApplicationContext().getContentResolver().openInputStream(uri);
+                                dataSize = fileInputStream.available();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println("File size in bytes"+dataSize);
+
+                        }
+                        else if(scheme.equals(ContentResolver.SCHEME_FILE))
+                        {
+                            String path = uri.getPath();
+                            try {
+                                f = new File(path);
+                                Log.d("f",f.toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        int mb = dataSize / 1000000;
+                        if (mb < 3){
+                            imageStream = getActivity().getContentResolver().openInputStream(uri);
+                            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                            imageButton.setImageBitmap(selectedImage);
+                            byte[] imageBytes = baos.toByteArray();
+                            base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+                        }else {
+                            Toast.makeText(getContext(), "Too Large", Toast.LENGTH_SHORT).show();
+                        }
+                     
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                    Log.d("attachimage", "from camera: " + uri);
+                } else {  // from gallery
+                    int dataSize = 0;
+                    try {
+                        File f;
+                        uri = imageReturnedIntent.getData();
+                        String scheme = uri.getScheme();
+                        System.out.println("Scheme type " + scheme);
+                        if (scheme.equals(ContentResolver.SCHEME_CONTENT)) {
+                            try {
+                                InputStream fileInputStream = getContext().getApplicationContext().getContentResolver().openInputStream(uri);
+                                dataSize = fileInputStream.available();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println("File size in bytes" + dataSize);
+
+                        } else if (scheme.equals(ContentResolver.SCHEME_FILE)) {
+                            String path = uri.getPath();
+                            try {
+                                f = new File(path);
+                                Log.d("f", f.toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        int mb = dataSize / 1000000;
+                        if (mb < 3) {
+                            final Uri imageUri = imageReturnedIntent.getData();
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+                            final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
+                            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                            imageButton.setImageBitmap(selectedImage);
+                            upload.setVisibility(View.GONE);
+                            selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                            byte[] imageBytes = baos.toByteArray();
+                            base64Image = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+                            Log.d("base", base64Image);
+                        } else {
+                            Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
+
+                        }
+
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
+                    }
                 }
-
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
             }
+        }else{
+            Toast.makeText(getContext(), "You haven't picked Image", Toast.LENGTH_SHORT).show();
 
-        }else {
-            Toast.makeText(getContext(), "You haven't picked Image",Toast.LENGTH_LONG).show();
         }
     }
+    // post to server
     @OnClick(R.id.button)
     void onButtonClicked() {
         if (editText.getText().toString().equals("") && base64Image.length() ==0){
