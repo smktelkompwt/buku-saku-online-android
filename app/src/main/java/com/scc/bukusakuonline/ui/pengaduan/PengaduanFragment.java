@@ -3,6 +3,7 @@ package com.scc.bukusakuonline.ui.pengaduan;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -63,6 +64,8 @@ import java.util.Objects;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dmax.dialog.SpotsDialog;
+import id.zelory.compressor.Compressor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -86,10 +89,7 @@ public class PengaduanFragment extends Fragment {
     PengaduanViewModel mPengaduanViewModel;
     String category;
     View v;
-    private List<File> cameraImageFiles;
-    private ArrayList permissionsToRequest;
-    private ArrayList permissionsRejected = new ArrayList();
-    private ArrayList permissions = new ArrayList();
+    AlertDialog alertDialog;
     public PengaduanFragment() {
         // Required empty public constructor
     }
@@ -101,6 +101,8 @@ public class PengaduanFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_pengaduan, container, false);
         ButterKnife.bind(this, v);
+        alertDialog = new SpotsDialog.Builder().setContext(getContext()).build();
+        base64Image= "";
         mPengaduanViewModel = ViewModelProviders.of(this).get(PengaduanViewModel.class);
         mPengaduanViewModel.loadData(getContext());
         mPengaduanViewModel.getListData().observe(this, detailPointItems -> {
@@ -197,108 +199,75 @@ public class PengaduanFragment extends Fragment {
                 Uri uri = null;
                 Log.d("code", String.valueOf(resultCode));
                 Log.d("image", String.valueOf(imageReturnedIntent));
+                try {
+                    if (imageReturnedIntent == null) {   //since we used EXTRA_OUTPUT for camera, so it will be null
+                        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                        File file = new File(Environment.getExternalStorageDirectory().getPath(), "photo.jpg");
+                        uri = Uri.fromFile(file);
 
-                if (imageReturnedIntent == null) {   //since we used EXTRA_OUTPUT for camera, so it will be null
-                    String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                        Bitmap  compressedImageBitmap = new Compressor(getContext()) .setMaxWidth(320)
+                                .setMaxHeight(151).setQuality(1).compressToBitmap(file);
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        imageButton.setImageBitmap(compressedImageBitmap);
+                        compressedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        byte[] imageBytes = baos.toByteArray();
+                        base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
-                    File file = new File(Environment.getExternalStorageDirectory().getPath(), "photo.jpg");
-                    uri = Uri.fromFile(file);
-                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        Log.d("base64",base64Image);
+                        int check = 4 * base64Image.length() / 3;
+                        Log.d("size", String.valueOf(check));
+                        Log.d("attachimage", "from camera: " + uri);
+                    } else {  // from gallery
+                        int dataSize = 0;
+                        try {
+                            File f;
+                            uri = imageReturnedIntent.getData();
+                            String scheme = uri.getScheme();
+                            System.out.println("Scheme type " + scheme);
+                            if (scheme.equals(ContentResolver.SCHEME_CONTENT)) {
+                                try {
+                                    InputStream fileInputStream = getContext().getApplicationContext().getContentResolver().openInputStream(uri);
+                                    dataSize = fileInputStream.available();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                                System.out.println("File size in bytes" + dataSize);
 
-                    final InputStream imageStream;
-                    try {
-                        int dataSize=0;
-                        File f;
-
-                        String scheme = uri.getScheme();
-                        System.out.println("Scheme type " + scheme);
-                        if(scheme.equals(ContentResolver.SCHEME_CONTENT))
-                        {
-                            try {
-                                InputStream fileInputStream=getContext().getApplicationContext().getContentResolver().openInputStream(uri);
-                                dataSize = fileInputStream.available();
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                            } else if (scheme.equals(ContentResolver.SCHEME_FILE)) {
+                                String path = uri.getPath();
+                                try {
+                                    f = new File(path);
+                                    Log.d("f", f.toString());
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }
-                            System.out.println("File size in bytes"+dataSize);
+                            int mb = dataSize / 1000000;
+                            if (mb < 3) {
+                                final Uri imageUri = imageReturnedIntent.getData();
+                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
-                        }
-                        else if(scheme.equals(ContentResolver.SCHEME_FILE))
-                        {
-                            String path = uri.getPath();
-                            try {
-                                f = new File(path);
-                                Log.d("f",f.toString());
-                            } catch (Exception e) {
-                                e.printStackTrace();
+                                final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
+                                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                                imageButton.setImageBitmap(selectedImage);
+                                upload.setVisibility(View.GONE);
+                                selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                                byte[] imageBytes = baos.toByteArray();
+                                base64Image = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
+                                Log.d("base", base64Image);
+                            } else {
+                                Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
+
                             }
+
+
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
                         }
-                        int mb = dataSize / 1000000;
-                        if (mb < 3){
-                            imageStream = getActivity().getContentResolver().openInputStream(uri);
-                            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                            imageButton.setImageBitmap(selectedImage);
-                            selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                            byte[] imageBytes = baos.toByteArray();
-                            base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
-                            Log.d("base64",base64Image);
-                        }else {
-                            Toast.makeText(getContext(), "Too Large", Toast.LENGTH_SHORT).show();
-                        }
-                     
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
                     }
-
-                    Log.d("attachimage", "from camera: " + uri);
-                } else {  // from gallery
-                    int dataSize = 0;
-                    try {
-                        File f;
-                        uri = imageReturnedIntent.getData();
-                        String scheme = uri.getScheme();
-                        System.out.println("Scheme type " + scheme);
-                        if (scheme.equals(ContentResolver.SCHEME_CONTENT)) {
-                            try {
-                                InputStream fileInputStream = getContext().getApplicationContext().getContentResolver().openInputStream(uri);
-                                dataSize = fileInputStream.available();
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            System.out.println("File size in bytes" + dataSize);
-
-                        } else if (scheme.equals(ContentResolver.SCHEME_FILE)) {
-                            String path = uri.getPath();
-                            try {
-                                f = new File(path);
-                                Log.d("f", f.toString());
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        int mb = dataSize / 1000000;
-                        if (mb < 3) {
-                            final Uri imageUri = imageReturnedIntent.getData();
-                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-                            final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
-                            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                            imageButton.setImageBitmap(selectedImage);
-                            upload.setVisibility(View.GONE);
-                            selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                            byte[] imageBytes = baos.toByteArray();
-                            base64Image = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
-                            Log.d("base", base64Image);
-                        } else {
-                            Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
-
-                        }
-
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                        Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
-                    }
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
             }
         }else{
@@ -309,10 +278,8 @@ public class PengaduanFragment extends Fragment {
     // post to server
     @OnClick(R.id.button)
     void onButtonClicked() {
-        if (editText.getText().toString().equals("") && base64Image.length() ==0){
-            Toast.makeText(getContext(), "Isi Datanya", Toast.LENGTH_SHORT).show();
-
-        }else {
+        alertDialog.show();
+        try {
             Log.d("wait","wait");
             Toast.makeText(getContext(), "Please Wait", Toast.LENGTH_SHORT).show();
             SharedPreferences sharedPreferences = getContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
@@ -325,14 +292,20 @@ public class PengaduanFragment extends Fragment {
                             if (response.body().getCode() == 404){
                                 Log.d("yes","yes");
                                 Log.d("yes",response.body().toString());
+                                alertDialog.hide();
+
                                 Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
                             }else {
+                                alertDialog.hide();
+
                                 Snackbar.make(v, "Success", Snackbar.LENGTH_LONG).show();
                                 Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }else {
                         Log.d("no","no");
+                        alertDialog.hide();
+
                         Snackbar.make(v,"Something went wrong",Snackbar.LENGTH_LONG).show();
                         Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
                     }
@@ -340,13 +313,19 @@ public class PengaduanFragment extends Fragment {
 
                 @Override
                 public void onFailure(Call<UploadPelanggaran> call, Throwable t) {
+                    alertDialog.hide();
                     Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
                     Toast.makeText(getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
 
                     Log.d("error",t.getMessage());
                 }
             });
+        }catch (Exception e){
+            alertDialog.hide();
+            Toast.makeText(getContext(), "Isi Datanya", Toast.LENGTH_LONG).show();
+
         }
+
 
     }
     @OnClick(R.id.editText_spinner_pengaduan)
