@@ -32,8 +32,6 @@ public class ProfileFragment extends Fragment {
     TextView name;
     @BindView(R.id.subjects)
     TextView email;
-    @BindView(R.id.textView13)
-    TextView phone;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel =
@@ -45,7 +43,6 @@ public class ProfileFragment extends Fragment {
             try {
                 name.setText(userItems.get(0).getName());
                 email.setText(userItems.get(0).getEmail());
-                phone.setText(userItems.get(0).getPhone());
             }catch (Exception e){
                 e.printStackTrace();
             }
