@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -218,53 +219,17 @@ public class PengaduanFragment extends Fragment {
                         Log.d("size", String.valueOf(check));
                         Log.d("attachimage", "from camera: " + uri);
                     } else {  // from gallery
-                        int dataSize = 0;
-                        try {
-                            File f;
-                            uri = imageReturnedIntent.getData();
-                            String scheme = uri.getScheme();
-                            System.out.println("Scheme type " + scheme);
-                            if (scheme.equals(ContentResolver.SCHEME_CONTENT)) {
-                                try {
-                                    InputStream fileInputStream = getContext().getApplicationContext().getContentResolver().openInputStream(uri);
-                                    dataSize = fileInputStream.available();
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                                System.out.println("File size in bytes" + dataSize);
-
-                            } else if (scheme.equals(ContentResolver.SCHEME_FILE)) {
-                                String path = uri.getPath();
-                                try {
-                                    f = new File(path);
-                                    Log.d("f", f.toString());
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            int mb = dataSize / 1000000;
-                            if (mb < 3) {
-                                final Uri imageUri = imageReturnedIntent.getData();
-                                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
-                                final InputStream imageStream = getActivity().getContentResolver().openInputStream(imageUri);
-                                final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                                imageButton.setImageBitmap(selectedImage);
-                                upload.setVisibility(View.GONE);
-                                selectedImage.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                                byte[] imageBytes = baos.toByteArray();
-                                base64Image = "data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.NO_WRAP);
-                                Log.d("base", base64Image);
-                            } else {
-                                Toast.makeText(getContext(), "Too Large", Toast.LENGTH_LONG).show();
-
-                            }
-
-
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                            Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_LONG).show();
-                        }
+                        Uri selectedImageUri = imageReturnedIntent.getData();
+                        String filePath = FetchPath.getPath(getContext(), selectedImageUri);
+                        File file = new File(filePath);
+                        Bitmap  compressedImageBitmap = new Compressor(getContext()) .setMaxWidth(320)
+                                .setMaxHeight(151).setQuality(1).compressToBitmap(file);
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        imageButton.setImageBitmap(compressedImageBitmap);
+                        compressedImageBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                        byte[] imageBytes = baos.toByteArray();
+                        base64Image ="data:image/png;base64," + Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                        Log.d("base",base64Image);
                     }
                 }catch (Exception e){
                     e.printStackTrace();
@@ -272,9 +237,9 @@ public class PengaduanFragment extends Fragment {
             }
         }else{
             Toast.makeText(getContext(), "You haven't picked Image", Toast.LENGTH_SHORT).show();
-
         }
     }
+
     // post to server
     @OnClick(R.id.button)
     void onButtonClicked() {
