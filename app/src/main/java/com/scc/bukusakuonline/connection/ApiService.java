@@ -62,7 +62,7 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("api/lapor/upload")
-    Call<UploadPelanggaran> uploadPelanggaran(@Header("Authorization") String auth,@Field("pelanggaran_kategori") String Pelanggaran, @Field("nis") Double Nis , @Field("image") String Image);
+    Call<UploadPelanggaran> uploadPelanggaran(@Header("Authorization") String auth,@Field("pelanggaran_kategori") String Pelanggaran, @Field("nis") String Nis , @Field("image") String Image);
 
     //peraturan
 

@@ -212,11 +212,12 @@ public class PengaduanFragment extends Fragment {
             Toast.makeText(getContext(), "Please Wait", Toast.LENGTH_SHORT).show();
             SharedPreferences sharedPreferences = Objects.requireNonNull(getContext()).getSharedPreferences("PREF", Context.MODE_PRIVATE);
             String token ="Bearer "+ sharedPreferences.getString("TOKEN","abc");
-            RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, Double.parseDouble(editText.getText().toString()) ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
+            RetroConfig.getRetrofit().create(ApiService.class).uploadPelanggaran(token,category, editText.getText().toString() ,base64Image).enqueue(new Callback<UploadPelanggaran>() {
                 @Override
                 public void onResponse(@NotNull Call<UploadPelanggaran> call, @NotNull Response<UploadPelanggaran> response) {
                     if (response.isSuccessful()){
                         if (response.body() != null) {
+                            Log.d("yes", String.valueOf(response.body()));
                             if (response.body().getCode() != null && response.body().getCode() == 404){
                                 Log.d("yes","yes");
                                 Log.d("yes",response.body().toString());

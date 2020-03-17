@@ -42,9 +42,14 @@ public class ProfileFragment extends Fragment {
         ButterKnife.bind(this,root);
         profileViewModel.loadData(Objects.requireNonNull(getContext()));
         profileViewModel.getListData().observe(this, userItems -> {
-            name.setText(userItems.get(0).getName());
-            email.setText(userItems.get(0).getEmail());
-            phone.setText(userItems.get(0).getPhone());
+            try {
+                name.setText(userItems.get(0).getName());
+                email.setText(userItems.get(0).getEmail());
+                phone.setText(userItems.get(0).getPhone());
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
 
         });
         return root;
