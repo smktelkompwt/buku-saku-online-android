@@ -36,16 +36,21 @@ public class PeraturanActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
-        peraturanViewModel = ViewModelProviders.of(this).get(PeraturanViewModel.class);
-        peraturanViewModel.loadData(this);
-        peraturanViewModel.getListData().observe(this, peraturanItems -> {
-            if (peraturanItems != null){
-                adapterPeraturan = new AdapterPeraturan(getApplicationContext(),peraturanItems);
-                mRecyclerView.setAdapter(adapterPeraturan);
-                adapterPeraturan.notifyDataSetChanged();
-            }
-        });
+        try {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
+            peraturanViewModel = ViewModelProviders.of(this).get(PeraturanViewModel.class);
+            peraturanViewModel.loadData(this);
+            peraturanViewModel.getListData().observe(this, peraturanItems -> {
+                if (peraturanItems != null){
+                    adapterPeraturan = new AdapterPeraturan(getApplicationContext(),peraturanItems);
+                    mRecyclerView.setAdapter(adapterPeraturan);
+                    adapterPeraturan.notifyDataSetChanged();
+                }
+            });
+        }catch (Exception e){
+
+        }
+
     }
 
 

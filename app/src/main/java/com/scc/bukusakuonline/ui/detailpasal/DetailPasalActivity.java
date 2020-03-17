@@ -38,14 +38,19 @@ public class DetailPasalActivity extends AppCompatActivity {
     }
 
     private void getData(String id, String id_pasal) {
-        detailPasalViewModel = ViewModelProviders.of(this).get(DetailPasalViewModel.class);
-        detailPasalViewModel.loadData(this,id,id_pasal);
-        detailPasalViewModel.getListData().observe(this, detailPasalItems -> {
-            if (detailPasalItems != null){
-                adapterPasal = new AdapterPasal(getApplicationContext(), detailPasalItems);
-                recyclerView.setAdapter(adapterPasal);
-                adapterPasal.notifyDataSetChanged();
-            }
-        });
+        try {
+            detailPasalViewModel = ViewModelProviders.of(this).get(DetailPasalViewModel.class);
+            detailPasalViewModel.loadData(this,id,id_pasal);
+            detailPasalViewModel.getListData().observe(this, detailPasalItems -> {
+                if (detailPasalItems != null){
+                    adapterPasal = new AdapterPasal(getApplicationContext(), detailPasalItems);
+                    recyclerView.setAdapter(adapterPasal);
+                    adapterPasal.notifyDataSetChanged();
+                }
+            });
+        }catch (Exception e){
+
+        }
+
     }
 }

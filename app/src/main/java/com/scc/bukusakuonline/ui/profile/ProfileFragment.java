@@ -40,16 +40,23 @@ public class ProfileFragment extends Fragment {
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,root);
-        profileViewModel.loadData(Objects.requireNonNull(getContext()));
-        profileViewModel.getListData().observe(this, userItems -> {
-            name.setText(userItems.get(0).getName());
-            email.setText(userItems.get(0).getEmail());
-            phone.setText(userItems.get(0).getPhone());
 
-        });
+        getProfile();
         return root;
     }
 
+    private void getProfile() {
+        try {
+            profileViewModel.loadData(Objects.requireNonNull(getContext()));
+            profileViewModel.getListData().observe(this, userItems -> {
+                name.setText(userItems.get(0).getName());
+                email.setText(userItems.get(0).getEmail());
+                phone.setText(userItems.get(0).getPhone());
+            });
+        }
+        catch(Exception e){
+        }
+    }
     @OnClick(R.id.btn_out) void Logout(){
         SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
