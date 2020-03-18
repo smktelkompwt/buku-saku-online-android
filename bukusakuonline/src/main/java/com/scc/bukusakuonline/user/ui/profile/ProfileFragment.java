@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,7 @@ public class ProfileFragment extends Fragment {
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,root);
+
         try {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
@@ -52,7 +54,6 @@ public class ProfileFragment extends Fragment {
         }catch (Exception e){
             Toast.makeText(getContext(),"Harap Login Ulang Terlebih Dahulu" , Toast.LENGTH_LONG).show();
         }
-
         return root;
     }
     @OnClick(R.id.btn_out) void Logout(){
