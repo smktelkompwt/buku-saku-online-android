@@ -32,26 +32,29 @@ public class ProfileFragment extends Fragment {
     TextView name;
     @BindView(R.id.subjects)
     TextView email;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,root);
-        profileViewModel.loadData(Objects.requireNonNull(getContext()));
-        profileViewModel.getListData().observe(this, userItems -> {
-            try {
-                name.setText(userItems.get(0).getName());
-                email.setText(userItems.get(0).getEmail());
-            }catch (Exception e){
-                e.printStackTrace();
-            }
 
-
-        });
+        getProfile();
         return root;
     }
 
+    private void getProfile() {
+        try {
+            profileViewModel.loadData(Objects.requireNonNull(getContext()));
+            profileViewModel.getListData().observe(this, userItems -> {
+                name.setText(userItems.get(0).getName());
+                email.setText(userItems.get(0).getEmail());
+            });
+        }
+        catch(Exception e){
+        }
+    }
     @OnClick(R.id.btn_out) void Logout(){
         SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("PREF", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

@@ -222,7 +222,6 @@ public class PengaduanFragment extends Fragment {
                                 Log.d("yes","yes");
                                 Log.d("yes",response.body().toString());
                                 alertDialog.hide();
-
                                 Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
                             }else {
                                 alertDialog.hide();

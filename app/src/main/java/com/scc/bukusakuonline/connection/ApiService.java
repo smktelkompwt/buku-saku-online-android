@@ -1,5 +1,6 @@
 package com.scc.bukusakuonline.connection;
 
+import com.scc.bukusakuonline.model.dashboard.DashboardResponse;
 import com.scc.bukusakuonline.model.detailpoint.DetailPointResponse;
 
 import com.scc.bukusakuonline.model.kelas.KelasResponse;
@@ -74,5 +75,8 @@ public interface ApiService {
     @GET("api/peraturan/pasal")
     Call<DetailPasalResponse> getPasal(@Header("Authorization") String auth, @Query("id") String id, @Query("idPasal") String idPasal);
 
+
+    @GET("api/dashboard/all")
+    Call<DashboardResponse> getDashboard(@Header("Authorization") String auth);
 
 }

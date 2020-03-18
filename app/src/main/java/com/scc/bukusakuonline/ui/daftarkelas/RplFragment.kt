@@ -39,19 +39,23 @@ class RplFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
 
     private fun init() {
-        kelasViewModel = ViewModelProviders.of(this).get(KelasViewModel::class.java)
-        context?.let { kelasViewModel.loadData(it,"RPL") }
-        kelasViewModel.listData.observe(this, Observer {
-            val kelas = ArrayList<String>()
-            for (i in it.indices) {
-                it.get(i).kelas?.let { it1 -> kelas.add(it1) }
-            }
-            adapter= ArrayAdapter(context!!,android.R.layout.simple_spinner_item,kelas)
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
-            spinner.onItemSelectedListener = this
+        try {
+            kelasViewModel = ViewModelProviders.of(this).get(KelasViewModel::class.java)
+            context?.let { kelasViewModel.loadData(it, "RPL") }
+            kelasViewModel.listData.observe(this, Observer {
+                val kelas = ArrayList<String>()
+                for (i in it.indices) {
+                    it.get(i).kelas?.let { it1 -> kelas.add(it1) }
+                }
+                adapter = ArrayAdapter(context!!, android.R.layout.simple_spinner_item, kelas)
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                spinner.adapter = adapter
+                spinner.onItemSelectedListener = this
 
-        })
+            })
+        }catch(e : Exception){
+
+        }
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

@@ -46,19 +46,24 @@ public class DetailPelanggaran extends AppCompatActivity {
     }
 
     private void getData(String id) {
-        mDetailPelanggaranViewModel = ViewModelProviders.of(this).get(DetailPelanggaranViewModel.class);
-        mDetailPelanggaranViewModel.loadData(this,id);
-        mDetailPelanggaranViewModel.getListData().observe(this, dataItems -> {
-            Log.d("url",dataItems.getImage());
-            String url = "http://" + dataItems.getImage();
-            Picasso.get().load(url).into(imageView);
-            name_detail.setText(dataItems.getUser().getNama());
-            classDetail.setText(dataItems.getUser().getKelas());
-            category.setText(dataItems.getPelanggaran().getKategori());
-            point.setText(String.valueOf(dataItems.getPelanggaran().getPoint()));
-            rules.setText(dataItems.getPelanggaran().getKategori());
-            user.setText(dataItems.getPelapor().getNama());
-        });
+        try {
+            mDetailPelanggaranViewModel = ViewModelProviders.of(this).get(DetailPelanggaranViewModel.class);
+            mDetailPelanggaranViewModel.loadData(this,id);
+            mDetailPelanggaranViewModel.getListData().observe(this, dataItems -> {
+                Log.d("url",dataItems.getImage());
+                String url = "http://" + dataItems.getImage();
+                Picasso.get().load(url).into(imageView);
+                name_detail.setText(dataItems.getUser().getNama());
+                classDetail.setText(dataItems.getUser().getKelas());
+                category.setText(dataItems.getPelanggaran().getKategori());
+                point.setText(String.valueOf(dataItems.getPelanggaran().getPoint()));
+                rules.setText(dataItems.getPelanggaran().getKategori());
+                user.setText(dataItems.getPelapor().getNama());
+            });
+        }catch (Exception e){
+
+        }
+
     }
 
     @Override
