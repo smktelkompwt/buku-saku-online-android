@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:layout_margin="15dp"
+        android:layout_margin="20dp"
         android:background="@drawable/border"
         app:cardCornerRadius="7dp"
        >
@@ -47,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
+                    android:maxLength="16"
                     android:textStyle="bold"
                     app:fontFamily="@font/roboto"
                     tools:text="Ravendra Al Kutsar" />

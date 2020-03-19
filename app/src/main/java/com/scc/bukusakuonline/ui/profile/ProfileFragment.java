@@ -53,6 +53,7 @@ public class ProfileFragment extends Fragment {
             });
         }
         catch(Exception e){
+            e.printStackTrace();
         }
     }
     @OnClick(R.id.btn_out) void Logout(){

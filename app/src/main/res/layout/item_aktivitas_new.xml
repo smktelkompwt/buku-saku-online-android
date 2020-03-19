@@ -65,17 +65,20 @@
                     tools:fontFamily="@font/roboto"
                     android:maxLength="11"
                     tools:text="Kode : A-01"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/lihat_detail"
-                    tools:fontFamily="@font/roboto"
-                    android:textSize="12sp"
-                    android:gravity="end"
                     android:layout_marginTop="3dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginEnd="16dp"
-                    android:textColor="@color/colorPrimary"/>
+                    android:layout_marginRight="16dp"
+                    android:gravity="end"
+
+                    android:text="@string/lihat_detail"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:fontFamily="@font/roboto" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
