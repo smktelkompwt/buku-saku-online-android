@@ -38,7 +38,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this,root);
-        SearchView searchView = root.findViewById(R.id.sercing);
         CardView menu_peraturan = root.findViewById(R.id.menu_peraturan);
         CardView menu_daftar_kelas = root.findViewById(R.id.menu_daftar_kelas);
         CardView menu_pelanggaran = root.findViewById(R.id.menu_pelanggaran);
