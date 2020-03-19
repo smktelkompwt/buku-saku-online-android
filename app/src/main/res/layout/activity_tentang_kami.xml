@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorbgBackgroundHome"
     android:layout_height="match_parent"
+    android:background="@drawable/border"
+    android:layout_margin="20dp"
+    android:padding="10dp"
     tools:context=".ui.TentangKamiActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
         android:background="@drawable/border"
-        android:layout_margin="15dp"
         app:cardCornerRadius="5dp">
         <ScrollView
             android:layout_width="match_parent"
@@ -21,7 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/border"
                 android:padding="20dp">
                 <TextView
                     android:layout_width="match_parent"
@@ -104,7 +103,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/masfiud"/>
+                        android:src="@drawable/gawang"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -116,13 +115,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Ramadhani Samudra Gawang"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="Gawang"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -133,7 +132,7 @@
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/masfiud"/>
+                        android:src="@drawable/faresa"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,24 +144,25 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Faresa Prasetyo Nugroho"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="faresa"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/masfiud"/>
+                        android:src="@drawable/bagas"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -174,13 +174,47 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rayhan Rafiud Darojat"
+                            android:text="Bagas Makhali"
                             android:textStyle="bold"
                             android:fontFamily="@font/roboto"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="rafiudd"/>
+                            android:text="Makhali"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/yudhan" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Yudhan Jefri"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Yudhan" />
                     </LinearLayout>
                 </LinearLayout>
                 <TextView

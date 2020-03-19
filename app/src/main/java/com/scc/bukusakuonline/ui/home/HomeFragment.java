@@ -71,16 +71,21 @@ public class HomeFragment extends Fragment {
     }
 
     private void getData() {
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false));
-        homeViewModel.loadData(getContext());
-        homeViewModel.getListData().observe(getActivity(), dataItems -> {
-            if (dataItems != null){
-                mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
-                mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
-                mAdapterAktivitasTerbaru.notifyDataSetChanged();
-            }
-        });
+        try {
+            homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false));
+            homeViewModel.loadData(getContext());
+            homeViewModel.getListData().observe(getActivity(), dataItems -> {
+                if (dataItems != null){
+                    mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
+                    mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
+                    mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                }
+            });
+        }catch (Exception e){
+
+        }
+
     }
 
     //to hide toolbar if conflict please resolve

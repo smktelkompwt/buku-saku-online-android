@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.scc.bukusakuonline.user">
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.daftarkelas.DaftarKelas">
+
+        </activity>
+
+
+        <activity android:name=".ui.LaguHymneActivity"
+            android:theme="@style/Toolbar">
+
+        </activity>
+        <activity android:name=".ui.TentangKamiActivity"
+            android:theme="@style/Toolbar"/>
+        <activity
+            android:name=".ui.LainyaActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.detailpasal.DetailPasalActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.detailperaturan.DetailPeraturanActivity"
+            android:theme="@style/Toolbar" />
+        <activity
+            android:name=".ui.peraturan.PeraturanActivity"
+            android:theme="@style/Toolbar" />
+        <activity android:name=".ui.DaftarPoint" />
+        <activity
+            android:name=".ui.detailpoint.DetailPoint"
+            android:theme="@style/Toolbar" >
+
+        </activity>
+        <activity
+
+            android:name=".ui.detailpelanggaran.DetailPelanggaran"
+            android:theme="@style/Toolbar" />
+        <activity
+
+            android:name=".ui.LoginActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+
+        </activity>
+        <activity
+            android:name=".ui.SplashScreenActivity"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:windowSoftInputMode="adjustPan"
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+
+
+        </activity>
+        <activity
+            android:theme="@style/Toolbar"
+            android:name=".ui.detailsiswa.DetailSiswaActivity" />
+    </application>
+
+</manifest>

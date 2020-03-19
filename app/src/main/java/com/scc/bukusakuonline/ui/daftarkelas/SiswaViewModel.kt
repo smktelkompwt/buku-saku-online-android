@@ -1,16 +1,12 @@
 package com.scc.bukusakuonline.ui.daftarkelas
 
 import android.content.Context
-import android.util.Log
 import android.util.Log.d
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.scc.bukusakuonline.R2.string.kelas
 import com.scc.bukusakuonline.connection.ApiService
 import com.scc.bukusakuonline.connection.RetroConfig
-import com.scc.bukusakuonline.model.DetailPointItems
-import com.scc.bukusakuonline.model.DetailPointResponse
 import com.scc.bukusakuonline.model.siswa.SiswaKelasItem
 import com.scc.bukusakuonline.model.siswa.SiswaKelasResponse
 import retrofit2.Call

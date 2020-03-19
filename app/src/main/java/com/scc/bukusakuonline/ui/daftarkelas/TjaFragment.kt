@@ -15,13 +15,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.adapter.AdapterSiswa
+
+import android.widget.AdapterView.OnItemSelectedListener
+
 import java.util.ArrayList
+
 
 /**
  * A simple [Fragment] subclass.
  */
-class TjaFragment : Fragment(), AdapterView.OnItemSelectedListener {
-    private lateinit var siswaViewModel: SiswaViewModel
+
+class TjaFragment : Fragment(), OnItemSelectedListener {
+
+        private lateinit var siswaViewModel: SiswaViewModel
+
     private lateinit var siswaAdapter: AdapterSiswa
     lateinit var kelasViewModel: KelasViewModel
     lateinit var rv_rpl : RecyclerView
@@ -38,7 +45,7 @@ class TjaFragment : Fragment(), AdapterView.OnItemSelectedListener {
     }
     private fun init() {
         kelasViewModel = ViewModelProviders.of(this).get(KelasViewModel::class.java)
-        context?.let { kelasViewModel.loadData(it,"RPL") }
+        context?.let { kelasViewModel.loadData(it,"TJA") }
         kelasViewModel.listData.observe(this, Observer {
             val kelas = ArrayList<String>()
             for (i in it.indices) {

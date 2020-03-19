@@ -33,15 +33,24 @@ public class HistoryFragment extends Fragment {
                 ViewModelProviders.of(this).get(HistoryViewModel.class);
         View root = inflater.inflate(R.layout.fragment_history, container, false);
         ButterKnife.bind(this,root);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-        mHistoryViewModel.loadData(getContext());
-        mHistoryViewModel.getListData().observe(getActivity(), dataItems -> {
-            if (dataItems != null){
-                mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
-                mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
-                mAdapterAktivitasTerbaru.notifyDataSetChanged();
-            }
-        });
+      GetHistory();
         return root;
+    }
+
+    private void GetHistory() {
+        try {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+            mHistoryViewModel.loadData(getContext());
+            mHistoryViewModel.getListData().observe(getActivity(), dataItems -> {
+                if (dataItems != null){
+                    mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
+                    mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
+                    mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                }
+            });
+        }catch (Exception e){
+
+        }
+
     }
 }

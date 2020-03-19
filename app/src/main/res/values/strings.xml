@@ -144,5 +144,7 @@
     <string name="lihat_detail">Lihat Detail</string>
     <string name="_1">1</string>
     <string name="peraturan_item">Tata Tertib Peserta didik SMK Telkom Purwokerto adalah peraturan-peraturan yang telah ditetapkan oleh Sekolah yang harus ditaati dan dilaksanakan oleh seluruh peserta didik SMK Telkom Purwokerto</string>
+    <string name="no_hp">No Hp</string>
+    <string name="attach_images_title">Choose Image</string>
 
 </resources>

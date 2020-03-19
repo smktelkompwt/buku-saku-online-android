@@ -22,7 +22,7 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
     override fun onBindViewHolder(holder: AktivitasTerbaruViewHolder, position: Int) {
         holder.bindItem(Items[position], context)
     }
-    override fun getItemCount() : Int = Items.size
+    override fun getItemCount() : Int = 5
 
     class AktivitasTerbaruViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val point = itemView.findViewById<TextView>(R.id.point_history)

@@ -31,16 +31,25 @@ public class DetailPoint extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setElevation(0);
         ButterKnife.bind(this);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
-        mDetailPointsViewModel = ViewModelProviders.of(this).get(DetailPointsViewModel.class);
-        mDetailPointsViewModel.loadData(this);
-        mDetailPointsViewModel.getListData().observe(this, detailPointItems -> {
-            if (detailPointItems != null){
-                mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
-                mRecyclerView.setAdapter(mAdapterDetailPoint);
-                mAdapterDetailPoint.notifyDataSetChanged();
-            }
-        });
+        getPoint();
+    }
+
+    private void getPoint() {
+        try {
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
+            mDetailPointsViewModel = ViewModelProviders.of(this).get(DetailPointsViewModel.class);
+            mDetailPointsViewModel.loadData(this);
+            mDetailPointsViewModel.getListData().observe(this, detailPointItems -> {
+                if (detailPointItems != null){
+                    mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
+                    mRecyclerView.setAdapter(mAdapterDetailPoint);
+                    mAdapterDetailPoint.notifyDataSetChanged();
+                }
+            });
+        }catch (Exception e){
+
+        }
+
     }
 
     @Override
