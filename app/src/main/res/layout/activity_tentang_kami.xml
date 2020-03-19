@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorbgBackgroundHome"
     android:layout_height="match_parent"
+    android:background="@drawable/border"
+    android:layout_margin="20dp"
+    android:padding="10dp"
     tools:context=".ui.TentangKamiActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
         android:background="@drawable/border"
-        android:layout_margin="15dp"
         app:cardCornerRadius="5dp">
         <ScrollView
             android:layout_width="match_parent"
@@ -21,7 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/border"
                 android:padding="20dp">
                 <TextView
                     android:layout_width="match_parent"
@@ -181,10 +180,9 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Bagas"/>
+                            android:text="Makhali"/>
                     </LinearLayout>
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"

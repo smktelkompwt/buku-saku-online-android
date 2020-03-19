@@ -23,7 +23,7 @@
                 app:layout_collapseMode="parallax"
 
                 android:background="@color/colorbgHome"
-                android:layout_height="?attr/actionBarSize"/>
+                android:layout_height="75dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,22 +33,23 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:textStyle="bold"/>
             <SearchView
                 android:id="@+id/sercing"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="45dp"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@drawable/background_search_home"
                 android:searchIcon="@drawable/sercing"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:queryHint="Cari siswa berdasarkan nis"
+                android:theme="@style/AppSearchView"
+                android:queryHint="Cari Siswa Berdasarkan NIS"
                 android:background="@drawable/background_search_home"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="110dp"/>
+                android:layout_marginTop="100dp"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.core.widget.NestedScrollView
@@ -146,13 +147,12 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Daftar Point Pelanggaran"
-                                android:layout_margin="10dp"
                                 android:textSize="12sp"
                                 android:maxLines="2"
-                                android:layout_marginEnd="32dp"
-                                android:layout_marginRight="32dp"
+                                android:layout_marginStart="10dp"
                                 android:textColor="@color/colorHitam"
-                                android:fontFamily="@font/roboto"/>
+                                android:fontFamily="@font/roboto"
+                                android:layout_marginLeft="10dp" />
                         </LinearLayout>
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>

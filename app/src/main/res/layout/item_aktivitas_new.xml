@@ -62,7 +62,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:textSize="12sp"
-
                     tools:fontFamily="@font/roboto"
                     android:maxLength="11"
                     tools:text="Kode : A-01"/>
@@ -73,6 +72,7 @@
                     tools:fontFamily="@font/roboto"
                     android:textSize="12sp"
                     android:gravity="end"
+                    android:layout_marginTop="3dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginEnd="16dp"
                     android:textColor="@color/colorPrimary"/>

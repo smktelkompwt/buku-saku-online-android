@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/colorbgPeraturan"
     android:layout_height="wrap_content">
     <androidx.cardview.widget.CardView
-        android:layout_width="320dp"
-        app:cardCornerRadius="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
         android:background="@drawable/border"
-        android:layout_marginTop="15dp"
-        android:layout_height="100dp">
+        android:layout_margin="20dp"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="0dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@drawable/border"
             android:layout_height="match_parent">
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -63,7 +66,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 
 </LinearLayout>
