@@ -15,6 +15,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pengaduan">Pengaduan</string>
     <string name="mapel">Mapel</string>
+    <string name="peraturan_item">Tata Tertib Peserta didik SMK Telkom Purwokerto adalah peraturan-peraturan yang telah ditetapkan oleh Sekolah yang harus ditaati dan dilaksanakan oleh seluruh peserta didik SMK Telkom Purwokerto</string>
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="jumlah_pelaporan">Jumlah Pelaporan</string>
     <string name="t">TextView</string>

@@ -32,22 +32,23 @@
                 android:textSize="24sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:textStyle="bold"/>
             <SearchView
                 android:id="@+id/sercing"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@drawable/background_search_home"
                 android:searchIcon="@drawable/sercing"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:queryHint="Cari siswa berdasarkan nis"
+                android:theme="@style/AppSearchView"
+                android:queryHint="Cari Siswa Berdasarkan NIS"
                 android:background="@drawable/background_search_home"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="110dp"/>
+                android:layout_marginTop="90dp"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <androidx.core.widget.NestedScrollView

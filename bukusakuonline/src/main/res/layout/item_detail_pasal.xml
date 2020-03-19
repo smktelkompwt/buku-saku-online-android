@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginTop="15dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/gray">
+    android:background="@color/colorbgPeraturan"
+    android:layout_height="wrap_content">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="250dp"
         app:cardCornerRadius="5dp"
-        app:cardBackgroundColor="@color/colorWhite"
-        app:cardElevation="15dp">
+        android:layout_margin="20dp"
+        android:background="@drawable/border"
+        app:cardElevation="0dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -38,7 +38,7 @@
                     android:text="1"
                     android:textAlignment="center"
                     android:textColor="@color/colorWhite"
-                    android:textSize="40sp" />
+                    android:textSize="24sp" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginRight="32dp"
                 android:fontFamily="@font/robotoligth"
-                android:text="Tata Tertib Peserta didik SMK Telkom Purwokerto adalah peraturan-peraturan yang telah ditetapkan oleh Sekolah yang harus ditaati dan dilaksanakan oleh seluruh peserta didik SMK Telkom Purwokerto"
+                android:text="@string/peraturan_item"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
