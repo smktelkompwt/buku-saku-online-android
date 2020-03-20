@@ -1,6 +1,7 @@
 package com.scc.bukusakuonline.user.ui.detailperaturan;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,5 +51,12 @@ public class DetailPeraturanActivity extends AppCompatActivity {
             }
 
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

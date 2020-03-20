@@ -127,10 +127,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Yudhan" />
+                            android:text="Dafa" />
                     </LinearLayout>
-
-
                 </LinearLayout>
 
                 <LinearLayout
