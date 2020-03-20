@@ -40,11 +40,17 @@ public class DetailPoint extends AppCompatActivity {
             mDetailPointsViewModel = ViewModelProviders.of(this).get(DetailPointsViewModel.class);
             mDetailPointsViewModel.loadData(this);
             mDetailPointsViewModel.getListData().observe(this, detailPointItems -> {
-                if (detailPointItems != null){
-                    mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
-                    mRecyclerView.setAdapter(mAdapterDetailPoint);
-                    mAdapterDetailPoint.notifyDataSetChanged();
+                try {
+                    if (detailPointItems != null){
+                        mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
+                        mRecyclerView.setAdapter(mAdapterDetailPoint);
+                        mAdapterDetailPoint.notifyDataSetChanged();
+                    }
+                }catch (Exception e){
+
                 }
+
+
             });
         }catch (Exception e){
 

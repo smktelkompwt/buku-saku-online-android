@@ -1,6 +1,7 @@
 package com.scc.bukusakuonline.ui.detailsiswa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -62,15 +63,21 @@ public class DetailSiswaActivity extends AppCompatActivity {
             detailSiswaViewModel = ViewModelProviders.of(this).get(DetailSiswaViewModel.class);
             detailSiswaViewModel.loadData(this,id);
             detailSiswaViewModel.getListData().observe(this, detailSiswaItems->{
-                String url = "http://" + Objects.requireNonNull(detailSiswaItems.getPelanggaran()).get(0).getImage();
-                Picasso.get().load(url).into(photo);
-                nama.setText(detailSiswaItems.getName());
-                kelas.setText(detailSiswaItems.getKelas());
-                point.setText(Objects.requireNonNull(Objects.requireNonNull(detailSiswaItems.getPoint()).toString()));
-                jumlah.setText(detailSiswaItems.getJumlah());
-                adapterAktivitasTerbaru = new AdapterAktivitasTerbaru(this,detailSiswaItems.getPelanggaran());
-                recyclerView.setAdapter(adapterAktivitasTerbaru);
-                adapterAktivitasTerbaru.notifyDataSetChanged();
+                try {
+                    String url = "http://" + Objects.requireNonNull(detailSiswaItems.getPelanggaran()).get(0).getImage();
+                    Picasso.get().load(url).into(photo);
+                    nama.setText(detailSiswaItems.getName());
+                    Log.d("cek",detailSiswaItems.getName() );
+                    kelas.setText(detailSiswaItems.getKelas());
+                    point.setText(Objects.requireNonNull(Objects.requireNonNull(detailSiswaItems.getPoint()).toString()));
+                    jumlah.setText(detailSiswaItems.getJumlah());
+                    adapterAktivitasTerbaru = new AdapterAktivitasTerbaru(this,detailSiswaItems.getPelanggaran());
+                    recyclerView.setAdapter(adapterAktivitasTerbaru);
+                    adapterAktivitasTerbaru.notifyDataSetChanged();
+                }catch (Exception e){
+
+                }
+
             });
         }catch (Exception e){
 

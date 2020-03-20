@@ -48,8 +48,13 @@ public class ProfileFragment extends Fragment {
         try {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(this, userItems -> {
-                name.setText(userItems.get(0).getName());
-                email.setText(userItems.get(0).getEmail());
+                try {
+                    name.setText(userItems.get(0).getName());
+                    email.setText(userItems.get(0).getEmail());
+                }catch (Exception e){
+
+                }
+
             });
         }
         catch(Exception e){

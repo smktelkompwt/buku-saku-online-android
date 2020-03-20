@@ -40,10 +40,16 @@ public class DetailPeraturanActivity extends AppCompatActivity {
             detailPeraturanViewModel = ViewModelProviders.of(this).get(DetailPeraturanViewModel.class);
             detailPeraturanViewModel.loadData(this,id);
             detailPeraturanViewModel.getListData().observe(this, pasalItems -> {
-                adapterBab = new AdapterBab(this, pasalItems ,id);
+                try {
 
-                recyclerView.setAdapter(adapterBab);
-                adapterBab.notifyDataSetChanged();
+
+                    adapterBab = new AdapterBab(this, pasalItems, id);
+
+                    recyclerView.setAdapter(adapterBab);
+                    adapterBab.notifyDataSetChanged();
+                }catch (Exception e){
+
+                }
             });
         }catch (Exception e){
 
