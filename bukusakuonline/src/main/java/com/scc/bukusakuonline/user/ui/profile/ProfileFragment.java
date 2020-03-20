@@ -42,19 +42,18 @@ public class ProfileFragment extends Fragment {
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,root);
-        profileViewModel.loadData(Objects.requireNonNull(getContext()));
-        profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
-            try{
+
+        try {
+            profileViewModel.loadData(Objects.requireNonNull(getContext()));
+            profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
                 name.setText(userItems.get(0).getName());
                 email.setText(userItems.get(0).getEmail());
                 phone.setText(userItems.get(0).getPhone());
-            }catch (Exception e){
-                e.printStackTrace();
-                Toast.makeText(getContext(), "Silahkan Login Kembali", Toast.LENGTH_SHORT).show();
-            }
 
-
-        });
+            });
+        }catch (Exception e){
+            Toast.makeText(getContext(),"Harap Login Ulang Terlebih Dahulu" , Toast.LENGTH_LONG).show();
+        }
         return root;
     }
     @OnClick(R.id.btn_out) void Logout(){
