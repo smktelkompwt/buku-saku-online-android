@@ -35,7 +35,8 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("api/users/admin/login")
     Call<Login> login(@Field("email") String email, @Field("password") String password, @Field("secretCode") String secret);
-
+    @GET("api/users/search")
+    Call<SiswaKelasResponse> searchSiswa(@Header("Authorization") String Auth, @Query("nis") String nis);
     @GET("api/users/me")
     Call<UserResponse> profile(@Header("Authorization") String Auth);
 

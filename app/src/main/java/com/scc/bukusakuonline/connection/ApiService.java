@@ -47,6 +47,8 @@ public interface ApiService {
 
     @GET("api/kelas/all")
     Call<KelasResponse> getKelas(@Header("Authorization") String Auth, @Query("jurusan") String jurusan);
+    @GET("api/users/search")
+    Call<SiswaKelasResponse> searchSiswa(@Header("Authorization") String Auth, @Query("nis") String nis);
 
     @GET("api/users/get")
     Call<DetailSiswaResponse> getDetailSsiswa(@Header("Authorization") String Auth, @Query("id") String id);
