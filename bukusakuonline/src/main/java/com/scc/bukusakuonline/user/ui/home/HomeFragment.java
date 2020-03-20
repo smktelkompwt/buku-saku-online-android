@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,11 +77,16 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false));
         homeViewModel.loadData(getContext());
         homeViewModel.getListData().observe(getActivity(), dataItems -> {
-            if (dataItems != null){
-                mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
-                mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
-                mAdapterAktivitasTerbaru.notifyDataSetChanged();
+            try {
+                if (dataItems != null){
+                    mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
+                    mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
+                    mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                }
+            }catch (Exception e){
+                Toast.makeText(getContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
             }
+
         });
     }
 

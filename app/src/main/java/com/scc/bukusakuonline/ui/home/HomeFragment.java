@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,6 +66,34 @@ public class HomeFragment extends Fragment {
             }
         });
         getData();
+
+
+//        SearchManager searchManager = (SearchManager) Objects.requireNonNull(getActivity()).getSystemService(Context.SEARCH_SERVICE);
+//        if(searchManager != null){
+//            SearchView searchView = root.findViewById(R.id.sercing);
+//            searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+//            searchView.setQueryHint(getResources().getString(R.string.search_));
+//            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//                @Override
+//                public boolean onQueryTextSubmit(String query) {
+//                    Toast.makeText(getContext(), query, Toast.LENGTH_SHORT).show();
+//                    DataItem items = new DataItem();
+//                    items.setName(query);
+//                    items.setRole("user");
+//                    Intent intent = new Intent(getContext(), SearchActivity.class);
+//                    intent.putExtra(EXTRA_SEARCH,items);
+//                    startActivity(intent);
+//                    return true;
+//                }
+//                @Override
+//                public boolean onQueryTextChange(String newText) {
+//
+//                    return false;
+//                }
+//            });
+//
+//        }
+
         return root;
     }
 

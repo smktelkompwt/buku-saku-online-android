@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Buku Saku Online</string>
+    <string name="app_name">Buku Saku Siswa</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -145,5 +145,6 @@
     <string name="lihat_detail">Lihat Detail</string>
     <string name="_1">1</string>
     <string name="title_Profile">Profile</string>
+    <string name="_3103118061">3103118061</string>
 
 </resources>

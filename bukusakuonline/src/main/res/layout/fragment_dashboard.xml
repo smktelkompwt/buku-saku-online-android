@@ -25,10 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
             <LinearLayout
-                android:paddingTop="22dp"
-                android:paddingBottom="22dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
+                android:layout_margin="12dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -38,13 +35,17 @@
                     android:text="@string/jumlah_pelanggar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+
                 <TextView
+                    android:id="@+id/JumlahPelanggar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:fontFamily="@font/roboto"
+                    android:layout_marginBottom="12dp"
+
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    app:fontFamily="@font/roboto"
                     tools:text="52" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -54,10 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp">
             <LinearLayout
-                android:paddingTop="22dp"
-                android:paddingBottom="22dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
+                android:layout_margin="12dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -67,13 +65,16 @@
                     android:text="@string/jumlah_siswa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
+
                 <TextView
+                    android:id="@+id/JumlahSiswa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:fontFamily="@font/roboto"
+                    android:layout_marginBottom="12dp"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    app:fontFamily="@font/roboto"
                     tools:text="52" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

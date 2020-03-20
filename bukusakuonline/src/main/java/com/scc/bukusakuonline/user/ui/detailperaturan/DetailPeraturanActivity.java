@@ -1,6 +1,7 @@
 package com.scc.bukusakuonline.user.ui.detailperaturan;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -39,10 +40,15 @@ public class DetailPeraturanActivity extends AppCompatActivity {
         detailPeraturanViewModel = ViewModelProviders.of(this).get(DetailPeraturanViewModel.class);
         detailPeraturanViewModel.loadData(this,id);
         detailPeraturanViewModel.getListData().observe(this, pasalItems -> {
-            adapterBab = new AdapterBab(this, pasalItems ,id);
+            try {
+                adapterBab = new AdapterBab(this, pasalItems ,id);
 
-            recyclerView.setAdapter(adapterBab);
-            adapterBab.notifyDataSetChanged();
+                recyclerView.setAdapter(adapterBab);
+                adapterBab.notifyDataSetChanged();
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
+            }
+
         });
     }
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -59,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
                             editor.apply();
                             Log.d("response", token);
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                         }
 
                     }
@@ -66,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NotNull Call<Login> call, @NotNull Throwable t) {
                     Log.d("failure", Objects.requireNonNull(t.getMessage()));
-
+                    Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                 }
             });
         }catch (Exception e){

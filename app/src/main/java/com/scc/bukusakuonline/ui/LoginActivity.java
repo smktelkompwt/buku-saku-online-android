@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,23 +50,31 @@ public class LoginActivity extends AppCompatActivity {
                     login(Objects.requireNonNull(txtEmail.getText()).toString(), Objects.requireNonNull(txtPassword.getText()).toString(),"001").enqueue(new Callback<Login>() {
                 @Override
                 public void onResponse(@NotNull Call<Login> call, @NotNull Response<Login> response) {
-                    if (response.isSuccessful()){
-                        assert response.body() != null;
-                        if (response.body().getCode() == 200){
-                            String token = response.body().getToken();
-                            SharedPreferences.Editor editor = preferences.edit();
-                            editor.putString("TOKEN",token);
-                            editor.apply();
-                            Log.d("response", token);
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+                        if (response.isSuccessful()){
+                            try {
+                            assert response.body() != null;
+                            if (response.body().getCode() == 200){
+                                String token = response.body().getToken();
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("TOKEN",token);
+                                editor.apply();
+                                Log.d("response", token);
+                                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            }else {
+                                Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
+                            }
+                            } catch (Exception e){
+                                Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
+                            }
                         }
 
-                    }
+
                 }
                 @Override
                 public void onFailure(@NotNull Call<Login> call, @NotNull Throwable t) {
                     Log.d("failure", Objects.requireNonNull(t.getMessage()));
-
+                    Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                 }
             });
         }catch (Exception e){

@@ -40,11 +40,16 @@ public class PeraturanActivity extends AppCompatActivity {
         peraturanViewModel = ViewModelProviders.of(this).get(PeraturanViewModel.class);
         peraturanViewModel.loadData(this);
         peraturanViewModel.getListData().observe(this, peraturanItems -> {
-            if (peraturanItems != null){
-                adapterPeraturan = new AdapterPeraturan(getApplicationContext(),peraturanItems);
-                mRecyclerView.setAdapter(adapterPeraturan);
-                adapterPeraturan.notifyDataSetChanged();
+            try {
+                if (peraturanItems != null){
+                    adapterPeraturan = new AdapterPeraturan(getApplicationContext(),peraturanItems);
+                    mRecyclerView.setAdapter(adapterPeraturan);
+                    adapterPeraturan.notifyDataSetChanged();
+                }
+            }catch (Exception e){
+
             }
+
         });
     }
 
