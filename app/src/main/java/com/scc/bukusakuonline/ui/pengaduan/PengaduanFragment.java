@@ -223,9 +223,10 @@ public class PengaduanFragment extends Fragment {
                                 Log.d("yes",response.body().toString());
                                 alertDialog.hide();
                                 Toast.makeText(getContext(), "NIS Tidak di Temukan", Toast.LENGTH_SHORT).show();
+
                             }else {
                                 alertDialog.hide();
-
+                                imageButton.setImageResource(android.R.color.transparent);
                                 Snackbar.make(v, "Success", Snackbar.LENGTH_LONG).show();
                                 Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
                             }
