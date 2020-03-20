@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#F8F8F8"
     android:layout_height="match_parent">
 
     <TextView
@@ -14,7 +15,7 @@
 
         android:layout_marginTop="8dp"
         android:text="@string/email"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -38,7 +39,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="50dp"
         android:text="@string/nama_lengkap"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgprofile" />
 
@@ -50,7 +51,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:text="@string/point"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
@@ -62,7 +63,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:text="@string/t" />
@@ -75,7 +76,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         tools:text="@string/t" />
@@ -88,7 +89,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:textColor="#000"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         tools:text="@string/t" />

@@ -46,9 +46,14 @@ public class ProfileFragment extends Fragment {
         try {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
-                name.setText(userItems.get(0).getName());
-                email.setText(userItems.get(0).getEmail());
-                phone.setText(userItems.get(0).getPhone());
+                try {
+                    name.setText(userItems.get(0).getName());
+                    email.setText(userItems.get(0).getEmail());
+                    phone.setText(userItems.get(0).getPhone());
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
+                }
+
 
             });
         }catch (Exception e){
