@@ -24,6 +24,7 @@ import com.scc.bukusakuonline.ui.LainyaActivity;
 import com.scc.bukusakuonline.ui.daftarkelas.DaftarKelas;
 import com.scc.bukusakuonline.ui.peraturan.PeraturanActivity;
 import com.scc.bukusakuonline.ui.detailpoint.DetailPoint;
+import com.scc.bukusakuonline.ui.search.SearchActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private AppBarLayout appBarLayout;
     @BindView(R2.id.rv_aktivitas_new) RecyclerView mRecyclerView;
+    @BindView(R2.id.sercing) SearchView searchView;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this,root);
@@ -67,7 +69,25 @@ public class HomeFragment extends Fragment {
             }
         });
         getData();
+        search();
         return root;
+    }
+
+    private void search() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                Intent search = new Intent(getContext(), SearchActivity.class);
+                search.putExtra("nis",s);
+                startActivity(search);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
     }
 
     private void getData() {
