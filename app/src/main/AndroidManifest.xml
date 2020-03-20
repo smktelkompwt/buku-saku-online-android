@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.scc.bukusakuonline">
 
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -26,13 +27,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:theme="@style/Toolbar"
+            android:name=".ui.search.SearchActivity"></activity>
         <activity android:name=".ui.daftarkelas.DaftarKelas"></activity>
         <activity
             android:name=".ui.LaguHymneActivity"
             android:theme="@style/Toolbar"></activity>
-
-
 
         <activity
             android:name=".ui.TentangKamiActivity"
@@ -52,7 +53,6 @@
         <activity android:name=".ui.DaftarPoint" />
         <activity
             android:name=".ui.detailpoint.DetailPoint"
-
             android:theme="@style/Toolbar"></activity>
 
         <activity
@@ -78,6 +78,7 @@
             android:theme="@style/AppTheme"
 
             android:windowSoftInputMode="adjustPan"></activity>
+
         <activity
             android:name=".ui.detailsiswa.DetailSiswaActivity"
             android:theme="@style/Toolbar" />
