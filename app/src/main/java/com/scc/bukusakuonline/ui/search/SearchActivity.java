@@ -55,6 +55,7 @@ public class SearchActivity extends AppCompatActivity {
                 adapterSiswa.notifyDataSetChanged();
             }else {
                 Toast.makeText(this, "Siswa Tidak Ditemukan", Toast.LENGTH_SHORT).show();
+                //yuhuu
             }
             
         });
