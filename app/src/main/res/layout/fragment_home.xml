@@ -34,7 +34,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:textStyle="bold"/>
-            <androidx.appcompat.widget.SearchView
+            <SearchView
                 android:id="@+id/sercing"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -251,7 +251,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorWhite"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="20dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
