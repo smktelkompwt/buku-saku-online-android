@@ -51,7 +51,7 @@ public class ProfileFragment extends Fragment {
                     email.setText(userItems.get(0).getEmail());
                     phone.setText(userItems.get(0).getPhone());
                 }catch (Exception e){
-                    Toast.makeText(getContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
+
                 }
 
 
