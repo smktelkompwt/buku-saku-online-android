@@ -65,17 +65,18 @@ public class DetailSiswaActivity extends AppCompatActivity {
             try {
                 String url = "http://" + Objects.requireNonNull(detailSiswaItems.getPelanggaran()).get(0).getImage();
                 Picasso.get().load(url).into(photo);
-                nama.setText(detailSiswaItems.getName());
-                kelas.setText(detailSiswaItems.getKelas());
-                point.setText(Objects.requireNonNull(Objects.requireNonNull(detailSiswaItems.getPoint()).toString()));
-                jumlah.setText(detailSiswaItems.getJumlah());
+
                 adapterAktivitasTerbaru = new AdapterAktivitasTerbaru(this,detailSiswaItems.getPelanggaran());
                 recyclerView.setAdapter(adapterAktivitasTerbaru);
                 adapterAktivitasTerbaru.notifyDataSetChanged();
             }catch (Exception e){
+//                e.printStackTrace();
                 Toast.makeText(getApplicationContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
             }
-
+            nama.setText(detailSiswaItems.getName());
+            kelas.setText(detailSiswaItems.getKelas());
+            point.setText(Objects.requireNonNull(Objects.requireNonNull(detailSiswaItems.getPoint()).toString()));
+            jumlah.setText(detailSiswaItems.getJumlah());
 
         });
     }

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.adapter.AdapterPasal;
@@ -57,5 +58,12 @@ public class DetailPasalActivity extends AppCompatActivity {
 
         }
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

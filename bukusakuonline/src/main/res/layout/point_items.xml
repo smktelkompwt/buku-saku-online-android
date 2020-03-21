@@ -8,6 +8,7 @@
     android:layout_height="60dp"
     android:orientation="horizontal">
     <TextView
+        android:textColor="#29293E"
         android:layout_marginTop="23dp"
         android:layout_marginBottom="23dp"
         android:id="@+id/code_point"
@@ -25,6 +26,8 @@
         android:layout_marginBottom="14dp"
         android:layout_marginTop="14dp"
         tools:text="@string/deskripsi"
+        android:textColor="#29293E"
+
         android:layout_marginLeft="41dp"
         android:textAlignment="textStart"
         android:textSize="12sp"
@@ -39,6 +42,8 @@
         android:id="@+id/point"
         tools:text="@string/point"
         android:layout_marginLeft="32dp"
+        android:textColor="#29293E"
+
         android:textAlignment="center"
         android:textSize="12sp"
         app:fontFamily="@font/roboto"
