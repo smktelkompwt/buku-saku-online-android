@@ -49,7 +49,7 @@
             android:theme="@style/Login"></activity>
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

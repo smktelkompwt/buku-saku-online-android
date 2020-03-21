@@ -28,9 +28,12 @@ class HomeViewModel : ViewModel() {
 
             override fun onResponse(call: Call<LaporanResponse>, response: Response<LaporanResponse>) {
                 if (response.code() == 200){
-                    response.body()?.data.let {
-                        listPoint.postValue(it)
+                    if(response.body()?.data?.size!! > 0){
+                        response.body()?.data.let {
+                            listPoint.postValue(it)
+                        }
                     }
+
                 }
             }
 

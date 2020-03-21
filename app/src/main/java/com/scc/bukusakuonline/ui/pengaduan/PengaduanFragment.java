@@ -63,9 +63,11 @@ import static android.app.Activity.RESULT_OK;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PengaduanFragment extends Fragment {
+public class PengaduanFragment extends Fragment implements MaterialSpinner.OnItemSelectedListener {
     @BindView(R.id.spinner_kategori)
     MaterialSpinner spinnerKategori;
+    @BindView(R.id.spinner_pelanggaran)
+    MaterialSpinner spinnerViolation;
     @BindView(R.id.editText_spinner_pengaduan)
     EditText editText;
     @BindView(R2.id.imageButton3)
@@ -96,16 +98,16 @@ public class PengaduanFragment extends Fragment {
     }
 
     private void getData() {
-        PengaduanViewModel mPengaduanViewModel = ViewModelProviders.of(this).get(PengaduanViewModel.class);
-        mPengaduanViewModel.loadData(Objects.requireNonNull(getContext()));
-        mPengaduanViewModel.getListData().observe(this, detailPointItems -> {
+        CategoryViewModel mCategoryViewModel = ViewModelProviders.of(this).get(CategoryViewModel.class);
+        mCategoryViewModel.loadData(Objects.requireNonNull(getContext()));
+        mCategoryViewModel.getListData().observe(this, detailPointItems -> {
             if (detailPointItems != null){
                 ArrayList<String> jenisPelanggaran = new ArrayList<>();
                 for (int i = 0; i< detailPointItems.size(); i++){
-                    jenisPelanggaran.add(detailPointItems.get(i).getJenis_pelanggaran());
+                    jenisPelanggaran.add(detailPointItems.get(i).getKategori());
                 }
                 spinnerKategori.setItems(jenisPelanggaran);
-                spinnerKategori.setOnItemSelectedListener((MaterialSpinner.OnItemSelectedListener<String>) (view, position, id, item) -> category = item);
+                spinnerKategori.setOnItemSelectedListener(this);
             }
         });
     }
@@ -122,7 +124,7 @@ public class PengaduanFragment extends Fragment {
         }
 
     }
-
+    //choose image
     @SuppressLint("IntentReset")
     private void popImageChooser(){
         final List<Intent> cameraIntents = new ArrayList<>();
@@ -257,9 +259,25 @@ public class PengaduanFragment extends Fragment {
 
 
     }
+
+    //spinner
     @OnClick(R.id.editText_spinner_pengaduan)
     void setEditText(){
         editText.setInputType(InputType.TYPE_CLASS_NUMBER);
     }
 
+    @Override
+    public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {
+        Log.d("category",view.getItems().get(position).toString());
+        ViolationViewModel mViolationViewModel = ViewModelProviders.of(this).get(ViolationViewModel.class);
+        mViolationViewModel.loadData(getContext(),view.getItems().get(position).toString());
+        mViolationViewModel.getListData().observe(this, detailPointItems -> {
+            ArrayList<String> jenisPelanggaran = new ArrayList<>();
+            for (int i = 0; i< detailPointItems.size(); i++){
+                jenisPelanggaran.add(detailPointItems.get(i).getJenis_pelanggaran());
+            }
+            spinnerViolation.setItems(jenisPelanggaran);
+            spinnerViolation.setOnItemSelectedListener((MaterialSpinner.OnItemSelectedListener<String>) (v, p, p02, violation) -> category = violation);
+        });
+    }
 }

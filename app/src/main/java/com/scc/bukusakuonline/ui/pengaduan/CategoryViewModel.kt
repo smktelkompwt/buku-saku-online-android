@@ -12,7 +12,7 @@ import com.scc.bukusakuonline.model.detailpoint.DetailPointResponse
 import retrofit2.Call
 import retrofit2.Response
 
-class PengaduanViewModel : ViewModel(){
+class CategoryViewModel : ViewModel(){
     private  var listPoint : MutableLiveData<List<DetailPointItems>> = MutableLiveData()
 
 
@@ -20,7 +20,7 @@ class PengaduanViewModel : ViewModel(){
         Log.d("viewmodel", "viewmodel")
         val sharedPreferences = context.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
-        RetroConfig.getRetrofit().create(ApiService::class.java).getDetailPoint(token).enqueue(object : retrofit2.Callback<DetailPointResponse>{
+        RetroConfig.getRetrofit().create(ApiService::class.java).getCategory(token).enqueue(object : retrofit2.Callback<DetailPointResponse>{
             override fun onFailure(call: Call<DetailPointResponse>, t: Throwable) {
                 Log.d("error", "failure")
             }

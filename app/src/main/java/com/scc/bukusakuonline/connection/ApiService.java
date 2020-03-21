@@ -29,9 +29,13 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface ApiService {
-    // point
+    // point / category
     @GET("api/point/all")
     Call<DetailPointResponse> getDetailPoint(@Header("Authorization") String Auth);
+    @GET("api/point/kategori/list")
+    Call<DetailPointResponse> getCategory(@Header("Authorization") String Auth);
+    @GET("api/point/kategori")
+    Call<DetailPointResponse> getPelanggaran(@Header("Authorization") String Auth, @Query("kategori") String category);
     //login / users
     @FormUrlEncoded
     @POST("api/users/admin/login")
