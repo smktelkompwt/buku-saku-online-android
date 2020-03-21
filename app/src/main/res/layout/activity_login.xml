@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/masuk"
-            android:backgroundTint="#FF3E71"
+            android:backgroundTint="#FF5151"
             tools:targetApi="lollipop" />
     </LinearLayout>
 

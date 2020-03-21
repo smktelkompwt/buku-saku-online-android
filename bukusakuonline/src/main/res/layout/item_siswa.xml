@@ -9,21 +9,20 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/border"
+        android:layout_margin="15dp"
         app:cardCornerRadius="7dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@drawable/border"
             android:layout_height="match_parent">
 
             <View
                 android:id="@+id/view4"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:background="#009688"
+                android:background="@drawable/siswa_kotak"
+
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
                 app:layout_constraintBottom_toBottomOf="parent"

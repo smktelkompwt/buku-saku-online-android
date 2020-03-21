@@ -61,11 +61,11 @@
         <activity
             android:name=".ui.LoginActivity"
 
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"></activity>
+            android:theme="@style/Login"></activity>
 
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
