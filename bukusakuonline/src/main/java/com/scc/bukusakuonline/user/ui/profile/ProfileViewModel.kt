@@ -2,6 +2,7 @@ package com.scc.bukusakuonline.user.ui.profile
 
 import android.content.Context
 import android.util.Log.d
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,9 +28,14 @@ class ProfileViewModel : ViewModel() {
             }
 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                response.body()?.data.let {
-                    listPoint.postValue(it)
+                try {
+                    response.body()?.data.let {
+                        listPoint.postValue(it)
+                    }
+                }catch (e:Exception){
+                    Toast.makeText(context,"Silahkan Login Kembali", Toast.LENGTH_SHORT).show()
                 }
+
             }
 
         })

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,12 @@ public class ProfileFragment extends Fragment {
             profileViewModel.getListData().observe(this, userItems -> {
                 name.setText(userItems.get(0).getName());
                 email.setText(userItems.get(0).getEmail());
+                try {
+
+                }catch (Exception e){
+                    Log.e(String.valueOf(e),"lol" );
+                }
+
             });
         }
         catch(Exception e){

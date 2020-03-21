@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -18,12 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.scc.bukusakuonline.R;
-import com.scc.bukusakuonline.R2;
+
 import com.scc.bukusakuonline.adapter.AdapterAktivitasTerbaru;
 import com.scc.bukusakuonline.ui.LainyaActivity;
 import com.scc.bukusakuonline.ui.daftarkelas.DaftarKelas;
 import com.scc.bukusakuonline.ui.peraturan.PeraturanActivity;
 import com.scc.bukusakuonline.ui.detailpoint.DetailPoint;
+import com.scc.bukusakuonline.ui.search.SearchActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,12 +35,14 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private AppBarLayout appBarLayout;
-    @BindView(R2.id.rv_aktivitas_new) RecyclerView mRecyclerView;
+    @BindView(R.id.rv_aktivitas_new) RecyclerView mRecyclerView;
+   ;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this,root);
         CardView menu_peraturan = root.findViewById(R.id.menu_peraturan);
         CardView menu_daftar_kelas = root.findViewById(R.id.menu_daftar_kelas);
+         SearchView searchView = root.findViewById(R.id.sercing);
         CardView menu_pelanggaran = root.findViewById(R.id.menu_pelanggaran);
         CardView menu_lainya = root.findViewById(R.id.menu_lainya);
         menu_peraturan.setOnClickListener(new View.OnClickListener() {
@@ -66,8 +69,33 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getContext(), LainyaActivity.class));
             }
         });
+        try {
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String s) {
+                    Intent search = new Intent(getContext(), SearchActivity.class);
+                    search.putExtra("nis",s);
+                    startActivity(search);
+                    return true;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String s) {
+                    return false;
+                }
+            });
+        }catch (Exception e){
+
+        }
         getData();
+        search();
+
         return root;
+    }
+
+    private void search() {
+
+
     }
 
     private void getData() {
@@ -76,11 +104,16 @@ public class HomeFragment extends Fragment {
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL,false));
             homeViewModel.loadData(getContext());
             homeViewModel.getListData().observe(getActivity(), dataItems -> {
-                if (dataItems != null){
-                    mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
-                    mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
-                    mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                try {
+                    if (dataItems != null){
+                        mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
+                        mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
+                        mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                    }
+                }catch (Exception e){
+
                 }
+
             });
         }catch (Exception e){
 

@@ -42,10 +42,14 @@ public class HistoryFragment extends Fragment {
             mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
             mHistoryViewModel.loadData(getContext());
             mHistoryViewModel.getListData().observe(getActivity(), dataItems -> {
-                if (dataItems != null){
-                    mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(),dataItems);
-                    mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
-                    mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                try {
+                    if (dataItems != null) {
+                        mAdapterAktivitasTerbaru = new AdapterAktivitasTerbaru(getContext(), dataItems);
+                        mRecyclerView.setAdapter(mAdapterAktivitasTerbaru);
+                        mAdapterAktivitasTerbaru.notifyDataSetChanged();
+                    }
+                }catch (Exception e){
+
                 }
             });
         }catch (Exception e){

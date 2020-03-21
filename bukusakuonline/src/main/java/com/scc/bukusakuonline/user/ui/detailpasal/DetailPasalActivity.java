@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.scc.bukusakuonline.ui.detailpasal.DetailPasalViewModel;
 import com.scc.bukusakuonline.user.R;
@@ -42,11 +44,23 @@ public class DetailPasalActivity extends AppCompatActivity {
         detailPasalViewModel = ViewModelProviders.of(this).get(DetailPasalViewModel.class);
         detailPasalViewModel.loadData(this,id,id_pasal);
         detailPasalViewModel.getListData().observe(this, detailPasalItems -> {
-            if (detailPasalItems != null){
-                adapterPasal = new AdapterPasal(getApplicationContext(), detailPasalItems);
-                recyclerView.setAdapter(adapterPasal);
-                adapterPasal.notifyDataSetChanged();
+            try {
+                if (detailPasalItems != null){
+                    adapterPasal = new AdapterPasal(getApplicationContext(), detailPasalItems);
+                    recyclerView.setAdapter(adapterPasal);
+                    adapterPasal.notifyDataSetChanged();
+                }
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
             }
+
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

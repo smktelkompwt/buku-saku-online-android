@@ -27,13 +27,16 @@ class ProfileViewModel : ViewModel() {
             }
 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if (response.body()?.data?.size!! > 0){
-                    response.body()?.data.let {
-                        listPoint.postValue(it)
+                try {
+                    if (response.body()?.data?.size!! > 0){
+                        response.body()?.data.let {
+                            listPoint.postValue(it)
+                        }
                     }
-                }else{
+                }catch (e: Exception){
                     Toast.makeText(context,"Silahkan Login Kembali",Toast.LENGTH_SHORT).show()
                 }
+
 
             }
 

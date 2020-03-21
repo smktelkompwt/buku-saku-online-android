@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/colorbgBackgroundHome"
+    android:background="@color/colorbgPeraturan"
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -34,7 +34,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
                 android:textStyle="bold"/>
-            <SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/sercing"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

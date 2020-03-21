@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.scc.bukusakuonline.R
 import com.scc.bukusakuonline.model.siswa.SiswaKelasItem
 import com.scc.bukusakuonline.ui.detailsiswa.DetailSiswaActivity
+import java.text.DecimalFormat
 
 class AdapterSiswa (private  val context: Context, private val Items:List<SiswaKelasItem>): RecyclerView.Adapter<AdapterSiswa.ViewHolder>() {
     class ViewHolder (view: View): RecyclerView.ViewHolder(view)  {
@@ -21,7 +22,9 @@ class AdapterSiswa (private  val context: Context, private val Items:List<SiswaK
         fun bindItem(items: SiswaKelasItem, context: Context){
             point.text = items.point
             name.text = items.name
-            nis.text = items.nis.toString()
+            val decimal = DecimalFormat("#")
+            decimal.maximumFractionDigits = 0
+            nis.text = decimal.format(items.nis)
             itemView.setOnClickListener {
                 val intent = Intent(context, DetailSiswaActivity::class.java)
                 intent.putExtra("id",items.id)

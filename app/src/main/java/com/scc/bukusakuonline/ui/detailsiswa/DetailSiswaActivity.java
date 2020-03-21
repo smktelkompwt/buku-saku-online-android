@@ -1,8 +1,10 @@
 package com.scc.bukusakuonline.ui.detailsiswa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -62,19 +64,27 @@ public class DetailSiswaActivity extends AppCompatActivity {
             detailSiswaViewModel = ViewModelProviders.of(this).get(DetailSiswaViewModel.class);
             detailSiswaViewModel.loadData(this,id);
             detailSiswaViewModel.getListData().observe(this, detailSiswaItems->{
-                String url = "http://" + Objects.requireNonNull(detailSiswaItems.getPelanggaran()).get(0).getImage();
-                Picasso.get().load(url).into(photo);
+                try {
+                    String url = "http://" + Objects.requireNonNull(detailSiswaItems.getPelanggaran()).get(0).getImage();
+                    Picasso.get().load(url).into(photo);
+
+                    adapterAktivitasTerbaru = new AdapterAktivitasTerbaru(this,detailSiswaItems.getPelanggaran());
+                    recyclerView.setAdapter(adapterAktivitasTerbaru);
+                    adapterAktivitasTerbaru.notifyDataSetChanged();
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
+
+                }
                 nama.setText(detailSiswaItems.getName());
                 kelas.setText(detailSiswaItems.getKelas());
                 point.setText(Objects.requireNonNull(Objects.requireNonNull(detailSiswaItems.getPoint()).toString()));
                 jumlah.setText(detailSiswaItems.getJumlah());
-                adapterAktivitasTerbaru = new AdapterAktivitasTerbaru(this,detailSiswaItems.getPelanggaran());
-                recyclerView.setAdapter(adapterAktivitasTerbaru);
-                adapterAktivitasTerbaru.notifyDataSetChanged();
+
             });
         }catch (Exception e){
 
         }
+
 
     }
 

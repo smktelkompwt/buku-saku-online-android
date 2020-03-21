@@ -2,6 +2,7 @@ package com.scc.bukusakuonline.user.ui.detailpoint;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
@@ -34,11 +35,16 @@ public class DetailPoint extends AppCompatActivity {
         mDetailPointsViewModel = ViewModelProviders.of(this).get(DetailPointsViewModel.class);
         mDetailPointsViewModel.loadData(this);
         mDetailPointsViewModel.getListData().observe(this, detailPointItems -> {
-            if (detailPointItems != null){
-                mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
-                mRecyclerView.setAdapter(mAdapterDetailPoint);
-                mAdapterDetailPoint.notifyDataSetChanged();
+            try {
+                if (detailPointItems != null){
+                    mAdapterDetailPoint = new AdapterDetailPoint(getApplicationContext(),detailPointItems);
+                    mRecyclerView.setAdapter(mAdapterDetailPoint);
+                    mAdapterDetailPoint.notifyDataSetChanged();
+                }
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
             }
+
         });
     }
 
