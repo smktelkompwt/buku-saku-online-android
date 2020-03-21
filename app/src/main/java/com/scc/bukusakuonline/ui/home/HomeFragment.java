@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this,root);
         CardView menu_peraturan = root.findViewById(R.id.menu_peraturan);
         CardView menu_daftar_kelas = root.findViewById(R.id.menu_daftar_kelas);
-         SearchView searchView = root.findViewById(R.id.sercing);
+        SearchView searchView = root.findViewById(R.id.sercing);
         CardView menu_pelanggaran = root.findViewById(R.id.menu_pelanggaran);
         CardView menu_lainya = root.findViewById(R.id.menu_lainya);
         menu_peraturan.setOnClickListener(new View.OnClickListener() {
