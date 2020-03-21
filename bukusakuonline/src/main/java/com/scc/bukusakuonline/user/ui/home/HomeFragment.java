@@ -114,12 +114,12 @@ public class HomeFragment extends Fragment {
                         mAdapterAktivitasTerbaru.notifyDataSetChanged();
                     }
                 }catch (Exception e){
-
+                    e.printStackTrace();
                 }
 
             });
         }catch (Exception e){
-
+            e.printStackTrace();
         }
 
     }

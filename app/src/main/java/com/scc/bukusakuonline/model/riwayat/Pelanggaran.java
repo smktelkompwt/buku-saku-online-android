@@ -3,6 +3,15 @@ package com.scc.bukusakuonline.model.riwayat;
 public class Pelanggaran{
 	private String kategori;
 	private int point;
+	private String kode;
+
+	public String getKode() {
+		return kode;
+	}
+
+	public void setKode(String kode) {
+		this.kode = kode;
+	}
 
 	public void setKategori(String kategori){
 		this.kategori = kategori;
@@ -25,7 +34,8 @@ public class Pelanggaran{
 		return 
 			"Pelanggaran{" + 
 			"kategori = '" + kategori + '\'' + 
-			",point = '" + point + '\'' + 
+			",point = '" + point + '\'' +
+					",kode = '" + kode +'\''+
 			"}";
 		}
 }

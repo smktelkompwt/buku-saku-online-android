@@ -3,19 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:background="@drawable/border"
         android:layout_margin="15dp"
         app:cardCornerRadius="7dp"
         app:cardElevation="0dp"
        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -49,7 +50,7 @@
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:maxLength="16"
-                    android:textStyle="bold"
+                    android:textColor="@color/colorHitam"
                     app:fontFamily="@font/roboto"
                     tools:text="Ravendra Al Kutsar" />
 
@@ -57,7 +58,7 @@
                     android:id="@+id/nisSiswa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3103118061"
+                    tools:text="3103118061"
                     android:textSize="16sp" />
             </LinearLayout>
 

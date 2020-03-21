@@ -1,5 +1,6 @@
 package com.scc.bukusakuonline.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -22,7 +23,7 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
     override fun onBindViewHolder(holder: AktivitasTerbaruViewHolder, position: Int) {
         holder.bindItem(Items[position], context)
     }
-    override fun getItemCount() : Int = 5
+
 
     class AktivitasTerbaruViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val point = itemView.findViewById<TextView>(R.id.point_history)
@@ -30,12 +31,13 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
         private val date = itemView.findViewById<TextView>(R.id.date_history)
         private val desc = itemView.findViewById<TextView>(R.id.desc_history)
 
+        @SuppressLint("SetTextI18n")
         fun bindItem(items: DataItem, context: Context){
             point.text = items.pelanggaran.point.toString()
             name.text = items.user.nama
             date.text = items.createdDate.toString()
 
-            desc.text = items.pelanggaran.kategori
+            desc.text = "Kode : ${items.pelanggaran.kode}"
             itemView.setOnClickListener {
                 val intent = Intent(context, DetailPelanggaran::class.java)
                 intent.putExtra("id", items.id)
@@ -44,5 +46,13 @@ class AdapterAktivitasTerbaru(private  val context: Context, private val Items:L
         }
 
 
+    }
+
+    override fun getItemCount(): Int {
+        return if (Items.size > 5){
+            5
+        }else{
+            Items.size
+        }
     }
 }

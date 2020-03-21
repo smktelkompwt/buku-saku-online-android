@@ -40,7 +40,7 @@
                 android:layout_height="50dp"
                 android:iconifiedByDefault="false"
                 android:queryBackground="@drawable/background_search_home"
-                android:searchIcon="@drawable/sercing"
+                android:searchIcon="@drawable/ic_search_black_24dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:theme="@style/AppSearchView"
@@ -100,7 +100,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:scaleType="fitXY"
-                                android:background="@color/gray"/>
+                                android:src="@drawable/pasal"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:maxWidth="30dp"
@@ -111,7 +111,7 @@
                                 android:maxLines="2"
                                 android:layout_marginEnd="32dp"
                                 android:layout_marginRight="32dp"
-                                android:textColor="@color/colorHitam"
+                                android:textColor="#303030"
                                 android:fontFamily="@font/roboto"/>
                         </LinearLayout>
                     </FrameLayout>
@@ -141,7 +141,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:scaleType="fitXY"
-                                android:background="@color/gray"/>
+                                android:background="@drawable/pelanggaran"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
                                 android:textSize="12sp"
                                 android:maxLines="2"
                                 android:layout_marginStart="10dp"
-                                android:textColor="@color/colorHitam"
+                                android:textColor="#303030"
                                 android:fontFamily="@font/roboto"
                                 android:layout_marginLeft="10dp" />
                         </LinearLayout>
@@ -188,7 +188,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:scaleType="fitXY"
-                                android:background="@color/gray"/>
+                                android:background="@drawable/kelas"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:maxWidth="30dp"
@@ -199,7 +199,7 @@
                                 android:maxLines="2"
                                 android:layout_marginEnd="32dp"
                                 android:layout_marginRight="32dp"
-                                android:textColor="@color/colorHitam"
+                                android:textColor="#303030"
                                 android:fontFamily="@font/roboto"/>
                         </LinearLayout>
                     </FrameLayout>
@@ -229,7 +229,7 @@
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:scaleType="fitXY"
-                                android:background="@color/gray"/>
+                                android:background="@drawable/lainnya"/>
                             <TextView
                                 android:layout_width="match_parent"
                                 android:maxWidth="30dp"
@@ -240,7 +240,7 @@
                                 android:maxLines="2"
                                 android:layout_marginEnd="32dp"
                                 android:layout_marginRight="32dp"
-                                android:textColor="@color/colorHitam"
+                                android:textColor="#303030"
                                 android:fontFamily="@font/roboto"/>
                         </LinearLayout>
                     </FrameLayout>

@@ -8,5 +8,7 @@ data class DetailPointItems(
         @SerializedName("jenis_pelanggaran")
         val jenis_pelanggaran : String ?,
         @SerializedName("point")
-        val point : String ?
+        val point : String ?,
+        @SerializedName("kategori")
+        val kategori: String?
 )

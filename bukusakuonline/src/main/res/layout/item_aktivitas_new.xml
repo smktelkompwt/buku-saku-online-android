@@ -73,8 +73,8 @@
                     tools:fontFamily="@font/roboto"
                     android:textSize="12sp"
                     android:gravity="end"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
                     android:textColor="@color/colorPrimary"/>
             </LinearLayout>
         </LinearLayout>

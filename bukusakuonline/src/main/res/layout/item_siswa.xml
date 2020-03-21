@@ -12,11 +12,11 @@
         android:layout_margin="15dp"
         app:cardCornerRadius="7dp"
         app:cardElevation="0dp"
-        android:background="@drawable/border"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@drawable/border"
             android:layout_height="match_parent">
 
             <View
@@ -49,7 +49,7 @@
                     android:layout_marginBottom="10dp"
                     android:textSize="16sp"
                     android:maxLength="16"
-                    android:textStyle="bold"
+                    android:textColor="@color/colorHitam"
                     app:fontFamily="@font/roboto"
                     tools:text="Ravendra Al Kutsar" />
 
@@ -57,7 +57,7 @@
                     android:id="@+id/nisSiswa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/_3103118061"
+                    tools:text="@string/_3103118061"
                     android:textSize="16sp" />
             </LinearLayout>
 
