@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.scc.bukusakuonline.user.R;
 import com.scc.bukusakuonline.user.ui.LoginActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
@@ -47,11 +48,18 @@ public class ProfileFragment extends Fragment {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
                 try {
+                    String url = "http://" + Objects.requireNonNull(userItems.get(0).getPhoto());
+//                    Picasso.get().load(url).into(photo);
+
+                }catch (Exception e){
+                    Toast.makeText(getContext(), "Gagal Load Foto", Toast.LENGTH_LONG).show();
+                }
+                try{
                     name.setText(userItems.get(0).getName());
                     email.setText(userItems.get(0).getEmail());
                     phone.setText(userItems.get(0).getPhone());
                 }catch (Exception e){
-                    Toast.makeText(getContext(), "Gagal Load Data", Toast.LENGTH_LONG).show();
+
                 }
 
 
