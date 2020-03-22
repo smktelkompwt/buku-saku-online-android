@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,30 +40,29 @@ public class ProfileFragment extends Fragment {
     TextView phone;
 
     public TextView kelas;
-
+    ImageView imageView;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
         kelas = root.findViewById(R.id.textView14);
+        imageView = root.findViewById(R.id.imgprofile);
         ButterKnife.bind(this,root);
 
         try {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
-                try {
-                    String url = "http://" + Objects.requireNonNull(userItems.get(0).getPhoto());
-//                    Picasso.get().load(url).into(photo);
 
-                }catch (Exception e){
-                    Toast.makeText(getContext(), "Gagal Load Foto", Toast.LENGTH_LONG).show();
-                }
                 try{
-                    name.setText(userItems.get(0).getName());
-                    email.setText(userItems.get(0).getEmail());
-                    phone.setText(userItems.get(0).getPhone());
-                    kelas.setText(userItems.get(0).getKelas());
+                    String url =  Objects.requireNonNull(userItems.getPhoto());
+                    Picasso.get().load(url).into(imageView);
+                    Log.d("cekimage", url);
+                    name.setText(userItems.getName());
+                    email.setText(userItems.getEmail());
+                    phone.setText(userItems.getPhone());
+                    kelas.setText(userItems.getKelas());
+
                 }catch (Exception e){
 
                 }

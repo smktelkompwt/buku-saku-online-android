@@ -12,5 +12,7 @@ data class UserItem(
         @SerializedName("class")
         val kelas: String?,
         @SerializedName("photo")
-        val photo: String?
+        val photo: String?,
+        @SerializedName("nis")
+        val nis: String?
 )
