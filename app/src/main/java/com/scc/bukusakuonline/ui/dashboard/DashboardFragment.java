@@ -41,8 +41,8 @@ public class DashboardFragment extends Fragment {
         dashboardViewModel.loadData(getContext());
         dashboardViewModel.getListData().observe(getActivity(), dataItems -> {
             try{
-                jumlahpelanggaran.setText(String.valueOf(dataItems.getCountPelanggaran()));
-                jumlahsiswa.setText(String.valueOf(dataItems.getCountSiswa()));
+                jumlahpelanggaran.setText(String.valueOf(dataItems.countPelanggaran));
+                jumlahsiswa.setText(String.valueOf(dataItems.countSiswa));
             }catch(Exception e){
 
             }
