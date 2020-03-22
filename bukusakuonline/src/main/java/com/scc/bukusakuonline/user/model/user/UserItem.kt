@@ -8,5 +8,7 @@ data class UserItem(
         @SerializedName("email")
         val email: String?,
         @SerializedName("point")
-        val phone: String?
+        val phone: String?,
+        @SerializedName("photo")
+        val photo: String?
 )

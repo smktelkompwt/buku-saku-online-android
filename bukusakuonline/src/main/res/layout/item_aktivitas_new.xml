@@ -70,6 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lihat_detail"
+                    android:textStyle="bold"
                     tools:fontFamily="@font/roboto"
                     android:textSize="12sp"
                     android:gravity="end"
