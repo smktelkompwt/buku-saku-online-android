@@ -64,7 +64,7 @@ public class ProfileFragment extends Fragment {
                     kelas.setText(userItems.getKelas());
 
                 }catch (Exception e){
-
+                    Toast.makeText(getContext(), "Gagal Ambil Data", Toast.LENGTH_SHORT).show();
                 }
 
 

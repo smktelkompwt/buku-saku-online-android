@@ -18,12 +18,14 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.ui.LoginActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
@@ -33,6 +35,8 @@ public class ProfileFragment extends Fragment {
     TextView name;
     @BindView(R.id.subjects)
     TextView email;
+    @BindView(R.id.imgprofile)
+    CircleImageView imgProfile;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,8 +55,10 @@ public class ProfileFragment extends Fragment {
             profileViewModel.getListData().observe(this, userItems -> {
 
                 try {
-                    name.setText(userItems.get(0).getName());
-                    email.setText(userItems.get(0).getEmail());
+                    String url =  Objects.requireNonNull(userItems.getPhoto());
+                    Picasso.get().load(url).into(imgProfile);
+                    name.setText(userItems.getName());
+                    email.setText(userItems.getEmail());
                 }catch (Exception e){
                     Log.e(String.valueOf(e),"lol" );
                 }

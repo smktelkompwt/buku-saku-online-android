@@ -6,5 +6,5 @@ data class UserResponse(
         @SerializedName("code")
         val code : Int?,
         @SerializedName("data")
-        val data: List<UserItem>?
+        val data: UserItem?
 )
