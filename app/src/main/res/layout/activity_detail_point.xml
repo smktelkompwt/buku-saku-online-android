@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.detailpoint.DetailPoint">
+    <LinearLayout
+        android:paddingTop="11dp"
+        android:background="@color/colorBgSplash"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="11dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:text="@string/code"
+            android:layout_marginLeft="35dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:fontFamily="@font/roboto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="35dp" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:text="@string/deskripsi"
+            android:layout_marginLeft="84dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:fontFamily="@font/roboto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="84dp" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:text="@string/point"
+            android:layout_marginLeft="80dp"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:fontFamily="@font/roboto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="80dp" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/point_items"
+        android:id="@+id/rv_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -5,6 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.scc.bukusakuonline.ui.home.HomeFragment"
@@ -12,14 +13,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.scc.bukusakuonline.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_history"
+        android:name="com.scc.bukusakuonline.ui.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.scc.bukusakuonline.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_dashboard"
+        android:name="com.scc.bukusakuonline.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.scc.bukusakuonline.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_pengaduan"
+        android:name="com.scc.bukusakuonline.ui.pengaduan.PengaduanFragment"
+        android:label="@string/pengaduan"
+        tools:layout="@layout/fragment_pengaduan">
+    </fragment>
 </navigation>
