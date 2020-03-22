@@ -88,6 +88,8 @@
     <string name="searchsiswa">Search Siswa</string>
     <string name="foto_profile">Foto Profile</string>
     <string name="pilih_pelanggaran">Pilih Pelanggaran</string>
+    <string name="sccpwt">sccpwt</string>
+    <string name="stematelpwt">stematelpwt</string>
     <string-array name="RPL">
         <item>X RPL 1</item>
         <item>X RPL 1</item>
@@ -149,5 +151,17 @@
         <item>oke pas</item>
         <item>oke</item>
     </string-array>
+    <string name="igscc" translatable="false">https://www.instagram.com/sccpwt/</string>
+    <string name="igstematel" translatable="false">https://www.instagram.com/stematelpwt/</string>
+
+    <string name="igrafiud" translatable="false">https://www.instagram.com/rafiudd_/</string>
+    <string name="igdafarz" translatable="false">https://www.instagram.com/rz.dfrz</string>
+    <string name="iggawang" translatable="false">https://www.instagram.com/ganar.gatul/</string>
+    <string name="igfakhrul" translatable="false">https://www.instagram.com/sccpwt/</string>
+    <string name="igfaresa" translatable="false">https://www.instagram.com/faresa_pn/</string>
+    <string name="igsindi" translatable="false">https://www.instagram.com/sindylail/</string>
+    <string name="igyudhan" translatable="false">https://www.instagram.com/yudhan.jeffri/</string>
+    <string name="igbagas" translatable="false">https://www.instagram.com/bagas_makhali/</string>
+    <string name="igdafa" translatable="false">https://www.instagram.com/dafaaaap/</string>
 
 </resources>

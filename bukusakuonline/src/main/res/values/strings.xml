@@ -1,4 +1,5 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
     <string name="app_name">Buku Saku Siswa</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -9,6 +10,8 @@
     <string name="masuk_untuk_melanjutkan">Masuk Untuk Melanjutkan</string>
     <string name="history">History</string>
     <string name="dashboard">Dashboard</string>
+    <string name="sccpwt">sccpwt</string>
+    <string name="stematelpwt">stematelpwt</string>
     <string name="profile">Profile</string>
     <string name="searchsiswa">Search Siswa</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -147,5 +150,16 @@
     <string name="title_Profile">Profile</string>
     <string name="_3103118061">3103118061</string>
     <string name="foto_profile">Foto Profile</string>
+    <string name="igscc" tools:ignore="ExtraTranslation">https://www.instagram.com/sccpwt/</string>
+    <string name="igstematel" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/stematelpwt/</string>
 
+    <string name="igdafarz" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/rz.dfrz</string>
+    <string name="igrafiud" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/rafiudd_/</string>
+    <string name="iggawang" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/ganar.gatul/</string>
+    <string name="igfakhrul" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/sccpwt/</string>
+    <string name="igfaresa" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/faresa_pn/</string>
+    <string name="igsindi" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/sindylail/</string>
+    <string name="igyudhan" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/yudhan.jeffri/</string>
+    <string name="igbagas" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/bagas_makhali/</string>
+    <string name="igdafa" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/dafaaaap/</string>
 </resources>
