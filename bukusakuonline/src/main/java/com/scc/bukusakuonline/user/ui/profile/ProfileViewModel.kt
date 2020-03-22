@@ -15,6 +15,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 class ProfileViewModel : ViewModel() {
+    
     private  var listPoint : MutableLiveData<List<UserItem>> = MutableLiveData()
 
 
@@ -24,7 +25,7 @@ class ProfileViewModel : ViewModel() {
         val token ="Bearer "+ sharedPreferences.getString("TOKEN","abc")
         RetroConfig.getRetrofit().create(ApiService::class.java).profile(token).enqueue(object : retrofit2.Callback<UserResponse>{
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                d("error","error")
+                Toast.makeText(context,"gagal load data", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {

@@ -37,11 +37,15 @@ public class ProfileFragment extends Fragment {
     TextView email;
     @BindView(R.id.textView13)
     TextView phone;
+
+    public TextView kelas;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         profileViewModel =
                 ViewModelProviders.of(this).get(ProfileViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profile, container, false);
+        kelas = root.findViewById(R.id.textView14);
         ButterKnife.bind(this,root);
 
         try {
@@ -58,6 +62,7 @@ public class ProfileFragment extends Fragment {
                     name.setText(userItems.get(0).getName());
                     email.setText(userItems.get(0).getEmail());
                     phone.setText(userItems.get(0).getPhone());
+                    kelas.setText(userItems.get(0).getKelas());
                 }catch (Exception e){
 
                 }
