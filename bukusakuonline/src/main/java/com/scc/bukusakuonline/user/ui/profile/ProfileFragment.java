@@ -48,16 +48,16 @@ public class ProfileFragment extends Fragment {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
                 try {
-                    String url = "http://" + Objects.requireNonNull(userItems.get(0).getPhoto());
+                    String url = "http://" + Objects.requireNonNull(userItems.getPhoto());
 //                    Picasso.get().load(url).into(photo);
 
                 }catch (Exception e){
                     Toast.makeText(getContext(), "Gagal Load Foto", Toast.LENGTH_LONG).show();
                 }
                 try{
-                    name.setText(userItems.get(0).getName());
-                    email.setText(userItems.get(0).getEmail());
-                    phone.setText(userItems.get(0).getPhone());
+                    name.setText(userItems.getName());
+                    email.setText(userItems.getEmail());
+                    phone.setText(userItems.getPhone());
                 }catch (Exception e){
 
                 }
