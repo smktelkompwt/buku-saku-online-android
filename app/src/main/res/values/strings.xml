@@ -88,8 +88,8 @@
     <string name="searchsiswa">Search Siswa</string>
     <string name="foto_profile">Foto Profile</string>
     <string name="pilih_pelanggaran">Pilih Pelanggaran</string>
-    <string name="sccpwt">sccpwt</string>
-    <string name="stematelpwt">stematelpwt</string>
+    <string name="sccpwt">\@sccpwt</string>
+    <string name="stematelpwt">\@stematelpwt</string>
     <string-array name="RPL">
         <item>X RPL 1</item>
         <item>X RPL 1</item>
