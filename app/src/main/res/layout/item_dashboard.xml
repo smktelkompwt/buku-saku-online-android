@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.cardview.widget.CardView
     android:layout_marginTop="16dp"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120dp"
@@ -14,12 +14,14 @@
         android:paddingRight="16dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/border">
         <TextView
             android:id="@+id/title_dashboard"
             android:textSize="12sp"
             app:fontFamily="@font/roboto"
             tools:text="@string/jumlah_siswa"
+            android:textColor="@color/colorHitam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
@@ -32,4 +34,4 @@
             android:textStyle="bold"
             tools:text="52" />
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>
