@@ -23,8 +23,8 @@ android {
         applicationId "com.scc.bukusakuonline.user"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         buildConfigField "String", "BASE_URL", "\"" + getURL() + "\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -58,7 +58,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.jaredrummler:material-spinner:1.3.1'
-
+    implementation 'com.google.android.play:core:1.5.0'
     implementation 'com.jakewharton:butterknife:10.2.1'
     implementation 'com.github.irfaan008:IRBottomNavigationView:1.0.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
