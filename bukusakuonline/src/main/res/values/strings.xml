@@ -10,8 +10,9 @@
     <string name="masuk_untuk_melanjutkan">Masuk Untuk Melanjutkan</string>
     <string name="history">History</string>
     <string name="dashboard">Dashboard</string>
-    <string name="sccpwt">sccpwt</string>
-    <string name="stematelpwt">stematelpwt</string>
+    <string name="sccpwt">\@sccpwt</string>
+
+    <string name="stematelpwt">\@stematelpwt</string>
     <string name="profile">Profile</string>
     <string name="searchsiswa">Search Siswa</string>
     <!-- TODO: Remove or change this placeholder text -->
