@@ -126,7 +126,7 @@
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/circleImageView25"
                     app:layout_constraintTop_toBottomOf="@+id/textView55"
-                    android:text="Backend Dev &amp; UI/UX Designer" />
+                    android:text="Backend Developer &amp; UI/UX Designer" />
 
                 <View
                     android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/circleImageView26"
                     app:layout_constraintTop_toBottomOf="@+id/textView56"
-                    android:text="Android Dev &amp; Frontend Dev" />
+                    android:text="Android Developer &amp; Frontend Dev" />
 
                 <View
                     android:layout_width="match_parent"
@@ -453,7 +453,7 @@
                     android:textSize="20sp"
                     app:layout_constraintStart_toEndOf="@+id/circleImageView23"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="Yudhan Ganteng" />
+                    android:text="Yudhan Jeffri Djuniartha" />
 
                 <TextView
                     android:id="@+id/textView63"
