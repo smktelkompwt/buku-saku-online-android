@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.scc.bukusakuonline.R;
 import com.scc.bukusakuonline.R2;
 import com.scc.bukusakuonline.connection.ApiService;
@@ -28,9 +28,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    @BindView(R2.id.txtEmail) TextInputEditText txtEmail;
+    @BindView(R2.id.txtEmail)
+    EditText txtEmail;
 
-    @BindView(R2.id.txtPassword) TextInputEditText txtPassword;
+    @BindView(R2.id.txtPassword)
+    EditText txtPassword;
 
     SharedPreferences preferences;
     @Override
