@@ -80,5 +80,6 @@ public class ProfileFragment extends Fragment {
         editor.remove("TOKEN");
         editor.apply();
         startActivity(new Intent(getActivity(), LoginActivity.class));
+        getActivity().finish();
     }
 }

@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (!token.equals("abc")){
             startActivity(new Intent(this,MainActivity.class));
+            finish();
         }
 
     }
@@ -62,7 +63,9 @@ public class LoginActivity extends AppCompatActivity {
                             editor.apply();
                             Log.d("response", token);
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            finish();
                         }else {
+                            Log.d("response",response.body().toString());
                             Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                         }
 
@@ -71,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(@NotNull Call<Login> call, @NotNull Throwable t) {
                     Log.d("failure", Objects.requireNonNull(t.getMessage()));
-                    Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Network Error", Toast.LENGTH_LONG).show();
                 }
             });
         }catch (Exception e){

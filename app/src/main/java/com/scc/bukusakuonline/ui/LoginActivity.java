@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         String token = preferences.getString("TOKEN","abc");
         if (!token.equals("abc")){
             startActivity(new Intent(this,MainActivity.class));
+            finish();
         }
     }
     @OnClick(R2.id.btnLogin) void login(){
@@ -63,6 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.apply();
                                 Log.d("response", token);
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                finish();
                             }else {
                                 Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                             }
