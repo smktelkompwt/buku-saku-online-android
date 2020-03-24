@@ -83,6 +83,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:background="@drawable/red_button"
+            android:layout_marginBottom="60dp"
             android:backgroundTint="#FF5151"
             android:text="@string/keluar"
             android:textAllCaps="false"
