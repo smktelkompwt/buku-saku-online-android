@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorbgPeraturan"
-    android:padding="10dp"
+
     tools:context=".ui.TentangKamiActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -34,6 +34,7 @@
             android:layout_marginLeft="20dp"
             android:textColor="#06956D"
             android:layout_marginTop="12dp"
+            android:textAllCaps="false"
             android:background="@drawable/contentig"
             android:text="@string/sccpwt"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:textAllCaps="false"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="12dp"
             android:padding="10dp"
@@ -90,14 +92,18 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
+
                     android:id="@+id/rafiud"
                     android:layout_height="match_parent">
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/circleImageView25"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+
                         android:src="@drawable/masfiud"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +129,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:fontFamily="@font/roboto"
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView25"
@@ -148,7 +154,9 @@
                         android:id="@+id/circleImageView26"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/gawang"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -174,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:fontFamily="@font/roboto"
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView26"
@@ -198,7 +206,9 @@
                         android:id="@+id/circleImageView27"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/masdafa"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -225,7 +235,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
                         android:fontFamily="@font/roboto"
-                        android:layout_marginTop="8dp"
+
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView27"
                         app:layout_constraintTop_toBottomOf="@+id/textView57"
@@ -248,7 +258,9 @@
                         android:id="@+id/circleImageView28"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/fakhrul"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -266,7 +278,7 @@
                         android:fontFamily="@font/roboto"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView28"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text=" Fakhrul Zakaria" />
+                        android:text="Fakhrul Zakaria" />
 
                     <TextView
                         android:id="@+id/textView68"
@@ -274,7 +286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:fontFamily="@font/roboto"
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView28"
@@ -299,7 +311,9 @@
                         android:id="@+id/circleImageView2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/faresa"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -326,7 +340,7 @@
                         android:layout_marginStart="12dp"
                         android:fontFamily="@font/roboto"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView2"
                         app:layout_constraintTop_toBottomOf="@+id/textView5"
@@ -349,7 +363,9 @@
                         android:id="@+id/circleImageView281"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/sindi"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -374,7 +390,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:fontFamily="@font/roboto"
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView281"
@@ -398,7 +414,9 @@
                         android:id="@+id/circleImageView22"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/bagas"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -424,7 +442,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:textSize="14sp"
                         android:fontFamily="@font/roboto"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView22"
@@ -449,7 +467,9 @@
                         android:id="@+id/circleImageView23"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/yudhan"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -467,7 +487,7 @@
                         android:textSize="18sp"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView23"
                         app:layout_constraintTop_toTopOf="parent"
-                        android:text="Yudhan Jefri" />
+                        android:text="Yudhan Jeffri D" />
 
                     <TextView
                         android:id="@+id/textView63"
@@ -475,7 +495,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:textSize="14sp"
                         android:fontFamily="@font/roboto"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView23"
@@ -500,7 +520,9 @@
                         android:id="@+id/circleImageView24"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_margin="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:src="@drawable/dafa"
 
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -527,7 +549,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginTop="8dp"
+
                         android:textSize="14sp"
                         android:fontFamily="@font/roboto"
                         app:layout_constraintStart_toEndOf="@+id/circleImageView24"
