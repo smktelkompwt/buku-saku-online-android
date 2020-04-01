@@ -50,11 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btnLogin) void login(){
         try {
+            Log.d("email",txtEmail.getText().toString());
+            Log.d("pass",txtPassword.getText().toString());
             RetroConfig.getRetrofit().create(ApiService.class).
                     login(Objects.requireNonNull(txtEmail.getText()).toString(), Objects.requireNonNull(txtPassword.getText()).toString(),"001").enqueue(new Callback<Login>() {
                 @Override
                 public void onResponse(@NotNull Call<Login> call, @NotNull Response<Login> response) {
                     if (response.isSuccessful()){
+                        Log.d("response",response.body().getCode().toString());
                         assert response.body() != null;
                         if (response.body().getCode() == 200){
                             String token = response.body().getToken();
@@ -65,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             finish();
                         }else {
-                            Log.d("response",response.body().toString());
+                            Log.d("response", String.valueOf(response.body()));
                             Toast.makeText(getApplicationContext(), "Email Atau Password Anda Salah", Toast.LENGTH_LONG).show();
                         }
 

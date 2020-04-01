@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 def getURL() {
     Properties properties = new Properties()
@@ -23,8 +23,8 @@ android {
         applicationId "com.scc.bukusakuonline.user"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
         buildConfigField "String", "BASE_URL", "\"" + getURL() + "\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -68,6 +68,10 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0"
     implementation "com.github.d-max:spots-dialog:1.1@aar"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.ethanhua:skeleton:1.1.2'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+    implementation 'com.faltenreich:skeletonlayout:2.0.1'
+
 }
 repositories {
     mavenCentral()

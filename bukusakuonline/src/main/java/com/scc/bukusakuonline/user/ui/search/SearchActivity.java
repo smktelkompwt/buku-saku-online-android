@@ -50,7 +50,7 @@ public class SearchActivity extends AppCompatActivity {
             alertDialog.hide();
             recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
             if (siswaKelasItems.size() > 0) {
-                adapterSiswa = new AdapterSiswa(this, siswaKelasItems);
+                adapterSiswa = new AdapterSiswa(this);
                 recyclerView.setAdapter(adapterSiswa);
                 adapterSiswa.notifyDataSetChanged();
             } else {
