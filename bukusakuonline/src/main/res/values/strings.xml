@@ -162,4 +162,5 @@
     <string name="igyudhan" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/yudhan.jeffri/</string>
     <string name="igbagas" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/bagas_makhali/</string>
     <string name="igdafa" translatable="false" tools:ignore="ExtraTranslation">https://www.instagram.com/dafaaaap/</string>
+    <string name="kls">X</string>
 </resources>
