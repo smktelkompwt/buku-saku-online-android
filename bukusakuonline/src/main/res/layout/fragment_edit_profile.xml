@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.EditProfileFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorBgSplash"
+        app:contentInsetStart="0dp">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Edit Profile"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:fontFamily="@font/roboto"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/back"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp" />
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Kelas"
+        android:textColor="#29293E"
+        android:textSize="12sp"/>
+    
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:gravity="center">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="80dp"
+           android:layout_height="50dp"
+           android:background="@drawable/border_spinner">
+
+           <com.jaredrummler.materialspinner.MaterialSpinner
+               android:id="@+id/spinnerKLS"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:layout_marginStart="3dp"
+               android:layout_marginLeft="3dp"
+               android:layout_marginTop="3dp"
+               android:layout_marginEnd="3dp"
+               android:text="@string/kls"
+               android:layout_marginRight="3dp"
+               android:layout_marginBottom="3dp"
+               android:entries="@array/spinner_kategori"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="152dp"
+           android:layout_height="50dp"
+           android:layout_marginStart="20dp"
+           android:background="@drawable/border_spinner"
+           android:layout_marginLeft="20dp">
+
+           <com.jaredrummler.materialspinner.MaterialSpinner
+               android:id="@+id/spinnerJURUSAN"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:layout_marginStart="3dp"
+               android:layout_marginLeft="3dp"
+               android:layout_marginTop="3dp"
+               android:layout_marginEnd="3dp"
+               android:layout_marginRight="3dp"
+               android:layout_marginBottom="3dp"
+               android:entries="@array/spinner_kategori"
+               android:text="RPL"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="80dp"
+           android:layout_height="50dp"
+           android:layout_marginStart="20dp"
+           android:background="@drawable/border_spinner"
+           android:layout_marginLeft="20dp">
+
+           <com.jaredrummler.materialspinner.MaterialSpinner
+               android:id="@+id/spinnerANGKA"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:layout_marginStart="3dp"
+               android:layout_marginLeft="3dp"
+               android:layout_marginTop="3dp"
+               android:layout_marginEnd="3dp"
+               android:text="6"
+               android:layout_marginRight="3dp"
+               android:layout_marginBottom="3dp"
+               android:entries="@array/spinner_kategori"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </LinearLayout>
+</LinearLayout>

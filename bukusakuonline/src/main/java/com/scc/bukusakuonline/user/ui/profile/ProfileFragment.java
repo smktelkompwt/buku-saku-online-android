@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,7 @@ public class ProfileFragment extends Fragment {
         imageView = root.findViewById(R.id.imgprofile);
         ButterKnife.bind(this,root);
 
+
         try {
             profileViewModel.loadData(Objects.requireNonNull(getContext()));
             profileViewModel.getListData().observe(getViewLifecycleOwner(), userItems -> {
@@ -78,5 +80,17 @@ public class ProfileFragment extends Fragment {
         editor.apply();
         startActivity(new Intent(getActivity(), LoginActivity.class));
         getActivity().finish();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        Button edit = view.findViewById(R.id.bt_edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new EditProfileFragment();
+            }
+        });
+        super.onViewCreated(view, savedInstanceState);
     }
 }
